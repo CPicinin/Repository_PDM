@@ -6,10 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PDM.DataObjects;
 using PDM.BusinessLayer;
-
 namespace PDM.View
 {
-    public partial class EditaUsuario : System.Web.UI.Page
+    public partial class EditarUsuario : System.Web.UI.Page
     {
         EmpresaBL ebl = new EmpresaBL();
         Empresa emp;
