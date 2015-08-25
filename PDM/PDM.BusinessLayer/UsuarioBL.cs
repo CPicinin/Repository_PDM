@@ -10,7 +10,7 @@ namespace PDM.BusinessLayer
 {
     public class UsuarioBL
     {
-        public List<Usuario> buscaUsuariosEmpresa(string empresa)
+        public List<Usuario> buscaUsuariosEmpresa(int empresa)
         {
             List<Usuario> lista = new List<Usuario>();
             UsuarioDA uDA = new UsuarioDA();
@@ -22,6 +22,13 @@ namespace PDM.BusinessLayer
             UsuarioDA uDA = new UsuarioDA();
             bool cadastrou = uDA.cadastraUsuario(user);
             return cadastrou;
+        }
+        public Usuario buscaUsuarioAtivo(string email)
+        {
+            UsuarioDA uda = new UsuarioDA();
+            Usuario u = new Usuario();
+            u = uda.buscaUsuarioAtivo(email);
+            return u;
         }
     }
 }

@@ -20,7 +20,7 @@ namespace PDM.DataAcess
             try
             {
                 conexao.Open();
-                comando.CommandText = @"SELECT email, senha, nome, empresa, dataFimLicenca FROM Usuario WHERE email = '" + user.email + "' AND senha = '" + user.senha + "' ";
+                comando.CommandText = @"SELECT email FROM Usuario WHERE email = '" + user.email + "' AND senha = '" + user.senha + "' ";
                 comando.Connection = conexao;
                 leitor = comando.ExecuteReader();
                 while (leitor.Read())
@@ -53,7 +53,7 @@ namespace PDM.DataAcess
             try
             {
                 conexao.Open();
-                comando.CommandText = @"SELECT email, senha, nome, empresa, dataFimLicenca FROM Usuario WHERE email = '" + email + "' AND senha = '" + senha + "'";
+                comando.CommandText = @"SELECT email, senha, nome, idEmpresa, tipo, dataFimLicenca, ativo FROM Usuario WHERE email = '" + email + "' AND senha = '" + senha + "'";
                 comando.Connection = conexao;
                 leitor = comando.ExecuteReader();
                 while (leitor.Read())
@@ -61,8 +61,10 @@ namespace PDM.DataAcess
                     user.email = leitor["email"].ToString();
                     user.senha = leitor["senha"].ToString();
                     user.nome = leitor["nome"].ToString();
-                    user.empresa = leitor["empresa"].ToString();
+                    user.idEmpresa = Convert.ToInt16(leitor["idEmpresa"].ToString());
                     user.dataFimLicenca = Convert.ToDateTime(leitor["dataFimLicenca"].ToString());
+                    user.tipo = Convert.ToInt16(leitor["tipo"].ToString());
+                    user.ativo = Convert.ToInt16(leitor["ativo"]);
                 }
             }
             catch (Exception)

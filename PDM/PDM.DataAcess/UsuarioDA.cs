@@ -10,28 +10,30 @@ namespace PDM.DataAcess
 {
     public class UsuarioDA
     {
-        public List<Usuario> buscaUsuariosEmpresa(string empresa)
+        public List<Usuario> buscaUsuariosEmpresa(int empresa)
         {
             List<Usuario> lista = new List<Usuario>();
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = StaticObjects.strConexao;
             SqlCommand comando = new SqlCommand();
             SqlDataReader leitor;
-            int count = 0;
             try
             {
                 conexao.Open();
-                comando.CommandText = @"SELECT email, nome, empresa, dataFimLicenca FROM Usuario WHERE empresa = '" + empresa + "' ORDER BY nome ";
+                comando.CommandText = @"SELECT email, senha, nome, idEmpresa, tipo, dataFimLicenca, ativo FROM Usuario WHERE idEmpresa = " + empresa + " ORDER BY nome ";
                 comando.Connection = conexao;
                 leitor = comando.ExecuteReader();
                 while (leitor.Read())
                 {
-                    Usuario u = new Usuario();
-                    u.email = leitor["email"].ToString();
-                    u.nome = leitor["nome"].ToString();
-                    u.empresa = leitor["empresa"].ToString();
-                    u.dataFimLicenca = Convert.ToDateTime(leitor["dataFimLicenca"].ToString());
-                    lista.Add(u);
+                    Usuario user = new Usuario();
+                    user.email = leitor["email"].ToString();
+                    user.senha = leitor["senha"].ToString();
+                    user.nome = leitor["nome"].ToString();
+                    user.idEmpresa = Convert.ToInt16(leitor["idEmpresa"].ToString());
+                    user.dataFimLicenca = Convert.ToDateTime(leitor["dataFimLicenca"].ToString());
+                    user.tipo = Convert.ToInt16(leitor["tipo"].ToString());
+                    user.ativo = Convert.ToInt16(leitor["ativo"]);
+                    lista.Add(user);
                 }
                 conexao.Close();
                 return lista;
@@ -52,8 +54,8 @@ namespace PDM.DataAcess
             try
             {
                 conexao.Open();
-                comando.CommandText = @"INSERT INTO dbo.Usuario (email,senha,nome,empresa,tipo,dataFimLicenca) VALUES " +
-                    "('" + user.email + "', '" + user.senha.GetHashCode() + "', '" + user.nome + "', '" + user.empresa + "', " + user.tipo + ", '" + licenca + "') ";
+                comando.CommandText = @"INSERT INTO dbo.Usuario (email,senha,nome,idEmpresa,tipo,dataFimLicenca, ativo) VALUES " +
+                    "('" + user.email + "', '" + user.senha.GetHashCode() + "', '" + user.nome + "', " + user.idEmpresa + ", " + user.tipo + ", '" + licenca + "', " + user.ativo + ") ";
                 comando.Connection = conexao;
                 comando.ExecuteNonQuery();
                 conexao.Close();
@@ -64,6 +66,39 @@ namespace PDM.DataAcess
                 conexao.Close();
                 return false;
             }
+        }
+
+        public Usuario buscaUsuarioAtivo(string email)
+        {
+            Usuario user = new Usuario();
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader leitor;
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"SELECT email, senha, nome, idEmpresa, tipo, dataFimLicenca, ativo FROM Usuario WHERE email = '" + email + "' ";
+                comando.Connection = conexao;
+                leitor = comando.ExecuteReader();
+                while (leitor.Read())
+                {
+                    user.email = leitor["email"].ToString();
+                    user.senha = leitor["senha"].ToString();
+                    user.nome = leitor["nome"].ToString();
+                    user.idEmpresa = Convert.ToInt16(leitor["idEmpresa"].ToString());
+                    user.dataFimLicenca = Convert.ToDateTime(leitor["dataFimLicenca"].ToString());
+                    user.tipo = Convert.ToInt16(leitor["tipo"].ToString());
+                    user.ativo = Convert.ToInt16(leitor["ativo"]);
+                }
+            }
+            catch (Exception)
+            {
+                conexao.Close();
+                return null;
+            }
+            conexao.Close();
+            return user;
         }
     }
 }

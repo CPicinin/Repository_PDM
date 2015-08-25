@@ -11,9 +11,9 @@ namespace PDM.DataObjects
         public string email { get; set; }
         public string senha { get; set; }
         public string nome { get; set; }
-        public string empresa { get; set; }
+        public int idEmpresa { get; set; }
         public int tipo { get; set; }
         public DateTime dataFimLicenca { get; set; }
-        public bool ativo { get; set; }
+        public int ativo { get; set; }
     }
 }

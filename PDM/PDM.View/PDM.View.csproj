@@ -61,6 +61,7 @@
     <Content Include="CadastroUsuarioMasterNovo.aspx" />
     <Content Include="Config.aspx" />
     <Content Include="ConsultaUsuario.aspx" />
+    <Content Include="EditaUsuario.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />
@@ -106,6 +107,13 @@
     </Compile>
     <Compile Include="ConsultaUsuario.aspx.designer.cs">
       <DependentUpon>ConsultaUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditaUsuario.aspx.cs">
+      <DependentUpon>EditaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditaUsuario.aspx.designer.cs">
+      <DependentUpon>EditaUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

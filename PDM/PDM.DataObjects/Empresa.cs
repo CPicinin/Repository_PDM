@@ -8,8 +8,9 @@ namespace PDM.DataObjects
 {
     public class Empresa
     {
-        long cnpj { get; set; }
-        string razao { get; set; }
-        string email { get; set; }
+        public int id { get; set; }
+        public string cnpj { get; set; }
+        public string razao { get; set; }
+        public string email { get; set; }
     }
 }

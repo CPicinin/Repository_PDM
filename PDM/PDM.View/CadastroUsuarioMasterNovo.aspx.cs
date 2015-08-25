@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using PDM.BusinessLayer;
+using PDM.DataObjects;
 
 namespace PDM.View
 {
@@ -12,6 +14,27 @@ namespace PDM.View
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            Empresa emp = new Empresa();
+            EmpresaBL ebl = new EmpresaBL();
+            Usuario user = new Usuario();
+            UsuarioBL ubl = new UsuarioBL();
+
+            emp.cnpj = cnpj.Value;
+            emp.razao = razao.Value;
+            emp.email = emailEmpresa.Value;
+            int idEmpresa = ebl.cadastraEmpresa(emp);
+            user.email = email.Value;
+            user.senha = senha.Value;
+            user.nome = nome.Value;
+            user.tipo = 2;
+            user.ativo = 1;
+            user.dataFimLicenca = DateTime.Now.AddDays(30);
+            user.idEmpresa = idEmpresa;
+            bool cadastrou = ubl.cadastraUsuario(user);
         }
     }
 }

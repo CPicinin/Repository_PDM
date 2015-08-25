@@ -41,7 +41,7 @@ namespace PDM.View
                     user = lbl.buscaUsuario(user.email, user.senha);
                     Session["email"] = user.email;
                     Session["senha"] = user.senha;
-                    Session["empresa"] = user.empresa;
+                    Session["empresa"] = user.idEmpresa;
                     Response.Redirect("Home.aspx");
                 }
                 else

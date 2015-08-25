@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="Index.aspx">PDM - Product Development Manager</a>
+                <a class="navbar-brand" href="Home.aspx">PDM - Product Development Manager</a>
             </div>
             <!-- /.navbar-header -->
 

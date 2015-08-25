@@ -9,22 +9,42 @@ using PDM.BusinessLayer;
 
 namespace PDM.View
 {
-    public partial class CadastraUsuario : System.Web.UI.Page
+    public partial class EditaUsuario : System.Web.UI.Page
     {
         EmpresaBL ebl = new EmpresaBL();
         Empresa emp;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                emp = new Empresa();
-                emp = ebl.buscaEmpresa(Convert.ToInt16(Session["empresa"]));
-                EmpresaUser.Value = emp.razao;
-            }
-        }
-        public CadastraUsuario()
-        {
+                UsuarioBL ubl = new UsuarioBL();
+                Usuario u = new Usuario();
+                u = ubl.buscaUsuarioAtivo(Session["email"].ToString());
+                emailUser.Value = u.email;
+                nomeUser.Value = u.nome;
 
+                emp = new Empresa();
+                emp = ebl.buscaEmpresa(u.idEmpresa);
+                EmpresaUser.Value = emp.razao;
+
+                if (u.tipo == 1)
+                {
+                    admSim.Checked = true;
+                }
+                else
+                {
+                    admNao.Checked = true;
+                }
+                if (u.ativo == 0)
+                {
+                    AtivoNao.Checked = true;
+                }
+                else
+                {
+                    ativoSim.Checked = true;
+                }
+            }
         }
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {
