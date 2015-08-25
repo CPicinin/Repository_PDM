@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PDM.Master" AutoEventWireup="true" CodeBehind="CadastroUsuarioMasterNovo.aspx.cs" EnableEventValidation="false" Inherits="PDM.View.CadastroUsuarioMasterNovo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PDMWithoutNavigationLeft.Master" AutoEventWireup="true" CodeBehind="CadastroUsuarioMasterNovo.aspx.cs" EnableEventValidation="false" Inherits="PDM.View.CadastroUsuarioMasterNovo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

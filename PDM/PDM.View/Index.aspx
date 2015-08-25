@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="PDM.View.Index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" ValidateRequest="false" CodeBehind="Index.aspx.cs" Inherits="PDM.View.Index" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +39,7 @@
         <div class="container topnav">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" runat="server" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -62,45 +62,43 @@
         </div>
         <!-- /.container -->
     </nav>
+    <form runat="server">
+        <!-- Header -->
+        <a name="about"></a>
+        <div class="intro-header">
+            <div class="container">
 
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="intro-message">
+                            <h1>PDM</h1>
+                            <h3>Gerencie Seus Projetos Em Um Só Lugar</h3>
+                            <hr class="intro-divider">
+                            <ul class="list-inline intro-social-buttons">
+                                <li>
+                                    <asp:LinkButton runat="server" ID="btnRegistro" OnClick="btnRegistro_Click" CssClass="btn btn-primary btn-lg" Text="Criar Conta"></asp:LinkButton>
+                                </li>
+                                <li>
+                                    <asp:LinkButton runat="server" ID="btnLogin" OnClick="btnLogin_Click" CssClass="btn btn-success btn-lg" Text="Entrar"></asp:LinkButton>
 
-    <!-- Header -->
-    <a name="about"></a>
-    <div class="intro-header">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-message">
-                        <h1>PDM</h1>
-                        <h3>Gerencie Seus Projetos Em Um Só Lugar</h3>
-                        <hr class="intro-divider">
-                        <ul class="list-inline intro-social-buttons">
-                            <li>
-                                <asp:LinkButton runat="server" class="btn btn-primary btn-lg" Text="Criar Conta"></asp:LinkButton>
-                                
-                            </li>
-                            <li>
-                                <asp:LinkButton runat="server" class="btn btn-success btn-lg" Text="Entrar"></asp:LinkButton>
-                                
-                            </li>
-                        </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
             </div>
+            <!-- /.container -->
 
         </div>
-        <!-- /.container -->
+        <!-- /.intro-header -->
 
-    </div>
-    <!-- /.intro-header -->
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+    </form>
 </body>
 
 </html>
