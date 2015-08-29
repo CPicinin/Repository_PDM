@@ -22,7 +22,7 @@
                                     <asp:BoundField DataField="nome" HeaderText="Nome" />
                                     <asp:BoundField DataField="empresa" HeaderText="Empresa" />
                                     <asp:BoundField DataField="licenca" HeaderText="Validade da Licença" />
-                                    <asp:HyperLinkField ControlStyle-CssClass="fa fa-search-plus fa-fw" />
+                                    <asp:HyperLinkField ControlStyle-CssClass="fa fa-search-plus fa-fw"/>
                                     <asp:HyperLinkField ControlStyle-CssClass="fa fa-pencil fa-fw" />
                                     <asp:HyperLinkField ControlStyle-CssClass="fa fa-trash-o fa-fw" />
                                 </Columns>
