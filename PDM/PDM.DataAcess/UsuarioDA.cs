@@ -100,5 +100,47 @@ namespace PDM.DataAcess
             conexao.Close();
             return user;
         }
+        public bool editaUsuario(Usuario user)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"UPDATE dbo.Usuario SET senha = '" + user.senha.GetHashCode() + "' , nome = '" + user.nome + "' , tipo = " + user.tipo + " " +
+                                ", ativo = " + user.ativo + " WHERE email =  '" + user.email + "' ";
+                comando.Connection = conexao;
+                comando.ExecuteNonQuery();
+                conexao.Close();
+                return true;
+            }
+            catch (Exception)
+            {
+                conexao.Close();
+                return false;
+            }
+        }
+        public bool excluiUsuario(string email)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            DateTime licenca = DateTime.Now.AddDays(365);
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"DELETE FROM dbo.Usuario WHERE email = '" + email + "' ";
+                comando.Connection = conexao;
+                comando.ExecuteNonQuery();
+                conexao.Close();
+                return true;
+            }
+            catch (Exception)
+            {
+                conexao.Close();
+                return false;
+            }
+        }
     }
 }

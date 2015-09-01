@@ -42,6 +42,7 @@
     <Compile Include="EmpresaDA.cs" />
     <Compile Include="LoginDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TerceiroDA.cs" />
     <Compile Include="UsuarioDA.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -12,17 +12,16 @@ namespace PDM.View
     {
         EmpresaBL ebl = new EmpresaBL();
         Empresa emp;
-
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Init(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Request["user_mail"] != null)
             {
                 UsuarioBL ubl = new UsuarioBL();
                 Usuario u = new Usuario();
-                u = ubl.buscaUsuarioAtivo(Session["email"].ToString());
+                u = ubl.buscaUsuarioAtivo(Request["user_mail"].ToString());
                 emailUser.Value = u.email;
                 nomeUser.Value = u.nome;
-
+                
                 emp = new Empresa();
                 emp = ebl.buscaEmpresa(u.idEmpresa);
                 EmpresaUser.Value = emp.razao;
@@ -44,6 +43,15 @@ namespace PDM.View
                     ativoSim.Checked = true;
                 }
             }
+            else
+            {
+
+            }
+            
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+          
         }
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {
@@ -72,24 +80,28 @@ namespace PDM.View
                 user.ativo = 0;
             }
             UsuarioBL ubl = new UsuarioBL();
-            bool cadastrou = ubl.cadastraUsuario(user);
+            bool cadastrou = ubl.editaUsuario(user);
             if (cadastrou)
             {
-                Response.Write("<script>alert('Registro efetuado com sucesso!')</script>");
+                Response.Write("<script>alert('Registro editado com sucesso!')</script>");
             }
         }
 
         protected void btnLimpar_Click(object sender, EventArgs e)
         {
-            emailUser.Value = "";
-            nomeUser.Value = "";
-            EmpresaUser.Value = "";
-            senhaUser.Value = "";
-            senha2User.Value = "";
-            admNao.Checked = false;
-            admSim.Checked = false;
-            ativoSim.Checked = false;
-            AtivoNao.Checked = false;
+            Response.Redirect("Home.aspx");
+        }
+
+        protected void btnExcluir_Click(object sender, EventArgs e)
+        {
+            //falta uma confirmação de você tem certeza que deseja excluir?
+            UsuarioBL ubl = new UsuarioBL();
+            bool deletou = ubl.excluiUsuario(emailUser.Value.ToString());
+            if (deletou)
+            {
+                Response.Write("<script>alert('Registro removido com sucesso!')</script>");
+                Response.Redirect("ConsultaUsuario.aspx");
+            }
         }
     }
 }

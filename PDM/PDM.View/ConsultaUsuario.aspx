@@ -18,37 +18,13 @@
                         <div class="dataTable_wrapper">
                             <asp:GridView ID="gridUsuarios" runat="server" AutoGenerateColumns="false" class="table table-striped table-bordered table-hover" >
                                 <Columns>
-                                    <asp:BoundField DataField="email" HeaderText="Email" />
-                                    <asp:BoundField DataField="nome" HeaderText="Nome" />
-                                    <asp:BoundField DataField="empresa" HeaderText="Empresa" />
-                                    <asp:BoundField DataField="licenca" HeaderText="Validade da Licença" />
-                                    <asp:HyperLinkField ControlStyle-CssClass="fa fa-search-plus fa-fw"/>
-                                    <asp:HyperLinkField ControlStyle-CssClass="fa fa-pencil fa-fw" />
-                                    <asp:HyperLinkField ControlStyle-CssClass="fa fa-trash-o fa-fw" />
+                                    <asp:BoundField DataField="Email" HeaderText="Email" />
+                                    <asp:BoundField DataField="Nome" HeaderText="Nome" />
+                                    <asp:BoundField DataField="Empresa" HeaderText="Empresa" />
+                                    <asp:BoundField DataField="Licença" HeaderText="Validade da Licença" />
+                                    <asp:HyperLinkField ControlStyle-CssClass="fa fa-pencil fa-fw" DataNavigateUrlFields="editar" />
                                 </Columns>
                             </asp:GridView>
-                            <!-- <table id="tabelaUsuarios" class="table table-striped table-bordered table-hover" runat="server">
-                                    <thead>
-                                        <tr>
-                                            <th>Email</th>
-                                            <th>Nome</th>
-                                            <th>Empresa</th>
-                                            <th>Tipo</th>
-                                            <th>Validade da Licença</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="odd gradeX">
-                                            <td><label id="lblEmail" runat="server"></label></td>
-                                            <td><label id="lblNome" runat="server"></label></td>
-                                            <td><label id="lblEmpresa" runat="server"></label></td>
-                                            <td><label id="lblTipo" runat="server"></label></td>
-                                            <td><label id="lblDataLicenca" runat="server"></label></td>
-                                            <td><a href="#"><i class="fa fa-search-plus fa-fw"></i></a><a href="#"><i class="fa fa-pencil fa-fw"></i></a><a href="#"><i class="fa fa-trash-o fa-fw"></i></a></td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>-->
                         </div>
                     </div>
                     <!-- /.panel-body -->

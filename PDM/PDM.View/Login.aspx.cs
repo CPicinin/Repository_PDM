@@ -11,8 +11,17 @@ namespace PDM.View
 {
     public partial class Login : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Init(object sender, EventArgs e)
         {
+            if(Request["end_session"] != null)
+            {
+                string teste = Request["end_session"].ToString();
+                if(teste == "sim")
+                {
+                    Home.userLogged = false;
+                }
+                
+            }
         }
 
         protected void Unnamed_Click(object sender, EventArgs e)

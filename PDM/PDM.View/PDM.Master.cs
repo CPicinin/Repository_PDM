@@ -13,7 +13,7 @@ namespace PDM.View
         {
             
         }
-        public void alteraTexto(string nome)
+        public void alteraTexto()
         {
             
         }

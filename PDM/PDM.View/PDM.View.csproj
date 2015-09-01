@@ -59,9 +59,12 @@
   <ItemGroup>
     <Content Include="CadastraUsuario.aspx" />
     <Content Include="CadastroUsuarioMasterNovo.aspx" />
+    <Content Include="CadatraTerceiro.aspx" />
     <Content Include="Config.aspx" />
+    <Content Include="ConsultaTerceiro.aspx" />
     <Content Include="ConsultaUsuario.aspx" />
     <Content Include="EditarUsuario.aspx" />
+    <Content Include="EditaTerceiro.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />
@@ -95,12 +98,26 @@
     <Compile Include="CadastroUsuarioMasterNovo.aspx.designer.cs">
       <DependentUpon>CadastroUsuarioMasterNovo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CadatraTerceiro.aspx.cs">
+      <DependentUpon>CadatraTerceiro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadatraTerceiro.aspx.designer.cs">
+      <DependentUpon>CadatraTerceiro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Config.aspx.cs">
       <DependentUpon>Config.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Config.aspx.designer.cs">
       <DependentUpon>Config.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaTerceiro.aspx.cs">
+      <DependentUpon>ConsultaTerceiro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaTerceiro.aspx.designer.cs">
+      <DependentUpon>ConsultaTerceiro.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConsultaUsuario.aspx.cs">
       <DependentUpon>ConsultaUsuario.aspx</DependentUpon>
@@ -115,6 +132,13 @@
     </Compile>
     <Compile Include="EditarUsuario.aspx.designer.cs">
       <DependentUpon>EditarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditaTerceiro.aspx.cs">
+      <DependentUpon>EditaTerceiro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditaTerceiro.aspx.designer.cs">
+      <DependentUpon>EditaTerceiro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

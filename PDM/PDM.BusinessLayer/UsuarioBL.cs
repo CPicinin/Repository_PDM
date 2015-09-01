@@ -30,5 +30,17 @@ namespace PDM.BusinessLayer
             u = uda.buscaUsuarioAtivo(email);
             return u;
         }
+        public bool editaUsuario(Usuario user)
+        {
+            UsuarioDA uDA = new UsuarioDA();
+            bool editou = uDA.editaUsuario(user);
+            return editou;
+        }
+        public bool excluiUsuario(string email)
+        {
+            UsuarioDA uDA = new UsuarioDA();
+            bool excluiu = uDA.excluiUsuario(email);
+            return excluiu;
+        }
     }
 }

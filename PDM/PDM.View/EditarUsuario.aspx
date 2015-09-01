@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PDM.Master" AutoEventWireup="true" CodeBehind="EditarUsuario.aspx.cs" Inherits="PDM.View.EditarUsuario" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>Editar Usuário</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="menuUser" runat="server">
 </asp:Content>
@@ -7,7 +8,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Novo Usuário</h1>
+                <h1 class="page-header">Editar Usuário</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -17,23 +18,23 @@
             <div class="col-xs-4 col-md-4">
                 <div class="form-group">
                     <label>Nome</label>
-                    <input id="nomeUser" type="text" class="form-control" placeholder="Nome" required="required" runat="server" />
+                    <input id="nomeUser" type="text" class="form-control" placeholder="Nome" runat="server" />
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input id="emailUser" type="email" class="form-control" placeholder="Email" required="required" runat="server" />
+                    <input id="emailUser" type="email" class="form-control" placeholder="Email" runat="server" />
                 </div>
                 <div class="form-group">
                     <label>Empresa</label>
-                    <input id="EmpresaUser" runat="server" type="text" class="form-control" required="required" placeholder="Empresa" />
+                    <input id="EmpresaUser" runat="server" type="text" class="form-control" rplaceholder="Empresa" />
                 </div>
                 <div class="form-group">
                     <label>Senha</label>
-                    <input id="senhaUser" class="form-control" type="password" required="required" runat="server" />
+                    <input id="senhaUser" class="form-control" type="password" runat="server" />
                 </div>
                 <div class="form-group">
                     <label>Repita a senha</label>
-                    <input id="senha2User" class="form-control" type="password" required="required" runat="server" />
+                    <input id="senha2User" class="form-control" type="password" runat="server" />
                 </div>
                 <div class="form-group">
                     <label>Administrador</label>
@@ -61,8 +62,9 @@
                         </label>
                     </div>
                 </div>
-                <asp:Button ID="btnCadastrar" type="submit" OnClick="btnCadastrar_Click" runat="server" class="btn btn-default" Text="Cadastrar" />
-                <asp:Button ID="btnLimpar" type="reset" runat="server" OnClick="btnLimpar_Click" class="btn btn-default" Text="Limpar" />
+                <asp:Button ID="btnCadastrar" type="submit" OnClick="btnCadastrar_Click" runat="server" CssClass="btn btn-default" Text="Salvar" />
+                <asp:Button ID="btnExcluir" OnClick="btnExcluir_Click" runat="server" CssClass="btn btn-default" Text="Excluir" />
+                <asp:Button ID="btnLimpar" type="reset" runat="server" OnClick="btnLimpar_Click" CssClass="btn btn-default" Text="Cancelar" />
             </div>
             <div class="col-xs-4 col-md-4"></div>
         </div>
