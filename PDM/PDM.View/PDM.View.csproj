@@ -59,7 +59,7 @@
   <ItemGroup>
     <Content Include="CadastraUsuario.aspx" />
     <Content Include="CadastroUsuarioMasterNovo.aspx" />
-    <Content Include="CadatraTerceiro.aspx" />
+    <Content Include="CadastraTerceiro.aspx" />
     <Content Include="Config.aspx" />
     <Content Include="ConsultaTerceiro.aspx" />
     <Content Include="ConsultaUsuario.aspx" />
@@ -98,12 +98,12 @@
     <Compile Include="CadastroUsuarioMasterNovo.aspx.designer.cs">
       <DependentUpon>CadastroUsuarioMasterNovo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CadatraTerceiro.aspx.cs">
-      <DependentUpon>CadatraTerceiro.aspx</DependentUpon>
+    <Compile Include="CadastraTerceiro.aspx.cs">
+      <DependentUpon>CadastraTerceiro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CadatraTerceiro.aspx.designer.cs">
-      <DependentUpon>CadatraTerceiro.aspx</DependentUpon>
+    <Compile Include="CadastraTerceiro.aspx.designer.cs">
+      <DependentUpon>CadastraTerceiro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Config.aspx.cs">
       <DependentUpon>Config.aspx</DependentUpon>
