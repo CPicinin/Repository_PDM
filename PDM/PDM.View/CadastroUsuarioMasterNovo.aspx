@@ -3,18 +3,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="page-wrapper">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-xs-2 col-md-2"></div>
+            <div class="col-lg-8">
                 <h1 class="page-header">Cadastro</h1>
                 <h3>Criar uma nova Conta de teste no PDM</h3>
             </div>
+            <div class="col-xs-2 col-md-2"></div>
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-xs-4 col-md-4"></div>
-            <div class="col-xs-4 col-md-4">
+            <div class="col-xs-3 col-md-3"></div>
+            <div class="col-xs-6 col-md-6">
                 <form role="form">
                     <div class="form-group">
                         <label>Email</label>
@@ -47,8 +48,7 @@
                     <asp:Button ID="btnCadastrar" CssClass="btn btn-default" Text="Cadastrar" runat="server" OnClick="btnCadastrar_Click" />
                 </form>
             </div>
-            <div class="col-xs-4 col-md-4"></div>
+            <div class="col-xs-3 col-md-3"></div>
         </div>
-    </div>
     <!-- /#page-wrapper -->
 </asp:Content>
