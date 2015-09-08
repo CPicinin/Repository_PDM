@@ -40,8 +40,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmpresaBL.cs" />
+    <Compile Include="EtapaBL.cs" />
     <Compile Include="LoginBL.cs" />
+    <Compile Include="ProjetoBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TarefaBL.cs" />
     <Compile Include="TerceiroBL.cs" />
     <Compile Include="UsuarioBL.cs" />
   </ItemGroup>
