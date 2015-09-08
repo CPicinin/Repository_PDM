@@ -89,7 +89,7 @@ namespace PDM.View
 
         protected void btnLimpar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Home.aspx");
+            Response.Redirect("ConsultaUsuario.aspx");
         }
 
         protected void btnExcluir_Click(object sender, EventArgs e)
