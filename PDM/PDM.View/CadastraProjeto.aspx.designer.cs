@@ -22,85 +22,22 @@ namespace PDM.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtTitulo;
         
         /// <summary>
-        /// txtEmail control.
+        /// listaResponsaveis control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtEmail;
+        protected global::System.Web.UI.WebControls.DropDownList listaResponsaveis;
         
         /// <summary>
-        /// radioPessoaFisica control.
+        /// listaTipo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton radioPessoaFisica;
-        
-        /// <summary>
-        /// radioPessoaJuridica control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton radioPessoaJuridica;
-        
-        /// <summary>
-        /// txtTelefone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtTelefone;
-        
-        /// <summary>
-        /// radioCliente control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton radioCliente;
-        
-        /// <summary>
-        /// radioFornecedor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton radioFornecedor;
-        
-        /// <summary>
-        /// cpfCnpj control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText cpfCnpj;
-        
-        /// <summary>
-        /// ativoSim control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton ativoSim;
-        
-        /// <summary>
-        /// AtivoNao control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton AtivoNao;
+        protected global::System.Web.UI.WebControls.DropDownList listaTipo;
         
         /// <summary>
         /// btnCadastrar control.

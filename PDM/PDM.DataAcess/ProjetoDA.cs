@@ -31,7 +31,7 @@ namespace PDM.DataAcess
                     p.titulo = leitor["titulo"].ToString();
                     p.emailResponsavel = leitor["emailResponsavel"].ToString();
                     p.status = Convert.ToInt16(leitor["status"].ToString());
-                    p.tipo = Convert.ToInt16(leitor["tipo"].ToString());
+                    p.tipo = Convert.ToInt16(leitor["tipoProjeto"].ToString());
                     p.dataInicio = Convert.ToDateTime(leitor["dataInicio"].ToString());
                     lista.Add(p);
                 }
@@ -76,15 +76,15 @@ namespace PDM.DataAcess
             SqlDataReader leitor;
             string where;
             // mudar os titulos para LIKE
-            if ((titulo != null) && (codigo != null))
+            if ((titulo != "") && (codigo != 0))
             {
                 where = "WHERE titulo LIKE '%" + titulo + "%' AND id = " + codigo + " ";
             }
-            else if (titulo != null)
+            else if (titulo != "")
             {
                 where = "WHERE titulo LIKE '%" + titulo + "%' ";
             }
-            else if (codigo != null)
+            else if (codigo != 0)
             {
                 where = "WHERE id = " + codigo + " ";
             }

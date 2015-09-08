@@ -20,6 +20,7 @@ namespace PDM.View
             string email;
             string senha;
             string empresa;
+            string nome;
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

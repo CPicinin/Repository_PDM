@@ -21,54 +21,13 @@
                     <input id="txtTitulo" type="text" class="form-control" placeholder="Nome" runat="server" />
                 </div>
                 <div class="form-group">
-                    <label>Email</label>
-                    <input id="txtEmail" type="email" class="form-control" placeholder="Email"  runat="server" />
+                    <label>Responsável</label>
+                    <asp:DropDownList ID="listaResponsaveis" runat="server" CssClass="form-control" ></asp:DropDownList>
                 </div>
                 <div class="form-group">
-                    <label>Tipo</label>
-                    <div class="radio">
-                        <label>
-                            <input id="radioPessoaFisica" type="radio" runat="server" name="optionsRadios" value="option1" />Pessoa Física
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input id="radioPessoaJuridica" type="radio" runat="server" name="optionsRadios" value="option2" />Pessoa Jurídica
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Telefone</label>
-                    <input id="txtTelefone" class="form-control" type="text" runat="server" />
-                </div>
-                <div class="form-group">
-                    <label>Tipo</label>
-                    <div class="radio">
-                        <label>
-                            <input id="radioCliente" type="radio" runat="server" name="optionsRadios" value="Cliente" />Cliente
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input id="radioFornecedor" type="radio" runat="server" name="optionsRadios" value="Fornecedor" />Fornecedor
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>CPF/CNPJ</label>
-                    <input id="cpfCnpj" type="text" class="form-control" placeholder="CPF - CNPJ" runat="server" />
-                </div>
-                <div class="form-group">
-                    <label>Ativo</label>
-                    <div class="radio">
-                        <label>
-                            <input id="ativoSim" type="radio" runat="server" name="optionsRadios2" value="option3" />Sim
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input id="AtivoNao" type="radio" runat="server" name="optionsRadios2" value="option4" />Não
-                        </label>
+                    <label>Tipo de projeto</label>
+                    <div class="list-group">
+                            <asp:DropDownList ID="listaTipo" runat="server" CssClass="form-control" ></asp:DropDownList>
                     </div>
                 </div>
                 <asp:Button ID="btnCadastrar" type="submit" OnClick="btnCadastrar_Click" runat="server" class="btn btn-default" Text="Cadastrar" />

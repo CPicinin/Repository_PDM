@@ -124,10 +124,10 @@
                             <a href="#"><i class="fa fa-tasks fa-fw"></i>Projetos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="consulta.html">Consulta</a>
+                                    <a href="ConsultaProjeto.aspx">Consulta</a>
                                 </li>
                                 <li>
-                                    <a href="cadastro.html">Novo</a>
+                                    <a href="CadastraProjeto.aspx">Novo</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
