@@ -30,8 +30,8 @@
                             <asp:DropDownList ID="listaTipo" runat="server" CssClass="form-control" ></asp:DropDownList>
                     </div>
                 </div>
-                <asp:Button ID="btnCadastrar" type="submit" OnClick="btnCadastrar_Click" runat="server" class="btn btn-default" Text="Cadastrar" />
-                <asp:Button ID="btnLimpar" type="reset" runat="server" OnClick="btnLimpar_Click" class="btn btn-default" Text="Limpar" />
+                <asp:Button ID="btnCadastrar" type="submit" OnClick="btnCadastrar_Click" runat="server" class="btn btn-default" Text="Salvar" />
+                <asp:Button ID="btnCancela" type="cancel" runat="server" OnClick="btnCancela_Click" class="btn btn-default" Text="Cancelar" />
             </div>
             <div class="col-xs-4 col-md-4"></div>
         </div>

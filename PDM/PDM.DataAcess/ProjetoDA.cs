@@ -157,5 +157,30 @@ namespace PDM.DataAcess
                 return false;
             }
         }
+
+        public List<string> buscaTiposProjeto()
+        {
+            List<string> lista = new List<string>();
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader leitor;
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"SELECT descricao FROM TipoProjeto ORDER BY id ";
+                comando.Connection = conexao;
+                leitor = comando.ExecuteReader();
+                while (leitor.Read())
+                {
+                    string item = leitor["descricao"].ToString();
+                    lista.Add(item);
+                }
+                conexao.Close();
+                return lista;
+            }
+            catch (Exception ex) { }
+            return null;
+        }
     }
 }

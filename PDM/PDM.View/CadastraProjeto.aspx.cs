@@ -13,7 +13,22 @@ namespace PDM.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ProjetoBL pbl = new ProjetoBL();
+            List<string> lista = new List<string>();
+            lista = pbl.buscaTiposProjeto();
+            if(lista != null)
+            {
+                listaTipo.DataSource = lista;
+                listaTipo.DataBind();
+            }
+            List<Usuario> listaU = new List<Usuario>();
+            UsuarioBL ubl = new UsuarioBL();
+            listaU = ubl.buscaUsuariosEmpresa(Convert.ToInt16(Session["empresa"].ToString()));
+            foreach(Usuario u in listaU)
+            {
+                listaResponsaveis.Items.Add(u.email);
+            }
+            listaResponsaveis.DataBind();
         }
 
         protected void btnCadastrar_Click(object sender, EventArgs e)
@@ -28,7 +43,7 @@ namespace PDM.View
             bool cadastrou = pbl.cadastraProjeto(p);
             if(cadastrou)
             {
-                Response.Write("");
+                Response.Write("Projeto cadastrado com sucesso!");
             }
         }
 
@@ -37,6 +52,11 @@ namespace PDM.View
             txtTitulo.Value = "";
             listaResponsaveis.SelectedIndex = 0;
             listaTipo.SelectedIndex = 0;
+        }
+
+        protected void btnCancela_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

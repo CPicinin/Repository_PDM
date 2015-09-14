@@ -13,30 +13,48 @@ namespace PDM.View {
     public partial class EditaProjeto {
         
         /// <summary>
-        /// btnAdd control.
+        /// txtTitulo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtTitulo;
         
         /// <summary>
-        /// literal1 control.
+        /// listaResponsaveis control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal literal1;
+        protected global::System.Web.UI.WebControls.DropDownList listaResponsaveis;
         
         /// <summary>
-        /// literal2 control.
+        /// listaTipo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal literal2;
+        protected global::System.Web.UI.WebControls.DropDownList listaTipo;
+        
+        /// <summary>
+        /// btnCadastrar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCadastrar;
+        
+        /// <summary>
+        /// btnCancela control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancela;
     }
 }
