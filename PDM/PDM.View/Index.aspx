@@ -38,14 +38,14 @@
                         <h3>Gerencie Seus Projetos Em Um Só Lugar</h3>
                         <hr class="intro-divider">
                         <form role="form" runat="server">
-                        <ul class="list-inline intro-social-buttons">
-                            <li>
-                                <asp:LinkButton ID="btnRegistro" runat="server" OnClick="btnRegistro_Click" CssClass="btn btn-primary btn-lg" Text="Criar Conta"></asp:LinkButton>
-                            </li>
-                            <li>
-                                <asp:LinkButton ID="btnLogin" runat="server" OnClick="btnLogin_Click" CssClass="btn btn-success btn-lg" Text="Entrar"></asp:LinkButton>
-                            </li>
-                        </ul>
+                            <ul class="list-inline intro-social-buttons">
+                                <li>
+                                    <asp:LinkButton ID="btnRegistro" runat="server" OnClick="btnRegistro_Click" CssClass="btn btn-primary btn-lg" Text="Criar Conta"></asp:LinkButton>
+                                </li>
+                                <li>
+                                    <asp:LinkButton ID="btnLogin" runat="server" OnClick="btnLogin_Click" CssClass="btn btn-success btn-lg" Text="Entrar"></asp:LinkButton>
+                                </li>
+                            </ul>
                         </form>
                     </div>
                 </div>
