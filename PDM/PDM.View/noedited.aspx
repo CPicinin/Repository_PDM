@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PDM.Master" AutoEventWireup="true" CodeBehind="noedited.aspx.cs" Inherits="PDM.View.noedited" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PDM.Master" AutoEventWireup="true" ValidateRequest="false" CodeBehind="noedited.aspx.cs" Inherits="PDM.View.noedited" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="menuUser" runat="server">
@@ -13,7 +13,7 @@
                 <div class="panel panel-default">
                     <div>
                         <input type="text" placeholder="text" />
-                        <asp:Button ID="btnAdd" OnClick="btnAdd_Click"runat="server" />
+                        <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" />
                         <asp:Literal ID="literal1" runat="server"></asp:Literal>
                         <asp:Literal ID="literal2" runat="server"></asp:Literal>
 
