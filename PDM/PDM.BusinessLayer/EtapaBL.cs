@@ -10,5 +10,18 @@ namespace PDM.BusinessLayer
 {
     public class EtapaBL
     {
+        public int buscaIdEtapa(string descricao)
+        {
+            EtapaDA eda = new EtapaDA();
+            int id = eda.buscaIdEtapa(descricao);
+            return id;
+        }
+        public List<string> buscaDescricaoEtapas()
+        {
+            List<string> lista = new List<string>();
+            EtapaDA eda = new EtapaDA();
+            lista = eda.buscaDescicaoEtapas();
+            return lista;
+        }
     }
 }
