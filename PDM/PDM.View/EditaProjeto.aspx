@@ -30,11 +30,13 @@
                         <asp:DropDownList ID="listaTipo" runat="server" CssClass="form-control"></asp:DropDownList>
                     </div>
                 </div>
-                <asp:Button ID="btnCadastrar" type="submit" OnClick="btnCadastrar_Click" runat="server" class="btn btn-default" Text="Salvar" />
-                <asp:Button ID="btnCancela" type="cancel" runat="server" OnClick="btnCancela_Click" class="btn btn-default" Text="Cancelar" />
-            </div>
-            <div class="form-group">
-                    <label>Tarefas do Projeto</label>
+                <div class="form-group">
+                    <asp:Button ID="btnCadastrar" type="submit" OnClick="btnCadastrar_Click" runat="server" class="btn btn-default" Text="Salvar" />
+                    <asp:Button ID="btnCancela" type="cancel" runat="server" OnClick="btnCancela_Click" class="btn btn-default" Text="Cancelar" />
+                </div>
+                <div class="form-group">
+                    label><h3>Tarefas do Projeto</h3>
+                    </label>
                     <div class="list-group">
                         Filtrar por Etapa:
                         <asp:DropDownList ID="lstEtapa" runat="server"></asp:DropDownList>
@@ -42,18 +44,19 @@
                         <asp:Button ID="btnBuscaTarefas" type="submit" OnClick="btnBuscaTarefas_Click" runat="server" class="btn btn-default" Text="Buscar" />
                     </div>
                 </div>
-            <div class="panel-body">
-                <div class="dataTable_wrapper">
-                    <asp:GridView ID="gridTarefas" runat="server" AutoGenerateColumns="false" class="table table-striped table-bordered table-hover">
-                        <Columns>
-                            <asp:BoundField DataField="Responsavel" HeaderText="Resposável" />
-                            <asp:BoundField DataField="DataInicio" HeaderText="Data de Início" />
-                            <asp:BoundField DataField="Prazo" HeaderText="Prazo" />
-                            <asp:BoundField DataField="Status" HeaderText="Status" />
-                            <asp:BoundField DataField="Titulo" HeaderText="Título da Tarefa" />
-                            <asp:HyperLinkField ControlStyle-CssClass="fa fa-pencil fa-fw" DataNavigateUrlFields="editar" />
-                        </Columns>
-                    </asp:GridView>
+                <div class="form-group">
+                    <div class="dataTable_wrapper">
+                        <asp:GridView ID="gridTarefas" runat="server" AutoGenerateColumns="false" class="table table-striped table-bordered table-hover">
+                            <Columns>
+                                <asp:BoundField DataField="Responsavel" HeaderText="Resposável" />
+                                <asp:BoundField DataField="DataInicio" HeaderText="Data de Início" />
+                                <asp:BoundField DataField="Prazo" HeaderText="Prazo" />
+                                <asp:BoundField DataField="Status" HeaderText="Status" />
+                                <asp:BoundField DataField="Titulo" HeaderText="Título da Tarefa" />
+                                <asp:HyperLinkField ControlStyle-CssClass="fa fa-pencil fa-fw" DataNavigateUrlFields="editar" />
+                            </Columns>
+                        </asp:GridView>
+                    </div>
                 </div>
             </div>
             <div class="col-xs-4 col-md-4"></div>

@@ -21,7 +21,7 @@ namespace PDM.DataAcess
             try
             {
                 conexao.Open();
-                comando.CommandText = @"SELECT id, emailResponsavel, titulo, tipoProjeto, dataInicio, status FROM Projeto WHERE emailResponsavel = '" + email + "' ";
+                comando.CommandText = @"SELECT id, emailResponsavel, titulo, idTipo, dataInicio, status FROM Projeto WHERE emailResponsavel = '" + email + "' ";
                 comando.Connection = conexao;
                 leitor = comando.ExecuteReader();
                 while (leitor.Read())
@@ -31,7 +31,7 @@ namespace PDM.DataAcess
                     p.titulo = leitor["titulo"].ToString();
                     p.emailResponsavel = leitor["emailResponsavel"].ToString();
                     p.status = Convert.ToInt16(leitor["status"].ToString());
-                    p.tipo = Convert.ToInt16(leitor["tipoProjeto"].ToString());
+                    p.tipo = Convert.ToInt16(leitor["idTipo"].ToString());
                     p.dataInicio = Convert.ToDateTime(leitor["dataInicio"].ToString());
                     lista.Add(p);
                 }
@@ -53,7 +53,7 @@ namespace PDM.DataAcess
             try
             {
                 conexao.Open();
-                comando.CommandText = @"INSERT INTO Projeto(emailResponsavel, titulo, tipoProjeto, dataInicio, status) VALUES " +
+                comando.CommandText = @"INSERT INTO Projeto(emailResponsavel, titulo, idTipo, dataInicio, status) VALUES " +
                 " ('" + p.emailResponsavel +"', '" + p.titulo + "', " + p.tipo + ", '" + p.dataInicio + "', " + p.status + ")";
                 comando.Connection = conexao;
                 comando.ExecuteNonQuery();
@@ -95,7 +95,7 @@ namespace PDM.DataAcess
             try
             {
                 conexao.Open();
-                comando.CommandText = @"SELECT id, emailResponsavel, titulo, tipoProjeto, dataInicio, status FROM Projeto " + where + " ";
+                comando.CommandText = @"SELECT id, emailResponsavel, titulo, idTipo, dataInicio, status FROM Projeto " + where + " ";
                 comando.Connection = conexao;
                 leitor = comando.ExecuteReader();
                 while (leitor.Read())
@@ -104,7 +104,7 @@ namespace PDM.DataAcess
                     p.titulo = leitor["titulo"].ToString();
                     p.emailResponsavel = leitor["emailResponsavel"].ToString();
                     p.status = Convert.ToInt16(leitor["status"].ToString());
-                    p.tipo = Convert.ToInt16(leitor["tipoProjeto"].ToString());
+                    p.tipo = Convert.ToInt16(leitor["idTipo"].ToString());
                     p.dataInicio = Convert.ToDateTime(leitor["dataInicio"].ToString());
                 }
             }
@@ -124,8 +124,8 @@ namespace PDM.DataAcess
             try
             {
                 conexao.Open();
-                comando.CommandText = @"UPDATE Projeto SET emailResponsavel = '" + p.emailResponsavel +"', titulo = '" + p.titulo + "', " + 
-                    " tipoProjeto = " + p.tipo + ", dataInicio = '" + p.dataInicio + "', status = " + p.status + " WHERE id = " + p.id + " ";
+                comando.CommandText = @"UPDATE Projeto SET emailResponsavel = '" + p.emailResponsavel +"', titulo = '" + p.titulo + "', " +
+                    " idTipo = " + p.tipo + ", dataInicio = '" + p.dataInicio + "', status = " + p.status + " WHERE id = " + p.id + " ";
                 comando.Connection = conexao;
                 comando.ExecuteNonQuery();
                 conexao.Close();

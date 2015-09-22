@@ -60,6 +60,7 @@ namespace PDM.View
                 dt.Columns.Add(c3);
                 dt.Columns.Add(c4);
                 dt.Columns.Add(c5);
+                dt.Columns.Add(c6);
 
                 foreach (Tarefa t in listaTarefas)
                 {
