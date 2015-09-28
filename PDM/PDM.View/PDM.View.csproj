@@ -58,11 +58,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CadastraProjeto.aspx" />
+    <Content Include="CadastraTarefa.aspx" />
     <Content Include="CadastraUsuario.aspx" />
     <Content Include="CadastroUsuarioMasterNovo.aspx" />
     <Content Include="CadastraTerceiro.aspx" />
     <Content Include="Config.aspx" />
     <Content Include="ConsultaProjeto.aspx" />
+    <Content Include="ConsultaTarefas.aspx" />
     <Content Include="ConsultaTerceiro.aspx" />
     <Content Include="ConsultaUsuario.aspx" />
     <Content Include="EditaProjeto.aspx" />
@@ -94,6 +96,13 @@
     </Compile>
     <Compile Include="CadastraProjeto.aspx.designer.cs">
       <DependentUpon>CadastraProjeto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastraTarefa.aspx.cs">
+      <DependentUpon>CadastraTarefa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastraTarefa.aspx.designer.cs">
+      <DependentUpon>CadastraTarefa.aspx</DependentUpon>
     </Compile>
     <Compile Include="CadastraUsuario.aspx.cs">
       <DependentUpon>CadastraUsuario.aspx</DependentUpon>
@@ -129,6 +138,13 @@
     </Compile>
     <Compile Include="ConsultaProjeto.aspx.designer.cs">
       <DependentUpon>ConsultaProjeto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaTarefas.aspx.cs">
+      <DependentUpon>ConsultaTarefas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaTarefas.aspx.designer.cs">
+      <DependentUpon>ConsultaTarefas.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConsultaTerceiro.aspx.cs">
       <DependentUpon>ConsultaTerceiro.aspx</DependentUpon>

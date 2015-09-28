@@ -20,7 +20,7 @@ namespace PDM.DataAcess
             try
             {
                 conexao.Open();
-                comando.CommandText = @"SELECT TOP 1 id FROM etapa WHERE descricao = '" + descricao + "'";
+                comando.CommandText = @"SELECT TOP 1 id FROM Etapa WHERE descricao = '" + descricao + "'";
                 comando.Connection = conexao;
                 leitor = comando.ExecuteReader();
                 while (leitor.Read())
@@ -55,6 +55,32 @@ namespace PDM.DataAcess
                 }
                 conexao.Close();
                 return lista;
+            }
+            catch (Exception)
+            {
+                conexao.Close();
+                return null;
+            }
+        }
+        public string buscaDescricaoEtapa(int id)
+        {
+            string desc = "";
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader leitor;
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"SELECT TOP 1 descricao FROM Etapa WHERE id = '" + id + "'";
+                comando.Connection = conexao;
+                leitor = comando.ExecuteReader();
+                while (leitor.Read())
+                {
+                    desc = leitor["descricao"].ToString();
+                }
+                conexao.Close();
+                return desc;
             }
             catch (Exception)
             {

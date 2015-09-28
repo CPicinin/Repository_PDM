@@ -162,5 +162,11 @@ namespace PDM.DataAcess
                 return false;
             }
         }
+        public List<Tarefa> buscaTarefasUsuario(string email)
+        {
+            List<Tarefa> lista = new List<Tarefa>();
+
+            return lista;
+        }
     }
 }

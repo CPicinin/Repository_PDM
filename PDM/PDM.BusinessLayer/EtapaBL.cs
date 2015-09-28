@@ -23,5 +23,12 @@ namespace PDM.BusinessLayer
             lista = eda.buscaDescicaoEtapas();
             return lista;
         }
+        public string buscaDescricaoEtapa(int id)
+        {
+            string desc = "";
+            EtapaDA eda = new EtapaDA();
+            desc = eda.buscaDescricaoEtapa(id);
+            return desc;
+        }
     }
 }

@@ -13,40 +13,85 @@ namespace PDM.View {
     public partial class EditaTarefa {
         
         /// <summary>
-        /// txtNome control.
+        /// listaEtapas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtNome;
+        protected global::System.Web.UI.WebControls.DropDownList listaEtapas;
         
         /// <summary>
-        /// txtEmail control.
+        /// listaResponsaveis control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtEmail;
+        protected global::System.Web.UI.WebControls.DropDownList listaResponsaveis;
         
         /// <summary>
-        /// ativoSim control.
+        /// txtTitulo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton ativoSim;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtTitulo;
         
         /// <summary>
-        /// AtivoNao control.
+        /// txtDataIni control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton AtivoNao;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtDataIni;
+        
+        /// <summary>
+        /// txtPrazo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtPrazo;
+        
+        /// <summary>
+        /// pendente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton pendente;
+        
+        /// <summary>
+        /// emAndamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton emAndamento;
+        
+        /// <summary>
+        /// concluido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton concluido;
+        
+        /// <summary>
+        /// cancelado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton cancelado;
         
         /// <summary>
         /// btnSalvar control.

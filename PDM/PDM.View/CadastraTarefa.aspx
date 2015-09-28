@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PDM.Master" AutoEventWireup="true" CodeBehind="EditaTarefa.aspx.cs" Inherits="PDM.View.EditaTarefa" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PDM.Master" AutoEventWireup="true" CodeBehind="CadastraTarefa.aspx.cs" Inherits="PDM.View.CadastraTarefa" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -8,7 +8,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Editar Tarefa</h1>
+                <h1 class="page-header">Nova Tarefa</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -18,15 +18,15 @@
             <div class="col-xs-4 col-md-4">
                 <div class="form-group">
                     <label>Etapa</label>
-                    <asp:DropDownList ID="listaEtapas" class="form-control" runat="server" />
+                    <asp:DropDownList ID="ListaEtapas" class="form-control" runat="server"></asp:DropDownList>
                 </div>
                 <div class="form-group">
                     <label>Responsável</label>
-                    <asp:DropDownList ID="listaResponsaveis" class="form-control" runat="server" />
+                    <asp:DropDownList ID="listaResponsaveis" runat="server" CssClass="form-control"></asp:DropDownList>
                 </div>
                 <div class="form-group">
                     <label>Título</label>
-                    <input id="txtTitulo" type="text" class="form-control" placeholder="Titulo" runat="server" />
+                    <input id="txtTitulo" type="text" class="form-control" placeholder="Nome" runat="server" />
                 </div>
                 <div class="form-group">
                     <label>Data de Início</label>
@@ -60,10 +60,15 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <asp:Button ID="btnSalvar" type="submit" OnClick="btnSalvar_Click" runat="server" CssClass="btn btn-default" Text="Salvar" />
-                    <asp:Button ID="btnExcluir" OnClick="btnExcluir_Click" runat="server" CssClass="btn btn-default" Text="Excluir" />
-                    <asp:Button ID="btnCancelar" type="reset" runat="server" OnClick="btnCancelar_Click" CssClass="btn btn-default" Text="Cancelar" />
+                    <label>Observação</label>
+                    <input id="txtObservacao" type="text" class="form-control" runat="server" />
+                </div>
+                <div class="form-group">
+                    <asp:Button ID="btnCadastrar" type="submit" OnClick="btnCadastrar_Click" runat="server" class="btn btn-default" Text="Salvar" />
+                    <asp:Button ID="btnCancela" type="cancel" runat="server" OnClick="btnCancela_Click" class="btn btn-default" Text="Cancelar" />
                 </div>
             </div>
             <div class="col-xs-4 col-md-4"></div>
+        </div>
+    </div>
 </asp:Content>

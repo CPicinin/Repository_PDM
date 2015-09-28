@@ -41,5 +41,12 @@ namespace PDM.BusinessLayer
             bool foi = tda.excluiTarefa(id);
             return foi;
         }
+        public List<Tarefa> buscaTarefasUsuario(string email)
+        {
+            List<Tarefa> lista = new List<Tarefa>();
+            TarefaDA tda = new TarefaDA();
+            lista = tda.buscaTarefasUsuario(email);
+            return lista;
+        }
     }
 }
