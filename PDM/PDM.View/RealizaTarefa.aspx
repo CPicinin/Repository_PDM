@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PDM.Master" AutoEventWireup="true" ValidateRequest="false" CodeBehind="EditaTarefa.aspx.cs" Inherits="PDM.View.EditaTarefa" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PDM.Master" AutoEventWireup="true" CodeBehind="RealizaTarefa.aspx.cs" Inherits="PDM.View.RealizaTarefa" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="menuUser" runat="server">
@@ -8,7 +7,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Editar Tarefa</h1>
+                <h1 class="page-header">Realizar Tarefa</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -59,6 +58,20 @@
                         </label>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label>Prazo (dias)</label>
+                    <input id="itemAdd" type="text" class="form-control" runat="server" />
+                    <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" CssClass="btn btn-default" Text="Incluir" />
+                </div>
+                <div class="dataTable_wrapper">
+                            <asp:GridView ID="gridItens" runat="server" AutoGenerateColumns="false" class="table table-striped table-bordered table-hover" >
+                                <Columns>
+                                    <asp:BoundField DataField="data" HeaderText="Data" />
+                                    <asp:BoundField DataField="descricao" HeaderText="Descrição" />
+                                    <asp:HyperLinkField ControlStyle-CssClass="fa fa-pencil fa-fw" DataNavigateUrlFields="excluir" />
+                                </Columns>
+                            </asp:GridView>
+                        </div>
                 <div class="form-group">
                     <asp:Button ID="btnSalvar" type="submit" OnClick="btnSalvar_Click" runat="server" CssClass="btn btn-default" Text="Salvar" />
                     <asp:Button ID="btnExcluir" OnClick="btnExcluir_Click" runat="server" CssClass="btn btn-default" Text="Excluir" />

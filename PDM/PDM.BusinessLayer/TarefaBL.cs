@@ -48,5 +48,15 @@ namespace PDM.BusinessLayer
             lista = tda.buscaTarefasUsuario(email);
             return lista;
         }
+        public bool adicionarItem(ItemTarefa i)
+        {
+            bool foi = tda.adicionarItem(i);
+            return foi;
+        }
+        public bool removerItem(int id)
+        {
+            bool foi = tda.removerItem(id);
+            return foi;
+        }
     }
 }

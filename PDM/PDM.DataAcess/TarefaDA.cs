@@ -165,8 +165,83 @@ namespace PDM.DataAcess
         public List<Tarefa> buscaTarefasUsuario(string email)
         {
             List<Tarefa> lista = new List<Tarefa>();
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader leitor;
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"SELECT id,idProjeto,idEtapa,emailResponsavel,titulo,dataInicio,dataFim,prazoEstimado,observacao, " +
+                    "status FROM dbo.Tarefa WHERE emailResponsavel = '" + email + "' ";
+                comando.Connection = conexao;
+                leitor = comando.ExecuteReader();
+                while (leitor.Read())
+                {
+                    Tarefa t = new Tarefa();
+                    t.id = Convert.ToInt16(leitor["id"].ToString());
+                    t.idProjeto = Convert.ToInt16(leitor["idProjeto"].ToString());
+                    t.idEtapa = Convert.ToInt16(leitor["idEtapa"].ToString());
+                    t.titulo = leitor["titulo"].ToString();
+                    t.emailResponsavel = leitor["emailResponsavel"].ToString();
+                    t.status = Convert.ToInt16(leitor["status"].ToString());
+                    t.dataInicio = Convert.ToDateTime(leitor["dataInicio"].ToString());
+                    t.dataFim = Convert.ToDateTime(leitor["dataFim"].ToString());
+                    t.prazoEstimado = Convert.ToInt16(leitor["prazoEstimado"].ToString());
+                    t.observacao = leitor["observacao"].ToString();
+                    lista.Add(t);
+                }
+                conexao.Close();
+                return lista;
+            }
+            catch (Exception)
+            {
+                conexao.Close();
+                return null;
+            }
+        }
+        public bool adicionarItem(ItemTarefa i)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"INSERT INTO dbo.ItensTarefa (idTarefa,data,hora,descricao) " +
+                            " VALUES (" + i.idTarefa + ",'" + i.data.ToShortDateString() + "','" + i.data.ToShortTimeString() + "','" + i.descricao + "')";
+                comando.Connection = conexao;
+                comando.ExecuteNonQuery();
+                conexao.Close();
+                return true;
+            }
 
-            return lista;
+            catch (Exception)
+            {
+                conexao.Close();
+                return false;
+            }
+        }
+        public bool removerItem(int id)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"DELETE FROM dbo.ItensTarefa WHERE id = " + id + " ";
+                comando.Connection = conexao;
+                comando.ExecuteNonQuery();
+                conexao.Close();
+                return true;
+            }
+
+            catch (Exception)
+            {
+                conexao.Close();
+                return false;
+            }
         }
     }
 }

@@ -53,7 +53,8 @@ namespace PDM.View
                 obs = t.observacao;
                 listaResponsaveis.SelectedItem.Value = t.emailResponsavel;
                 txtTitulo.Value = t.titulo;
-                txtDataIni.Value = t.dataInicio.ToShortDateString();
+                txtDataIni.Value = t.dataInicio.ToShortDateString().ToString();
+                txtDataIni.DataBind();
                 txtPrazo.Value = t.prazoEstimado.ToString();
                 switch(t.status)
                 {

@@ -7,7 +7,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Terceiros</h1>
+                <h1 class="page-header">Tarefas</h1>
             </div>
             <div class="col-lg-12">
                 <div class="panel panel-default">
@@ -16,10 +16,11 @@
                         <div class="dataTable_wrapper">
                             <asp:GridView ID="gridTerceiros" runat="server" AutoGenerateColumns="false" class="table table-striped table-bordered table-hover" >
                                 <Columns>
-                                    <asp:BoundField DataField="CNPJ" HeaderText="Cpf/Cnpj" />
-                                    <asp:BoundField DataField="Nome" HeaderText="Nome" />
-                                    <asp:BoundField DataField="Email" HeaderText="Email" />
-                                    <asp:BoundField DataField="Telefone" HeaderText="Telefone" />
+                                    <asp:BoundField DataField="etapa" HeaderText="Etapa" />
+                                    <asp:BoundField DataField="responsavel" HeaderText="E-mail Responsavel" />
+                                    <asp:BoundField DataField="dataInicio" HeaderText="Data de Início" />
+                                    <asp:BoundField DataField="prazo" HeaderText="Prazo Estimado (dias)" />
+                                    <asp:BoundField DataField="titulo" HeaderText="Título" />
                                     <asp:HyperLinkField ControlStyle-CssClass="fa fa-pencil fa-fw" DataNavigateUrlFields="editar" />
                                 </Columns>
                             </asp:GridView>
