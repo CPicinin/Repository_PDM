@@ -17,7 +17,7 @@
                             <asp:GridView ID="griEtapas" runat="server" AutoGenerateColumns="false" class="table table-striped table-bordered table-hover" >
                                 <Columns>
                                     <asp:BoundField DataField="id" HeaderText="Cpf/Cnpj" />
-                                    <asp:BoundField DataField="Nome" HeaderText="Nome" />
+                                    <asp:BoundField DataField="nome" HeaderText="Nome" />
                                     <asp:HyperLinkField ControlStyle-CssClass="fa fa-pencil fa-fw" DataNavigateUrlFields="editar" />
                                 </Columns>
                             </asp:GridView>
@@ -32,7 +32,6 @@
             </div>
         </div>
         <!-- /#page-wrapper -->
-
     </div>
     <!-- /#wrapper -->
 

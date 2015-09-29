@@ -88,5 +88,105 @@ namespace PDM.DataAcess
                 return null;
             }
         }
+        public List<Etapa> buscaEtapas()
+        {
+            List<Etapa> lista = new List<Etapa>();
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader leitor;
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"SELECT id,tituloEtapa,tipoEtapa FROM Etapa";
+                comando.Connection = conexao;
+                leitor = comando.ExecuteReader();
+                while (leitor.Read())
+                {
+                    Etapa e = new Etapa();
+                    e.id = Convert.ToInt16(leitor["id"].ToString());
+                    e.tituloEtapa = leitor["tituloEtapa"].ToString();
+                    e.tipo = Convert.ToInt16(leitor["tipoEtapa"].ToString());
+                    lista.Add(e);
+                }
+                conexao.Close();
+                return lista;
+            }
+            catch (Exception)
+            {
+                conexao.Close();
+                return null;
+            }
+        }
+        public Etapa buscaEtapa(int id)
+        {
+            Etapa e = new Etapa();
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader leitor;
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"SELECT id,tituloEtapa,tipoEtapa FROM Etapa WHERE id = " + id + " ";
+                comando.Connection = conexao;
+                leitor = comando.ExecuteReader();
+                while (leitor.Read())
+                {
+                    e.id = Convert.ToInt16(leitor["id"].ToString());
+                    e.tituloEtapa = leitor["tituloEtapa"].ToString();
+                    e.tipo = Convert.ToInt16(leitor["tipoEtapa"].ToString());
+                }
+                conexao.Close();
+                return e;
+            }
+            catch (Exception)
+            {
+                conexao.Close();
+                return null;
+            }
+        }
+        public bool excluiEtapa(int id)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"DELETE FROM dbo.Etapa WHERE id = " + id + " ";
+                comando.Connection = conexao;
+                comando.ExecuteNonQuery();
+                conexao.Close();
+                return true;
+            }
+
+            catch (Exception)
+            {
+                conexao.Close();
+                return false;
+            }
+        }
+        public bool editaEtapa(Etapa e)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"UPDATE dbo.Etapa SET tituloEtapa = '" + e.tituloEtapa + "' WHERE id = " + e.id + " ";
+                comando.Connection = conexao;
+                comando.ExecuteNonQuery();
+                conexao.Close();
+                return true;
+            }
+
+            catch (Exception)
+            {
+                conexao.Close();
+                return false;
+            }
+        }
     }
 }

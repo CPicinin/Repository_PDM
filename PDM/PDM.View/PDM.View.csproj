@@ -68,6 +68,7 @@
     <Content Include="ConsultaTarefas.aspx" />
     <Content Include="ConsultaTerceiro.aspx" />
     <Content Include="ConsultaUsuario.aspx" />
+    <Content Include="EditaEtapa.aspx" />
     <Content Include="EditaProjeto.aspx" />
     <Content Include="EditarUsuario.aspx" />
     <Content Include="EditaTarefa.aspx" />
@@ -168,6 +169,13 @@
     </Compile>
     <Compile Include="ConsultaUsuario.aspx.designer.cs">
       <DependentUpon>ConsultaUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditaEtapa.aspx.cs">
+      <DependentUpon>EditaEtapa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditaEtapa.aspx.designer.cs">
+      <DependentUpon>EditaEtapa.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditaProjeto.aspx.cs">
       <DependentUpon>EditaProjeto.aspx</DependentUpon>
