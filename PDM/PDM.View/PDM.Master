@@ -69,7 +69,9 @@
                             <li><a href="Config.aspx"><i class="fa fa-gear fa-fw"></i>Configurações</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="Login.aspx"><i class="fa fa-sign-out fa-fw"></i>Sair</a>
+                            <li><asp:ImageButton runat="server" OnClick="OnClick" CssClass="fa fa-sign-out fa-fw" AlternateText="Sair"/>
+ 
+                                
                             </li>
                         </ul>
                         <!-- /.dropdown-user -->

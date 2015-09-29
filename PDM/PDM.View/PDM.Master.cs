@@ -13,9 +13,16 @@ namespace PDM.View
         {
             
         }
-        public void alteraTexto()
+        public void AlteraTexto()
         {
             
+        }
+
+        protected void OnClick(object sender, ImageClickEventArgs e)
+        {
+            Session.Clear();
+            Session.Abandon();
+            Response.Redirect("Login.aspx");
         }
     }
 }
