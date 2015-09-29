@@ -63,6 +63,7 @@
     <Content Include="CadastroUsuarioMasterNovo.aspx" />
     <Content Include="CadastraTerceiro.aspx" />
     <Content Include="Config.aspx" />
+    <Content Include="ConsultaEtapa.aspx" />
     <Content Include="ConsultaProjeto.aspx" />
     <Content Include="ConsultaTarefas.aspx" />
     <Content Include="ConsultaTerceiro.aspx" />
@@ -132,6 +133,13 @@
     </Compile>
     <Compile Include="Config.aspx.designer.cs">
       <DependentUpon>Config.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaEtapa.aspx.cs">
+      <DependentUpon>ConsultaEtapa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaEtapa.aspx.designer.cs">
+      <DependentUpon>ConsultaEtapa.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConsultaProjeto.aspx.cs">
       <DependentUpon>ConsultaProjeto.aspx</DependentUpon>
