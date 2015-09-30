@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using PDM.BusinessLayer;
+using PDM.DataObjects;
 
 namespace PDM.View
 {
@@ -18,7 +20,8 @@ namespace PDM.View
             }
             else
             {
-
+                TarefaBL tbl = new TarefaBL();
+                lblQntTarefas.Text = tbl.contaTarefasUsuario(Session["email"].ToString()).ToString();
             }
         }
         protected void Page_Load(object sender, EventArgs e)

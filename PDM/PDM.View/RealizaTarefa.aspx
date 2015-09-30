@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PDM.Master" AutoEventWireup="true" CodeBehind="RealizaTarefa.aspx.cs" Inherits="PDM.View.RealizaTarefa" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="menuUser" runat="server">
@@ -59,24 +60,26 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Prazo (dias)</label>
-                    <input id="itemAdd" type="text" class="form-control" runat="server" />
+                    <label>Adicionar Registros</label>
+                    <asp:TextBox id="txtItem" CssClass="form-control" runat="server"></asp:TextBox>
                     <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" CssClass="btn btn-default" Text="Incluir" />
                 </div>
-                <div class="dataTable_wrapper">
-                            <asp:GridView ID="gridItens" runat="server" AutoGenerateColumns="false" class="table table-striped table-bordered table-hover" >
-                                <Columns>
-                                    <asp:BoundField DataField="data" HeaderText="Data" />
-                                    <asp:BoundField DataField="descricao" HeaderText="Descrição" />
-                                    <asp:HyperLinkField ControlStyle-CssClass="fa fa-pencil fa-fw" DataNavigateUrlFields="excluir" />
-                                </Columns>
-                            </asp:GridView>
-                        </div>
+                <div class="form-group">
+                    <div class="dataTable_wrapper">
+                        <asp:GridView ID="gridItens" runat="server" AutoGenerateColumns="false" class="table table-striped table-bordered table-hover">
+                            <Columns>
+                                <asp:BoundField DataField="data" HeaderText="Data" />
+                                <asp:BoundField DataField="descricao" HeaderText="Descrição" />
+                                <asp:HyperLinkField ControlStyle-CssClass="fa fa-pencil fa-fw" DataNavigateUrlFields="excluir" />
+                            </Columns>
+                        </asp:GridView>
+                    </div>
+                </div>
                 <div class="form-group">
                     <asp:Button ID="btnSalvar" type="submit" OnClick="btnSalvar_Click" runat="server" CssClass="btn btn-default" Text="Salvar" />
-                    <asp:Button ID="btnExcluir" OnClick="btnExcluir_Click" runat="server" CssClass="btn btn-default" Text="Excluir" />
+                    <asp:Button ID="btnFinalizar" OnClick="btnFinalizar_Click" runat="server" CssClass="btn btn-default" Text="Finalizar" />
                     <asp:Button ID="btnCancelar" type="reset" runat="server" OnClick="btnCancelar_Click" CssClass="btn btn-default" Text="Cancelar" />
                 </div>
             </div>
-            <div class="col-xs-4 col-md-4"></div>
+    <div class="col-xs-4 col-md-4"></div>
 </asp:Content>

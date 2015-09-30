@@ -58,5 +58,10 @@ namespace PDM.BusinessLayer
             bool foi = tda.removerItem(id);
             return foi;
         }
+        public int contaTarefasUsuario(string email)
+        {
+            int n = tda.contaTarefasUsuario(email);
+            return n;
+        }
     }
 }

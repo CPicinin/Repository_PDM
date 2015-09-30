@@ -53,9 +53,24 @@ namespace PDM.View
             ItemTarefa i = new ItemTarefa();
             i.idTarefa = idTarefa;
             i.data = DateTime.Now;
-            i.descricao = itemAdd.Value;
+            i.descricao = txtItem.Text;
             TarefaBL tbl = new TarefaBL();
             bool foi = tbl.adicionarItem(i);
+        }
+
+        protected void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnFinalizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

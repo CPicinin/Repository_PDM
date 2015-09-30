@@ -123,13 +123,25 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-tasks fa-fw"></i>Projetos<span class="fa arrow"></span></a>
+                            <a href="ConsultaProjeto.aspx"><i class="fa fa-tasks fa-fw"></i>Projetos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="ConsultaProjeto.aspx">Consulta</a>
                                 </li>
                                 <li>
                                     <a href="CadastraProjeto.aspx">Novo</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="ConsultaEtapa.aspx"><i class="fa fa-tasks fa-fw"></i>Etapas<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="ConsultaEtapa.aspx">Consulta</a>
+                                </li>
+                                <li>
+                                    <a href="#">Novo</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

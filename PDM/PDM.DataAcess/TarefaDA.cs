@@ -243,5 +243,31 @@ namespace PDM.DataAcess
                 return false;
             }
         }
+        public int contaTarefasUsuario(string email)
+        {
+            int numero = 0;
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader leitor;
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"SELECT COUNT(id) AS 'quantidade' FROM dbo.Tarefa WHERE emailResponsavel = '" + email + "' ";
+                comando.Connection = conexao;
+                leitor = comando.ExecuteReader();
+                while (leitor.Read())
+                {
+                    numero = Convert.ToInt16(leitor["quantidade"].ToString());
+                }
+                conexao.Close();
+                return numero;
+            }
+            catch (Exception)
+            {
+                conexao.Close();
+                return numero;
+            }
+        }
     }
 }
