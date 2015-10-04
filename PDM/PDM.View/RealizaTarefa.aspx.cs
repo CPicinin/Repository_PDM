@@ -16,11 +16,14 @@ namespace PDM.View
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            if (Request["id_tarefa"] != null)
+            if(!IsPostBack)
             {
-                idTarefa = Convert.ToInt16(Request["id_tarefa"].ToString());
+                if (Request["id_tarefa"] != null)
+                {
+                    idTarefa = Convert.ToInt16(Request["id_tarefa"].ToString());
+                }
+                carregaTabela();
             }
-            carregaTabela();
         }
         public void carregaTabela()
         {
@@ -56,6 +59,16 @@ namespace PDM.View
             i.descricao = itemAdd.Value;
             TarefaBL tbl = new TarefaBL();
             bool foi = tbl.adicionarItem(i);
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnSalvar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

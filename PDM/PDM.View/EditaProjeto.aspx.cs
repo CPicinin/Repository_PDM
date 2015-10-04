@@ -81,6 +81,13 @@ namespace PDM.View
             listaEtapas = ebl.buscaDescricaoEtapas();
             lstEtapa.DataSource = listaEtapas;
             lstEtapa.DataBind();
+
+     
+        }
+
+        protected void listaTipo_DataBinding(object sender, EventArgs e)
+        {
+            listaTipo.DataSource = new List<Projeto>();
         }
 
         protected void btnCancela_Click(object sender, EventArgs e)

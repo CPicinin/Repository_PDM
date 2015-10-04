@@ -46,10 +46,22 @@ namespace PDM.BusinessLayer
         }
         public List<string> buscaTiposProjeto()
         {
+            
             List<string> lista = new List<string>();
             ProjetoDA pda = new ProjetoDA();
             lista = pda.buscaTiposProjeto();
             return lista;
         }
+
+        public List<Projeto> teste()
+        {
+
+            List<string> lista = new List<string>();
+            ProjetoDA pda = new ProjetoDA();
+            var bind = pda.buscaProjetos("");
+
+            return bind;
+        }
+        
     }
 }
