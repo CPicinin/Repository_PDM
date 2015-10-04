@@ -20,7 +20,7 @@ namespace PDM.DataAcess
             try
             {
                 conexao.Open();
-                comando.CommandText = @"SELECT TOP 1 id FROM Etapa WHERE descricao = '" + descricao + "'";
+                comando.CommandText = @"SELECT TOP 1 id FROM Etapa WHERE tituloEtapa = '" + descricao + "'";
                 comando.Connection = conexao;
                 leitor = comando.ExecuteReader();
                 while (leitor.Read())
@@ -176,6 +176,27 @@ namespace PDM.DataAcess
             {
                 conexao.Open();
                 comando.CommandText = @"UPDATE dbo.Etapa SET tituloEtapa = '" + e.tituloEtapa + "' WHERE id = " + e.id + " ";
+                comando.Connection = conexao;
+                comando.ExecuteNonQuery();
+                conexao.Close();
+                return true;
+            }
+
+            catch (Exception)
+            {
+                conexao.Close();
+                return false;
+            }
+        }
+        public bool gravaEtapa(string descricao)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"INSERT INTO dbo.Etapa VALUES ('" + descricao + "', 0)";
                 comando.Connection = conexao;
                 comando.ExecuteNonQuery();
                 conexao.Close();

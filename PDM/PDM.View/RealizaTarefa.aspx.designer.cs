@@ -94,13 +94,13 @@ namespace PDM.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton cancelado;
         
         /// <summary>
-        /// itemAdd control.
+        /// txtItem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText itemAdd;
+        protected global::System.Web.UI.WebControls.TextBox txtItem;
         
         /// <summary>
         /// btnAdd control.
@@ -128,6 +128,15 @@ namespace PDM.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSalvar;
+        
+        /// <summary>
+        /// btnFinalizar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFinalizar;
         
         /// <summary>
         /// btnCancelar control.

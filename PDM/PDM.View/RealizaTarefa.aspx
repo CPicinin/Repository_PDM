@@ -60,57 +60,26 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Incluir Item</label>
-                    <input id="itemAdd" type="text" class="form-control" runat="server" />
+                    <label>Adicionar Registros</label>
+                    <asp:TextBox id="txtItem" CssClass="form-control" runat="server"></asp:TextBox>
                     <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" CssClass="btn btn-default" Text="Incluir" />
                 </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h1 class="page-header">Tarefas</h1>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="panel panel-default">
-                                <!-- /.panel-heading -->
-                                <div class="panel-body">
-                                    <div class="dataTable_wrapper">
-                                        <asp:GridView ID="gridItens" runat="server" AutoGenerateColumns="false" class="table table-striped table-bordered table-hover">
-                                            <Columns>
-                                                <asp:BoundField DataField="data" HeaderText="Data" />
-                                                <asp:BoundField DataField="descricao" HeaderText="Descrição" />
-                                                <asp:HyperLinkField ControlStyle-CssClass="fa fa-pencil fa-fw" DataNavigateUrlFields="excluir" />
-                                            </Columns>
-                                        </asp:GridView>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.panel-body -->
-                        </div>
-                        <!-- /.col-lg-12 -->
-                    </div>
-                    <!-- /.row -->
-                    <div class="row">
+                <div class="form-group">
+                    <div class="dataTable_wrapper">
+                        <asp:GridView ID="gridItens" runat="server" AutoGenerateColumns="false" class="table table-striped table-bordered table-hover">
+                            <Columns>
+                                <asp:BoundField DataField="data" HeaderText="Data" />
+                                <asp:BoundField DataField="descricao" HeaderText="Descrição" />
+                                <asp:HyperLinkField ControlStyle-CssClass="fa fa-pencil fa-fw" DataNavigateUrlFields="excluir" />
+                            </Columns>
+                        </asp:GridView>
                     </div>
                 </div>
                 <div class="form-group">
-                    <asp:Button ID="btnSalvar" OnClick="btnSalvar_Click" runat="server" CssClass="btn btn-default" Text="Salvar" />
-                    <asp:Button ID="btnCancelar" runat="server" OnClick="btnCancelar_Click" CssClass="btn btn-default" Text="Cancelar" />
+                    <asp:Button ID="btnSalvar" type="submit" OnClick="btnSalvar_Click" runat="server" CssClass="btn btn-default" Text="Salvar" />
+                    <asp:Button ID="btnFinalizar" OnClick="btnFinalizar_Click" runat="server" CssClass="btn btn-default" Text="Finalizar" />
+                    <asp:Button ID="btnCancelar" type="reset" runat="server" OnClick="btnCancelar_Click" CssClass="btn btn-default" Text="Cancelar" />
                 </div>
-                <!-- /#page-wrapper -->
-                <!-- jQuery -->
-                <script src="bower_components/jquery/dist/jquery.min.js"></script>
-
-                <!-- Bootstrap Core JavaScript -->
-                <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-                <!-- Metis Menu Plugin JavaScript -->
-                <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
-                <!-- Morris Charts JavaScript -->
-                <script src="bower_components/raphael/raphael-min.js"></script>
-                <script src="bower_components/morrisjs/morris.min.js"></script>
-                <script src="js/morris-data.js"></script>
-
-                <!-- Custom Theme JavaScript -->
-                <script src="dist/js/sb-admin-2.js"></script>
-                <div class="col-xs-4 col-md-4"></div>
+            </div>
+    <div class="col-xs-4 col-md-4"></div>
 </asp:Content>

@@ -56,5 +56,11 @@ namespace PDM.BusinessLayer
             bool foi = eda.editaEtapa(e);
             return foi;
         }
+        public bool gravaEtapa(string descricao)
+        {
+            EtapaDA eda = new EtapaDA();
+            bool foi = eda.gravaEtapa(descricao);
+            return foi;
+        }
     }
 }

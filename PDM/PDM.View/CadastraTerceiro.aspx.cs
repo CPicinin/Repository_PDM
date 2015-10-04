@@ -62,6 +62,10 @@ namespace PDM.View
                 //preencha tudo
             }
             bool gravou = tbl.cadastraTerceiro(t);
+            if(gravou)
+            {
+                Response.Write("<script>alert('Registro efetuado com sucesso!')</script>");
+            }
         }
 
         protected void btnLimpar_Click(object sender, EventArgs e)

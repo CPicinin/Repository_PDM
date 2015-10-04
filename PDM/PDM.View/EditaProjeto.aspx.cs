@@ -20,14 +20,15 @@ namespace PDM.View
             ProjetoBL pbl = new ProjetoBL();
             List<string> lista = new List<string>();
             lista = pbl.buscaTiposProjeto();
-            if(lista != null)
+            foreach(string s in lista)
             {
-                listaTipo.DataSource = lista;
-                listaTipo.DataBind();
+                listaTipo.Items.Add(s);
             }
+                listaTipo.DataBind();
             List<Usuario> listaU = new List<Usuario>();
+            string teste = Session["empresa"].ToString();
             UsuarioBL ubl = new UsuarioBL();
-            listaU = ubl.buscaUsuariosEmpresa(Convert.ToInt16(Session["empresa"].ToString()));
+            listaU = ubl.buscaUsuariosEmpresa(Convert.ToInt16(teste));
             foreach (Usuario u in listaU)
             {
                 listaResponsaveis.Items.Add(u.email);
@@ -66,9 +67,23 @@ namespace PDM.View
                 {
                     DataRow dr = dt.NewRow();
                     dr["Responsavel"] = t.emailResponsavel.ToString();
-                    dr["DataInicio"] = t.dataInicio.ToString();
-                    dr["Prazo"] = t.dataInicio.AddDays(t.prazoEstimado).ToString();
-                    dr["Status"] = t.status.ToString();
+                    dr["DataInicio"] = t.dataInicio.ToShortDateString();
+                    dr["Prazo"] = t.dataInicio.AddDays(t.prazoEstimado).ToShortDateString();
+                    switch (t.status)
+                    {
+                        case 0:
+                            dr["Status"] = "Pendente";
+                            break;
+                        case 1:
+                            dr["Status"] = "Em Andamento";
+                            break;
+                        case 2:
+                            dr["Status"] = "Concluída";
+                            break;
+                        case 3:
+                            dr["Status"] = "Cancelada";
+                            break;
+                    }
                     dr["Titulo"] = t.titulo.ToString();
                     dr["editar"] = "~/EditaTarefa.aspx?id_tarefa=" + t.id.ToString();
                     dt.Rows.Add(dr);
@@ -79,7 +94,11 @@ namespace PDM.View
             EtapaBL ebl = new EtapaBL();
             List<string> listaEtapas = new List<string>();
             listaEtapas = ebl.buscaDescricaoEtapas();
-            lstEtapa.DataSource = listaEtapas;
+            lstEtapa.Items.Add("--selecione--");
+            foreach(string s in listaEtapas)
+            {
+                lstEtapa.Items.Add(s);
+            }
             lstEtapa.DataBind();
 
      
@@ -118,13 +137,42 @@ namespace PDM.View
             }
             listaTarefas = tbl.buscaTarefasProjeto(p.id, filtra, etapa);
             DataTable dt = new DataTable();
+
+            DataColumn c1 = new DataColumn("Responsavel", Type.GetType("System.String"));
+            DataColumn c2 = new DataColumn("DataInicio", Type.GetType("System.String"));
+            DataColumn c3 = new DataColumn("Prazo", Type.GetType("System.String"));
+            DataColumn c4 = new DataColumn("Status", Type.GetType("System.String"));
+            DataColumn c5 = new DataColumn("Titulo", Type.GetType("System.String"));
+            DataColumn c6 = new DataColumn("editar", Type.GetType("System.String"));
+
+            dt.Columns.Add(c1);
+            dt.Columns.Add(c2);
+            dt.Columns.Add(c3);
+            dt.Columns.Add(c4);
+            dt.Columns.Add(c5);
+            dt.Columns.Add(c6);
             foreach (Tarefa t in listaTarefas)
             {
                 DataRow dr = dt.NewRow();
                 dr["Responsavel"] = t.emailResponsavel.ToString();
-                dr["DataInicio"] = t.dataInicio.ToString();
-                dr["Prazo"] = t.dataInicio.AddDays(t.prazoEstimado).ToString();
-                dr["Status"] = t.status.ToString();
+                dr["DataInicio"] = t.dataInicio.ToShortDateString();
+                dr["Prazo"] = t.dataInicio.AddDays(t.prazoEstimado).ToShortDateString();
+                switch(t.status)
+                {
+                    case 0:
+                        dr["Status"] = "Pendente";
+                        break;
+                    case 1:
+                        dr["Status"] = "Em Andamento";
+                        break;
+                    case 2:
+                        dr["Status"] = "Concluída";
+                        break;
+                    case 3:
+                        dr["Status"] = "Cancelada";
+                        break;
+                }
+                //dr["Status"] = t.status.ToString();
                 dr["Titulo"] = t.titulo.ToString();
                 dr["editar"] = "~/EditaTarefa.aspx?id_tarefa=" + t.id.ToString();
                 dt.Rows.Add(dr);
