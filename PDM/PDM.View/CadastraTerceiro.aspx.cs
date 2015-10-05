@@ -20,7 +20,6 @@ namespace PDM.View
         {
             Terceiro t = new Terceiro();
             TerceiroBL tbl = new TerceiroBL();
-            t.idEmpresa = Convert.ToInt16(Session["empresa"].ToString());
             t.nome = txtNome.Value;
             t.telefone = txtTelefone.Value;
             t.cpfCnpj = cpfCnpj.Value;

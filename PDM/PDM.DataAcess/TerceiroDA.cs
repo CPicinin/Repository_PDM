@@ -20,14 +20,13 @@ namespace PDM.DataAcess
             try
             {
                 conexao.Open();
-                comando.CommandText = @"SELECT id, idEmpresa, cpfCnpj, nome, email, telefone, tipoPessoa, tipoTerceiro, ativo FROM Terceiro ORDER BY nome ";
+                comando.CommandText = @"SELECT id, cpfCnpj, nome, email, telefone, tipoPessoa, tipoTerceiro, ativo FROM Terceiro ORDER BY nome ";
                 comando.Connection = conexao;
                 leitor = comando.ExecuteReader();
                 while (leitor.Read())
                 {
                     Terceiro t = new Terceiro();
                     t.id = Convert.ToInt16(leitor["id"].ToString());
-                    t.idEmpresa = Convert.ToInt16(leitor["idEmpresa"].ToString());
                     t.cpfCnpj = leitor["cpfCnpj"].ToString();
                     t.nome = leitor["nome"].ToString();
                     t.email = leitor["email"].ToString();
@@ -56,8 +55,8 @@ namespace PDM.DataAcess
             try
             {
                 conexao.Open();
-                comando.CommandText = @"INSERT INTO dbo.Terceiro (idEmpresa, cpfCnpj, nome, email, telefone, tipoPessoa, tipoTerceiro, ativo) VALUES " +
-                    "(" + t.idEmpresa + ", '" + t.cpfCnpj + "', '" + t.nome + "', '" + t.email + "', '" + t.telefone + "', " + t.tipoPessoa + ", " + t.tipoTerceiro + ", " + t.ativo + " ) ";
+                comando.CommandText = @"INSERT INTO dbo.Terceiro (cpfCnpj, nome, email, telefone, tipoPessoa, tipoTerceiro, ativo) VALUES " +
+                    "('" + t.cpfCnpj + "', '" + t.nome + "', '" + t.email + "', '" + t.telefone + "', " + t.tipoPessoa + ", " + t.tipoTerceiro + ", " + t.ativo + " ) ";
                 comando.Connection = conexao;
                 comando.ExecuteNonQuery();
                 conexao.Close();
@@ -97,13 +96,12 @@ namespace PDM.DataAcess
             try
             {
                 conexao.Open();
-                comando.CommandText = @"SELECT id, idEmpresa, cpfCnpj, nome, email, telefone, tipoPessoa, tipoTerceiro, ativo FROM Terceiro " + where + " ";
+                comando.CommandText = @"SELECT id, cpfCnpj, nome, email, telefone, tipoPessoa, tipoTerceiro, ativo FROM Terceiro " + where + " ";
                 comando.Connection = conexao;
                 leitor = comando.ExecuteReader();
                 while (leitor.Read())
                 {
                     t.id = Convert.ToInt16(leitor["id"].ToString());
-                    t.idEmpresa = Convert.ToInt16(leitor["idEmpresa"].ToString());
                     t.cpfCnpj = leitor["cpfCnpj"].ToString();
                     t.nome = leitor["nome"].ToString();
                     t.email = leitor["email"].ToString();

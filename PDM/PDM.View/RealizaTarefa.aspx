@@ -21,16 +21,12 @@
                     <asp:DropDownList ID="listaEtapas" class="form-control" runat="server" />
                 </div>
                 <div class="form-group">
-                    <label>Responsável</label>
-                    <asp:DropDownList ID="listaResponsaveis" class="form-control" runat="server" />
-                </div>
-                <div class="form-group">
                     <label>Título</label>
                     <input id="txtTitulo" type="text" class="form-control" placeholder="Titulo" runat="server" />
                 </div>
                 <div class="form-group">
                     <label>Data de Início</label>
-                    <input id="txtDataIni" type="date" class="form-control" runat="server" />
+                    <input id="txtDataIni" type="text" class="form-control" runat="server" />
                 </div>
                 <div class="form-group">
                     <label>Prazo (dias)</label>
@@ -60,7 +56,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Adicionar Registros</label>
+                    <label><h3>Adicionar Registros</h3></label>
                     <asp:TextBox id="txtItem" CssClass="form-control" runat="server"></asp:TextBox>
                     <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" CssClass="btn btn-default" Text="Incluir" />
                 </div>
@@ -70,15 +66,14 @@
                             <Columns>
                                 <asp:BoundField DataField="data" HeaderText="Data" />
                                 <asp:BoundField DataField="descricao" HeaderText="Descrição" />
-                                <asp:HyperLinkField ControlStyle-CssClass="fa fa-pencil fa-fw" DataNavigateUrlFields="excluir" />
+                                <asp:HyperLinkField ControlStyle-CssClass="fa fa-close " DataNavigateUrlFields="excluir" />
                             </Columns>
                         </asp:GridView>
                     </div>
                 </div>
                 <div class="form-group">
-                    <asp:Button ID="btnSalvar" type="submit" OnClick="btnSalvar_Click" runat="server" CssClass="btn btn-default" Text="Salvar" />
                     <asp:Button ID="btnFinalizar" OnClick="btnFinalizar_Click" runat="server" CssClass="btn btn-default" Text="Finalizar" />
-                    <asp:Button ID="btnCancelar" type="reset" runat="server" OnClick="btnCancelar_Click" CssClass="btn btn-default" Text="Cancelar" />
+                    <asp:Button ID="btnCancelar" type="reset" runat="server" OnClick="btnCancelar_Click" CssClass="btn btn-default" Text="Voltar" />
                 </div>
             </div>
     <div class="col-xs-4 col-md-4"></div>

@@ -14,7 +14,7 @@ namespace PDM.View
         public static bool userLogged = false;
         protected void page_Init(object sender, EventArgs e)
         {
-            if (!userLogged)
+            if (Session["email"] == null)
             {
                 Response.Redirect("Login.aspx");
             }
@@ -24,16 +24,11 @@ namespace PDM.View
                 lblQntTarefas.Text = tbl.contaTarefasUsuario(Session["email"].ToString()).ToString();
             }
         }
-        protected void Page_Load(object sender, EventArgs e)
+        /*protected void Page_Load(object sender, EventArgs e)
         {
-            if (!userLogged)
-            {
-                Response.Redirect("Login.aspx");
-            }
-            else
-            {
-
-            }
-        }
+            if (!userLogged){
+                Response.Redirect("Login.aspx");}
+            else{}
+        }*/
     }
 }

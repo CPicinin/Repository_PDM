@@ -74,6 +74,7 @@
     <Content Include="EditarUsuario.aspx" />
     <Content Include="EditaTarefa.aspx" />
     <Content Include="EditaTerceiro.aspx" />
+    <Content Include="ExcluirItemTarefa.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />
@@ -212,6 +213,13 @@
     </Compile>
     <Compile Include="EditaTerceiro.aspx.designer.cs">
       <DependentUpon>EditaTerceiro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExcluirItemTarefa.aspx.cs">
+      <DependentUpon>ExcluirItemTarefa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExcluirItemTarefa.aspx.designer.cs">
+      <DependentUpon>ExcluirItemTarefa.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

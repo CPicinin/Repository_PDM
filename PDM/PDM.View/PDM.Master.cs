@@ -21,8 +21,10 @@ namespace PDM.View
         protected void OnClick(object sender, ImageClickEventArgs e)
         {
             string exit = "sim";
-            Session.Clear();
-            Session.Abandon();
+            Session["email"] = null;
+            Session["senha"] = null;
+            Session["empresa"] = null;
+            Session["nome"] = null;
             Response.Redirect("Login.aspx?end_session=" + exit);
         }
     }

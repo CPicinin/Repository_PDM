@@ -35,8 +35,7 @@
                     <asp:Button ID="btnCancela" type="cancel" runat="server" OnClick="btnCancela_Click" class="btn btn-default" Text="Cancelar" />
                 </div>
                 <div class="form-group">
-                    label><h3>Tarefas do Projeto</h3>
-                    </label>
+                    <h3>Tarefas do Projeto</h3>
                     <div class="list-group">
                         Filtrar por Etapa:
                         <asp:DropDownList ID="lstEtapa" runat="server"></asp:DropDownList>

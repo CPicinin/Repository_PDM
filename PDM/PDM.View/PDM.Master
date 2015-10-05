@@ -141,7 +141,7 @@
                                     <a href="ConsultaEtapa.aspx">Consulta</a>
                                 </li>
                                 <li>
-                                    <a href="#">Novo</a>
+                                    <a href="CadastraEtapa.aspx">Novo</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

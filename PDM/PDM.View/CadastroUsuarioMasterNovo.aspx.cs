@@ -35,6 +35,16 @@ namespace PDM.View
             user.dataFimLicenca = DateTime.Now.AddDays(30);
             user.idEmpresa = idEmpresa;
             bool cadastrou = ubl.cadastraUsuario(user);
+            if(cadastrou)
+            {
+                //Response.Write("<script>alert('Novo usuário e empresa cadastrados com sucesso!')</script>");
+                //fazer um modal cipah pra msgm acima, daí no click do ok redirecionar
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                Response.Write("<script>alert('Dados inválidos, revise o cadastro!')</script>");
+            }
         }
     }
 }

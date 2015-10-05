@@ -72,12 +72,12 @@ namespace PDM.DataAcess
             try
             {
                 conexao.Open();
-                comando.CommandText = @"SELECT TOP 1 descricao FROM Etapa WHERE id = '" + id + "'";
+                comando.CommandText = @"SELECT TOP 1 tituloEtapa FROM Etapa WHERE id = " + id + "";
                 comando.Connection = conexao;
                 leitor = comando.ExecuteReader();
                 while (leitor.Read())
                 {
-                    desc = leitor["descricao"].ToString();
+                    desc = leitor["tituloEtapa"].ToString();
                 }
                 conexao.Close();
                 return desc;

@@ -21,6 +21,7 @@ namespace PDM.View
             string senha;
             string empresa;
             string nome;
+            string idTarefa;
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

@@ -28,12 +28,12 @@
                     <label>Tipo</label>
                     <div class="radio">
                         <label>
-                            <input id="radioPessoaFisica" type="radio" runat="server" name="optionsRadios" value="option1" />Pessoa Física
+                            <input id="radioPessoaFisica" type="radio" runat="server" name="optionsRadios3" value="option1" />Pessoa Física
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input id="radioPessoaJuridica" type="radio" runat="server" name="optionsRadios" value="option2" />Pessoa Jurídica
+                            <input id="radioPessoaJuridica" type="radio" runat="server" name="optionsRadios3" value="option2" />Pessoa Jurídica
                         </label>
                     </div>
                 </div>
