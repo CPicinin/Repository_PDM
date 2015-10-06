@@ -14,8 +14,8 @@
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-xs-4 col-md-4"></div>
-            <div class="col-xs-4 col-md-4">
+            <div class="col-xs-2 col-md-2"></div>
+            <div class="col-xs-8 col-md-8">
                 <div class="form-group">
                     <label>Nome</label>
                     <input id="txtNome" type="text" class="form-control" placeholder="Nome" runat="server" />
@@ -75,7 +75,7 @@
                 <asp:Button ID="btnExcluir" OnClick="btnExcluir_Click" runat="server" CssClass="btn btn-default" Text="Excluir" />
                 <asp:Button ID="btnCancelar" type="reset" runat="server" OnClick="btnCancelar_Click" CssClass="btn btn-default" Text="Cancelar" />
             </div>
-            <div class="col-xs-4 col-md-4"></div>
+            <div class="col-xs-2 col-md-2"></div>
         </div>
     </div>
 </asp:Content>

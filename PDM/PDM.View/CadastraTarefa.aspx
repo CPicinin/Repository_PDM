@@ -14,8 +14,8 @@
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-xs-4 col-md-4"></div>
-            <div class="col-xs-4 col-md-4">
+            <div class="col-xs-2 col-md-2"></div>
+            <div class="col-xs-8 col-md-8">
                 <div class="form-group">
                     <label>Etapa</label>
                     <asp:DropDownList ID="ListaEtapas" class="form-control" runat="server"></asp:DropDownList>
@@ -68,7 +68,7 @@
                     <asp:Button ID="btnCancela" type="cancel" runat="server" OnClick="btnCancela_Click" class="btn btn-default" Text="Cancelar" />
                 </div>
             </div>
-            <div class="col-xs-4 col-md-4"></div>
+            <div class="col-xs-2 col-md-2"></div>
         </div>
     </div>
 </asp:Content>

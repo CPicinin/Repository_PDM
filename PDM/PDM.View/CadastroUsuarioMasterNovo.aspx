@@ -14,8 +14,8 @@
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-xs-4 col-md-4"></div>
-            <div class="col-xs-4 col-md-4">
+            <div class="col-xs-2 col-md-2"></div>
+            <div class="col-xs-8 col-md-8">
                 <form role="form">
                     <div class="form-group">
                         <label>Email</label>
@@ -48,7 +48,7 @@
                     <asp:Button ID="btnCadastrar" CssClass="btn btn-default" Text="Cadastrar" runat="server" OnClick="btnCadastrar_Click" />
                 </form>
             </div>
-            <div class="col-xs-4 col-md-4"></div>
+            <div class="col-xs-2 col-md-2"></div>
         </div>
     <!-- /#page-wrapper -->
 </asp:Content>
