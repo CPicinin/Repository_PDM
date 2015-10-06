@@ -52,6 +52,8 @@
                         <i class="fa fa-envelope fa-fw"></i><i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
+                        <li><a href="CasdastraMensagem.aspx"><i class="fa fa-envelope alert-info"></i>Enviar Mensagem</a>
+                            </li>
                     </ul>
                     <!-- /.dropdown-messages -->
                 </li>
@@ -69,7 +71,7 @@
                             <li><a href="Config.aspx"><i class="fa fa-gear fa-fw"></i>Configurações</a>
                             </li>
                             <li class="divider"></li>
-                            <li><asp:ImageButton runat="server" OnClick="OnClick" CssClass="fa fa-sign-out fa-fw" AlternateText="Sair"/>
+                            <li><asp:ImageButton runat="server" OnClick="OnClick" CssClass="fa fa-sign-out" AlternateText="Sair"/>
  
                                 
                             </li>
@@ -123,7 +125,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-tasks fa-fw"></i>Projetos<span class="fa arrow"></span></a>
+                            <a href="ConsultaProjeto.aspx"><i class="fa fa-tasks fa-fw"></i>Projetos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="ConsultaProjeto.aspx">Consulta</a>
@@ -135,13 +137,13 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-tasks fa-fw"></i>Etapa<span class="fa arrow"></span></a>
+                            <a href="ConsultaEtapa.aspx"><i class="fa fa-tasks fa-fw"></i>Etapas<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="ConsultaProjeto.aspx">Consulta</a>
+                                    <a href="ConsultaEtapa.aspx">Consulta</a>
                                 </li>
                                 <li>
-                                    <a href="CadastraProjeto.aspx">Novo</a>
+                                    <a href="CadastraEtapa.aspx">Novo</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

@@ -9,7 +9,6 @@ namespace PDM.DataObjects
     public class Terceiro
     {
         public int id { get; set; }
-        public int idEmpresa { get; set; }
         public string cpfCnpj { get; set; }
         public string nome { get; set; }
         public string email { get; set; }

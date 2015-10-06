@@ -42,6 +42,7 @@
     <Compile Include="EmpresaDA.cs" />
     <Compile Include="EtapaDA.cs" />
     <Compile Include="LoginDA.cs" />
+    <Compile Include="MensagemDA.cs" />
     <Compile Include="ProjetoDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TarefaDA.cs" />

@@ -56,7 +56,6 @@ namespace PDM.View
                 else
                 {
                     Response.Write("<script>alert('Usuário ou Senha Inválidos!')</script>");
-                    
                 }              
             }
         }

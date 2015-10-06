@@ -42,5 +42,11 @@ namespace PDM.BusinessLayer
             bool excluiu = uDA.excluiUsuario(email);
             return excluiu;
         }
+        public string buscaNome(string email)
+        {
+            UsuarioDA uDA = new UsuarioDA();
+            string user = uDA.buscaNome(email);
+            return user;
+        }
     }
 }

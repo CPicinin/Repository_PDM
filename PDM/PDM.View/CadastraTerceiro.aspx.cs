@@ -20,7 +20,6 @@ namespace PDM.View
         {
             Terceiro t = new Terceiro();
             TerceiroBL tbl = new TerceiroBL();
-            t.idEmpresa = Convert.ToInt16(Session["empresa"].ToString());
             t.nome = txtNome.Value;
             t.telefone = txtTelefone.Value;
             t.cpfCnpj = cpfCnpj.Value;
@@ -62,6 +61,10 @@ namespace PDM.View
                 //preencha tudo
             }
             bool gravou = tbl.cadastraTerceiro(t);
+            if(gravou)
+            {
+                Response.Write("<script>alert('Registro efetuado com sucesso!')</script>");
+            }
         }
 
         protected void btnLimpar_Click(object sender, EventArgs e)

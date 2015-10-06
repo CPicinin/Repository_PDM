@@ -20,6 +20,34 @@ namespace PDM.View
                 codigoTerceiro = Convert.ToInt16(Request["id_terceiro"].ToString());
                 Terceiro t = new Terceiro();
                 TerceiroBL tbl = new TerceiroBL();
+                t = tbl.buscaTerceiro(null, codigoTerceiro);
+                txtNome.Value = t.nome;
+                txtEmail.Value = t.email;
+                txtTelefone.Value = t.telefone;
+                if(t.ativo == 1)
+                {
+                    ativoSim.Checked = true;
+                }
+                else
+                {
+                    AtivoNao.Checked = true;
+                }
+                if (t.tipoPessoa == 1)
+                {
+                    radioPessoaFisica.Checked = true;
+                }
+                else
+                {
+                    radioPessoaJuridica.Checked = true;
+                }
+                if(t.tipoTerceiro == 1)
+                {
+                    radioCliente.Checked = true;
+                }
+                else
+                {
+                    radioFornecedor.Checked = true;
+                }
             }
         }
 

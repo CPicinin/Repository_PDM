@@ -22,12 +22,12 @@
                 </div>
                 <div class="form-group">
                     <label>Responsável</label>
-                    <asp:DropDownList ID="listaResponsaveis" runat="server" CssClass="form-control"></asp:DropDownList>
+                    <asp:DropDownList ID="listaResponsaveis"  runat="server" CssClass="form-control"></asp:DropDownList>
                 </div>
                 <div class="form-group">
                     <label>Tipo de projeto</label>
                     <div class="list-group">
-                        <asp:DropDownList ID="listaTipo" runat="server" CssClass="form-control"></asp:DropDownList>
+                        <asp:DropDownList ID="listaTipo" DataTextField="titulo" DataValueField="id"  runat="server" CssClass="form-control"></asp:DropDownList>
                     </div>
                 </div>
                 <div class="form-group">
@@ -35,13 +35,16 @@
                     <asp:Button ID="btnCancela" type="cancel" runat="server" OnClick="btnCancela_Click" class="btn btn-default" Text="Cancelar" />
                 </div>
                 <div class="form-group">
-                    label><h3>Tarefas do Projeto</h3>
-                    </label>
+                    <h3>Tarefas do Projeto</h3>
                     <div class="list-group">
                         Filtrar por Etapa:
                         <asp:DropDownList ID="lstEtapa" runat="server"></asp:DropDownList>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="btnBuscaTarefas" type="submit" OnClick="btnBuscaTarefas_Click" runat="server" class="btn btn-default" Text="Buscar" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:LinkButton ID="btnNotificar"  OnClick="btnNotifica_Click" runat="server" class="fa fa-envelope" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:LinkButton ID="btnAdicionar" CssClass="fa fa-plus" OnClick="btnAdicionar_Click" runat="server"/>
                     </div>
                 </div>
                 <div class="form-group">

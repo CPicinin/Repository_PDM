@@ -20,26 +20,29 @@ namespace PDM.View
             TarefaBL tbl = new TarefaBL();
             lista = tbl.buscaTarefasUsuario(Session["email"].ToString());
 
-            DataColumn c1 = new DataColumn("Cnpj", Type.GetType("System.String"));
-            DataColumn c2 = new DataColumn("Nome", Type.GetType("System.String"));
-            DataColumn c3 = new DataColumn("Email", Type.GetType("System.String"));
-            DataColumn c4 = new DataColumn("Telefone", Type.GetType("System.String"));
-            DataColumn c5 = new DataColumn("editar", Type.GetType("System.String"));
-
+            DataColumn c1 = new DataColumn("etapa", Type.GetType("System.String"));
+            DataColumn c2 = new DataColumn("responsavel", Type.GetType("System.String"));
+            DataColumn c3 = new DataColumn("dataInicio", Type.GetType("System.String"));
+            DataColumn c4 = new DataColumn("prazo", Type.GetType("System.String"));
+            DataColumn c5 = new DataColumn("titulo", Type.GetType("System.String"));
+            DataColumn c6 = new DataColumn("editar", Type.GetType("System.String"));
             dt.Columns.Add(c1);
             dt.Columns.Add(c2);
             dt.Columns.Add(c3);
             dt.Columns.Add(c4);
             dt.Columns.Add(c5);
+            dt.Columns.Add(c6);
 
             foreach (Tarefa t in lista)
             {
+                EtapaBL ebl = new EtapaBL();
                 DataRow dr = dt.NewRow();
-                dr["Cnpj"] = t.cpfCnpj.ToString();
-                dr["Nome"] = t.nome.ToString();
-                dr["Email"] = t.email.ToString();
-                dr["Telefone"] = t.telefone.ToString();
-                dr["editar"] = "~/EditaTerceiro.aspx?id_terceiro=" + t.id.ToString();
+                dr["etapa"] = ebl.buscaDescricaoEtapa(t.idEtapa);
+                dr["responsavel"] = t.emailResponsavel.ToString();
+                dr["dataInicio"] = t.dataInicio.ToString();
+                dr["prazo"] = t.prazoEstimado.ToString();
+                dr["titulo"] = t.titulo.ToString();
+                dr["editar"] = "~/RealizaTarefa.aspx?id_tarefa=" + t.id.ToString();
                 dt.Rows.Add(dr);
             }
             gridTerceiros.DataSource = dt.Copy();

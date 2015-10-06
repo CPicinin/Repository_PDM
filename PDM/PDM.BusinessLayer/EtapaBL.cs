@@ -30,5 +30,37 @@ namespace PDM.BusinessLayer
             desc = eda.buscaDescricaoEtapa(id);
             return desc;
         }
+        public List<Etapa> buscaEtapas()
+        {
+            List<Etapa> lista = new List<Etapa>();
+            EtapaDA eda = new EtapaDA();
+            lista = eda.buscaEtapas();
+            return lista;
+        }
+        public Etapa buscaEtapa(int id)
+        {
+            Etapa e = new Etapa();
+            EtapaDA eda = new EtapaDA();
+            e = eda.buscaEtapa(id);
+            return e;
+        }
+        public bool excluiEtapa(int id)
+        {
+            EtapaDA eda = new EtapaDA();
+            bool foi = eda.excluiEtapa(id);
+            return foi;
+        }
+        public bool editaEtapa(Etapa e)
+        {
+            EtapaDA eda = new EtapaDA();
+            bool foi = eda.editaEtapa(e);
+            return foi;
+        }
+        public bool gravaEtapa(string descricao)
+        {
+            EtapaDA eda = new EtapaDA();
+            bool foi = eda.gravaEtapa(descricao);
+            return foi;
+        }
     }
 }
