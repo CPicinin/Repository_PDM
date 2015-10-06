@@ -77,6 +77,46 @@
     <Content Include="noedited.aspx" />
     <Content Include="PDM.Master" />
     <Content Include="PDMWithoutNavigationLeft.Master" />
+    <Content Include="style\font-awesome\.bower.json" />
+    <Content Include="style\font-awesome\.gitignore" />
+    <Content Include="style\font-awesome\.npmignore" />
+    <Content Include="style\font-awesome\bower.json" />
+    <Content Include="style\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="style\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="style\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="style\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="style\font-awesome\less\bordered-pulled.less" />
+    <Content Include="style\font-awesome\less\core.less" />
+    <Content Include="style\font-awesome\less\extras.less" />
+    <Content Include="style\font-awesome\less\fixed-width.less" />
+    <Content Include="style\font-awesome\less\font-awesome.less" />
+    <Content Include="style\font-awesome\less\icons.less" />
+    <Content Include="style\font-awesome\less\larger.less" />
+    <Content Include="style\font-awesome\less\list.less" />
+    <Content Include="style\font-awesome\less\mixins.less" />
+    <Content Include="style\font-awesome\less\path.less" />
+    <Content Include="style\font-awesome\less\rotated-flipped.less" />
+    <Content Include="style\font-awesome\less\spinning.less" />
+    <Content Include="style\font-awesome\less\stacked.less" />
+    <Content Include="style\font-awesome\less\variables.less" />
+    <Content Include="style\font-awesome\scss\font-awesome.scss" />
+    <Content Include="style\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="style\font-awesome\scss\_core.scss" />
+    <Content Include="style\font-awesome\scss\_extras.scss" />
+    <Content Include="style\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="style\font-awesome\scss\_icons.scss" />
+    <Content Include="style\font-awesome\scss\_larger.scss" />
+    <Content Include="style\font-awesome\scss\_list.scss" />
+    <Content Include="style\font-awesome\scss\_mixins.scss" />
+    <Content Include="style\font-awesome\scss\_path.scss" />
+    <Content Include="style\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="style\font-awesome\scss\_spinning.scss" />
+    <Content Include="style\font-awesome\scss\_stacked.scss" />
+    <Content Include="style\font-awesome\scss\_variables.scss" />
+    <Content Include="style\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="style\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="style\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="style\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -87,6 +127,26 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="RecuperarSenha.aspx" />
+    <Content Include="style\css\bootstrap.min.css" />
+    <Content Include="style\css\metisMenu.min.css" />
+    <Content Include="style\css\morris.css" />
+    <Content Include="style\css\sales_page.css" />
+    <Content Include="style\css\sb-admin-2.css" />
+    <Content Include="style\css\timeline.css" />
+    <Content Include="style\font-awesome\css\font-awesome.css" />
+    <Content Include="style\font-awesome\css\font-awesome.min.css" />
+    <Content Include="style\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="style\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="style\img\Copia.jpg" />
+    <Content Include="style\img\Originals\projeto.jpg" />
+    <Content Include="style\img\projeto.jpg" />
+    <Content Include="style\js\bootstrap.min.js" />
+    <Content Include="style\js\jquery.min.js" />
+    <Content Include="style\js\metisMenu.min.js" />
+    <Content Include="style\js\morris-data.js" />
+    <Content Include="style\js\morris.min.js" />
+    <Content Include="style\js\raphael-min.js" />
+    <Content Include="style\js\sb-admin-2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +312,7 @@
       <Name>PDM.DataObjects</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

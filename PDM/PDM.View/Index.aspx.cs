@@ -11,10 +11,7 @@ namespace PDM.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["email"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
+            
         }
 
         protected void btnRegistro_Click(object sender, EventArgs e)
