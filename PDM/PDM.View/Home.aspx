@@ -43,14 +43,14 @@
                                 <i class="fa fa-comments fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">5</div>
+                                <div class="huge"><asp:Label ID="lblMensagens" runat="server" Text="0"></asp:Label></div>
                                 <div>Mensagens</div>
                             </div>
                         </div>
                     </div>
                     <a href="#">
                         <div class="panel-footer">
-                            <span class="pull-left">Ver Detalhes</span>
+                            <span class="pull-left"><a href="ConsultaMensagens.aspx">Ver Detalhes</a></span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                         </div>

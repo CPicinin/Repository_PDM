@@ -42,6 +42,7 @@
     <Compile Include="EmpresaBL.cs" />
     <Compile Include="EtapaBL.cs" />
     <Compile Include="LoginBL.cs" />
+    <Compile Include="MensagemBL.cs" />
     <Compile Include="ProjetoBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TarefaBL.cs" />

@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C756366C-8A14-4179-925C-AFDA4017FDFE}</ProjectGuid>
+    <ProjectGuid>{9792CED4-74C5-4B49-83C1-2A1DE6843407}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PDM.DataAcess</RootNamespace>
-    <AssemblyName>PDM.DataAcess</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>PDM.PrintMailOther</RootNamespace>
+    <AssemblyName>PDM.PrintMailOther</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -39,21 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmpresaDA.cs" />
-    <Compile Include="EtapaDA.cs" />
-    <Compile Include="LoginDA.cs" />
-    <Compile Include="MensagemDA.cs" />
-    <Compile Include="ProjetoDA.cs" />
+    <Compile Include="Email.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TarefaDA.cs" />
-    <Compile Include="TerceiroDA.cs" />
-    <Compile Include="UsuarioDA.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PDM.DataObjects\PDM.DataObjects.csproj">
-      <Project>{519a06e1-2611-48be-b6b8-015d6a47b659}</Project>
-      <Name>PDM.DataObjects</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

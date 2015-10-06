@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDM.DataAcess", "PDM.DataAc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDM.DataObjects", "PDM.DataObjects\PDM.DataObjects.csproj", "{519A06E1-2611-48BE-B6B8-015D6A47B659}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDM.PrintMailOther", "PDM.PrintMailOther\PDM.PrintMailOther.csproj", "{9792CED4-74C5-4B49-83C1-2A1DE6843407}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{519A06E1-2611-48BE-B6B8-015D6A47B659}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{519A06E1-2611-48BE-B6B8-015D6A47B659}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{519A06E1-2611-48BE-B6B8-015D6A47B659}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9792CED4-74C5-4B49-83C1-2A1DE6843407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9792CED4-74C5-4B49-83C1-2A1DE6843407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9792CED4-74C5-4B49-83C1-2A1DE6843407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9792CED4-74C5-4B49-83C1-2A1DE6843407}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

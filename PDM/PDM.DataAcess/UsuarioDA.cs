@@ -142,5 +142,31 @@ namespace PDM.DataAcess
                 return false;
             }
         }
+        public string buscaNome(string email)
+        {
+            string user = "";
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader leitor;
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"SELECT TOP 1 nome FROM Usuario WHERE email = '" + email + "' ";
+                comando.Connection = conexao;
+                leitor = comando.ExecuteReader();
+                while (leitor.Read())
+                {
+                    user = leitor["nome"].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                conexao.Close();
+                return null;
+            }
+            conexao.Close();
+            return user;
+        }
     }
 }

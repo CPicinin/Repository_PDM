@@ -10,24 +10,15 @@
 namespace PDM.View {
     
     
-    public partial class Home {
+    public partial class ConsultaMensagens {
         
         /// <summary>
-        /// lblQntTarefas control.
+        /// gridMensagens control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQntTarefas;
-        
-        /// <summary>
-        /// lblMensagens control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensagens;
+        protected global::System.Web.UI.WebControls.GridView gridMensagens;
     }
 }

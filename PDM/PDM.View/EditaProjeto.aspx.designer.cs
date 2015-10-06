@@ -76,6 +76,24 @@ namespace PDM.View {
         protected global::System.Web.UI.WebControls.Button btnBuscaTarefas;
         
         /// <summary>
+        /// btnNotificar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnNotificar;
+        
+        /// <summary>
+        /// btnAdicionar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnAdicionar;
+        
+        /// <summary>
         /// gridTarefas control.
         /// </summary>
         /// <remarks>

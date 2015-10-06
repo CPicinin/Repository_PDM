@@ -52,6 +52,8 @@
                         <i class="fa fa-envelope fa-fw"></i><i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
+                        <li><a href="CasdastraMensagem.aspx"><i class="fa fa-envelope alert-info"></i>Enviar Mensagem</a>
+                            </li>
                     </ul>
                     <!-- /.dropdown-messages -->
                 </li>
@@ -69,7 +71,7 @@
                             <li><a href="Config.aspx"><i class="fa fa-gear fa-fw"></i>Configurações</a>
                             </li>
                             <li class="divider"></li>
-                            <li><asp:ImageButton runat="server" OnClick="OnClick" CssClass="fa fa-sign-out fa-fw" AlternateText="Sair"/>
+                            <li><asp:ImageButton runat="server" OnClick="OnClick" CssClass="fa fa-sign-out" AlternateText="Sair"/>
  
                                 
                             </li>

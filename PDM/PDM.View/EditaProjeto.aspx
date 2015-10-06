@@ -41,6 +41,10 @@
                         <asp:DropDownList ID="lstEtapa" runat="server"></asp:DropDownList>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="btnBuscaTarefas" type="submit" OnClick="btnBuscaTarefas_Click" runat="server" class="btn btn-default" Text="Buscar" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:LinkButton ID="btnNotificar"  OnClick="btnNotifica_Click" runat="server" class="fa fa-envelope" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:LinkButton ID="btnAdicionar" CssClass="fa fa-plus" OnClick="btnAdicionar_Click" runat="server"/>
                     </div>
                 </div>
                 <div class="form-group">

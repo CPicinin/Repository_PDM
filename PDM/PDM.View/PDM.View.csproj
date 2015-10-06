@@ -63,8 +63,10 @@
     <Content Include="CadastraUsuario.aspx" />
     <Content Include="CadastroUsuarioMasterNovo.aspx" />
     <Content Include="CadastraTerceiro.aspx" />
+    <Content Include="CasdastraMensagem.aspx" />
     <Content Include="Config.aspx" />
     <Content Include="ConsultaEtapa.aspx" />
+    <Content Include="ConsultaMensagens.aspx" />
     <Content Include="ConsultaProjeto.aspx" />
     <Content Include="ConsultaTarefas.aspx" />
     <Content Include="ConsultaTerceiro.aspx" />
@@ -77,6 +79,7 @@
     <Content Include="ExcluirItemTarefa.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Index.aspx" />
+    <Content Include="LerMensagem.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="noedited.aspx" />
     <Content Include="PDM.Master" />
@@ -137,6 +140,13 @@
     <Compile Include="CadastraTerceiro.aspx.designer.cs">
       <DependentUpon>CadastraTerceiro.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CasdastraMensagem.aspx.cs">
+      <DependentUpon>CasdastraMensagem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CasdastraMensagem.aspx.designer.cs">
+      <DependentUpon>CasdastraMensagem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Config.aspx.cs">
       <DependentUpon>Config.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -150,6 +160,13 @@
     </Compile>
     <Compile Include="ConsultaEtapa.aspx.designer.cs">
       <DependentUpon>ConsultaEtapa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaMensagens.aspx.cs">
+      <DependentUpon>ConsultaMensagens.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaMensagens.aspx.designer.cs">
+      <DependentUpon>ConsultaMensagens.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConsultaProjeto.aspx.cs">
       <DependentUpon>ConsultaProjeto.aspx</DependentUpon>
@@ -238,6 +255,13 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LerMensagem.aspx.cs">
+      <DependentUpon>LerMensagem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LerMensagem.aspx.designer.cs">
+      <DependentUpon>LerMensagem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -290,6 +314,10 @@
     <ProjectReference Include="..\PDM.DataObjects\PDM.DataObjects.csproj">
       <Project>{519a06e1-2611-48be-b6b8-015d6a47b659}</Project>
       <Name>PDM.DataObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PDM.PrintMailOther\PDM.PrintMailOther.csproj">
+      <Project>{9792ced4-74c5-4b49-83c1-2a1de6843407}</Project>
+      <Name>PDM.PrintMailOther</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

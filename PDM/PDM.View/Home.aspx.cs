@@ -22,6 +22,8 @@ namespace PDM.View
             {
                 TarefaBL tbl = new TarefaBL();
                 lblQntTarefas.Text = tbl.contaTarefasUsuario(Session["email"].ToString()).ToString();
+                MensagemBL mbl = new MensagemBL();
+                lblMensagens.Text = mbl.contaMensagens(Session["email"].ToString()).ToString();
             }
         }
         /*protected void Page_Load(object sender, EventArgs e)
