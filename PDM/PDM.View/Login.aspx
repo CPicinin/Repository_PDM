@@ -55,7 +55,7 @@
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <asp:LinkButton ID="lnkLogin" runat="server" OnClick="Unnamed_Click" class="btn btn-lg btn-success btn-block" Text="Login"></asp:LinkButton>
+                                <asp:LinkButton ID="lnkLogin" runat="server" OnClick="btnLogin_Click" class="btn btn-lg btn-success btn-block" Text="Login"></asp:LinkButton>
                                 <div>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <asp:HyperLink id="registrar" runat="server" NavigateUrl="~/RecuperarSenha.aspx" Text="Esqueceu sua senha? Clique aqui!"></asp:HyperLink>

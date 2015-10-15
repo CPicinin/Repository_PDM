@@ -24,7 +24,7 @@ namespace PDM.View
             }
         }
 
-        protected void Unnamed_Click(object sender, EventArgs e)
+        protected void btnLogin_Click(object sender, EventArgs e)
         {
             LoginBL lbl = new LoginBL();
 

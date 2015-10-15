@@ -22,6 +22,9 @@ namespace PDM.View
             string empresa;
             string nome;
             string idTarefa;
+            //string strConexao = @"Server=COLUSSI\SQLExpress; Database=pdm; User Id=sa;password=d@217799";
+            //string strConexao = @"Server=TI\SQLExpress; Database=pdm; User Id=sa;password=d@217799";
+            string strConexao = @"Server=VIRTUAL01\SQLExpress; Database=pdm; User Id=sa;password=*Cris159";
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
