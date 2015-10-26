@@ -48,12 +48,6 @@
                                 <div class="form-group">
                                     <input runat="server" class="form-control" placeholder="Senha" id="password" required="required" type="password"/>
                                 </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input id="remember" runat="server" type="checkbox" value="Remember Me"/>Lembrar
-                                            
-                                    </label>
-                                </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <asp:LinkButton ID="lnkLogin" runat="server" OnClick="btnLogin_Click" class="btn btn-lg btn-success btn-block" Text="Login"></asp:LinkButton>
                                 <div>

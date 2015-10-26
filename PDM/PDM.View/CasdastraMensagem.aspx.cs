@@ -38,6 +38,14 @@ namespace PDM.View
             m.lida = 0;
             MensagemBL mbl = new MensagemBL();
             bool foi = mbl.cadastraMensagem(m);
+
+            LogEventoBL lbl = new LogEventoBL();
+            Log l = new Log();
+            l.email = Session["email"].ToString();
+            l.data = DateTime.Now;
+            l.descricao = "Mensagem criada de " + Session["email"].ToString() + " para: " + " " + m.responsavel +  " mensagem: " + m.mensagem + " ";
+            lbl.adicionaLog(l);
+
             if(foi)
             {
                 Response.Redirect("Home.aspx");

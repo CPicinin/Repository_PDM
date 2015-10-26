@@ -95,6 +95,12 @@ namespace PDM.View
             {
                 //preencha tudo
             }
+            LogEventoBL lbl = new LogEventoBL();
+            Log l = new Log();
+            l.email = Session["email"].ToString();
+            l.data = DateTime.Now;
+            l.descricao = "Editado Terceiro " + t.nome + " ";
+            lbl.adicionaLog(l);
         }
 
         protected void btnExcluir_Click(object sender, EventArgs e)
@@ -103,6 +109,12 @@ namespace PDM.View
             {
                 TerceiroBL tbl = new TerceiroBL();
                 bool excluiu = tbl.excluiTerceiro(codigoTerceiro);
+                LogEventoBL lbl = new LogEventoBL();
+                Log l = new Log();
+                l.email = Session["email"].ToString();
+                l.data = DateTime.Now;
+                l.descricao = "Removido Terceiro " + codigoTerceiro + " ";
+                lbl.adicionaLog(l);
                 if(excluiu)
                 {
                     Response.Write("<script>alert('Registro editado com sucesso!')</script>");

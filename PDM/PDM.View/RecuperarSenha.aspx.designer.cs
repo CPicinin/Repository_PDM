@@ -13,12 +13,21 @@ namespace PDM.View {
     public partial class RecuperarSenha {
         
         /// <summary>
-        /// form1 control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtEmail;
+        
+        /// <summary>
+        /// lnkRecupera control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkRecupera;
     }
 }

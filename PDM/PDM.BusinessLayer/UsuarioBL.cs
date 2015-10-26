@@ -48,5 +48,29 @@ namespace PDM.BusinessLayer
             string user = uDA.buscaNome(email);
             return user;
         }
+        public string buscaHash(string email)
+        {
+            UsuarioDA uDA = new UsuarioDA();
+            string hash = uDA.buscaHash(email);
+            return hash;
+        }
+        public bool alteraSenhaUsuario(string email, string senha)
+        {
+            UsuarioDA uDA = new UsuarioDA();
+            bool foi = uDA.alteraSenhaUsuario(email,senha);
+            return foi;
+        }
+        public bool limpaHash(string email)
+        {
+            UsuarioDA uDA = new UsuarioDA();
+            bool foi = uDA.limpaHash(email);
+            return foi;
+        }
+        public bool insereHashTemp(string email, string hashTemp)
+        {
+            UsuarioDA uDA = new UsuarioDA();
+            bool foi = uDA.insereHashTemp(email, hashTemp);
+            return foi;
+        }
     }
 }

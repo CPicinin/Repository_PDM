@@ -119,6 +119,13 @@ namespace PDM.View
             {
                 Response.Write("<script>alert('Projeto editado com sucesso!')</script>");
             }
+            LogEventoBL lbl = new LogEventoBL();
+            Log l = new Log();
+            l.email = Session["email"].ToString();
+            l.data = DateTime.Now;
+            l.descricao = "Editado projeto " + p.id + "-" + p.titulo + " ";
+            lbl.adicionaLog(l);
+            Response.Redirect("ConsultaEtapa.aspx");
         }
 
         protected void btnBuscaTarefas_Click(object sender, EventArgs e)

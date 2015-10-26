@@ -51,10 +51,22 @@ namespace PDM.View
                     Session["email"] = user.email;
                     Session["senha"] = user.senha;
                     Session["empresa"] = user.idEmpresa;
+                    LogEventoBL lbl = new LogEventoBL();
+                    Log l = new Log();
+                    l.email = Session["email"].ToString();
+                    l.data = DateTime.Now;
+                    l.descricao = "Logou no PDM: " + user.email + " ";
+                    lbl.adicionaLog(l);
                     Response.Redirect("Home.aspx");
                 }
                 else
                 {
+                    LogEventoBL lbl = new LogEventoBL();
+                    Log l = new Log();
+                    l.email = Session["email"].ToString();
+                    l.data = DateTime.Now;
+                    l.descricao = "Tentativa falha de login " + user.email + " ";
+                    lbl.adicionaLog(l);
                     Response.Write("<script>alert('Usuário ou Senha Inválidos!')</script>");
                 }              
             }

@@ -49,10 +49,6 @@ namespace PDM.View
             }
             
         }
-        protected void Page_Load(object sender, EventArgs e)
-        {
-          
-        }
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {
             Usuario user = new Usuario();
@@ -81,6 +77,13 @@ namespace PDM.View
             }
             UsuarioBL ubl = new UsuarioBL();
             bool cadastrou = ubl.editaUsuario(user);
+            LogEventoBL lbl = new LogEventoBL();
+            Log l = new Log();
+            l.email = Session["email"].ToString();
+            l.data = DateTime.Now;
+            l.descricao = "Alterado Usuário " + user.email + " ";
+            lbl.adicionaLog(l);
+            Response.Redirect("ConsultaEtapa.aspx");
             if (cadastrou)
             {
                 Response.Write("<script>alert('Registro editado com sucesso!')</script>");
@@ -97,6 +100,15 @@ namespace PDM.View
             //falta uma confirmação de você tem certeza que deseja excluir?
             UsuarioBL ubl = new UsuarioBL();
             bool deletou = ubl.excluiUsuario(emailUser.Value.ToString());
+            UsuarioBL ubl = new UsuarioBL();
+            bool cadastrou = ubl.editaUsuario(user);
+            LogEventoBL lbl = new LogEventoBL();
+            Log l = new Log();
+            l.email = Session["email"].ToString();
+            l.data = DateTime.Now;
+            l.descricao = "Removido Usuário " + emailUser.Value.ToString() + " ";
+            lbl.adicionaLog(l);
+            Response.Redirect("ConsultaEtapa.aspx");
             if (deletou)
             {
                 Response.Write("<script>alert('Registro removido com sucesso!')</script>");

@@ -45,6 +45,12 @@ namespace PDM.View
             {
                 Response.Write("Projeto cadastrado com sucesso!");
             }
+            LogEventoBL lbl = new LogEventoBL();
+            Log l = new Log();
+            l.email = Session["email"].ToString();
+            l.data = DateTime.Now;
+            l.descricao = "Cadastradao Projeto Titulo: " + p.titulo + ", Responsável: " + p.emailResponsavel + " ";
+            lbl.adicionaLog(l);
         }
 
         protected void btnLimpar_Click(object sender, EventArgs e)

@@ -40,6 +40,12 @@ namespace PDM.View
             {
                 Response.Write("<script>alert('Etapa editada com sucesso!')</script>");
             }
+            LogEventoBL lbl = new LogEventoBL();
+            Log l = new Log();
+            l.email = Session["email"].ToString();
+            l.data = DateTime.Now;
+            l.descricao = "Editada Etapa " + et.id + "-" + et.tituloEtapa + " ";
+            lbl.adicionaLog(l);
             Response.Redirect("ConsultaEtapa.aspx");
         }
 
@@ -51,6 +57,12 @@ namespace PDM.View
             {
                 Response.Write("<script>alert('Etapa excluída com sucesso!')</script>");
             }
+            LogEventoBL lbl = new LogEventoBL();
+            Log l = new Log();
+            l.email = Session["email"].ToString();
+            l.data = DateTime.Now;
+            l.descricao = "Removida Etapa " + id + " ";
+            lbl.adicionaLog(l);
             Response.Redirect("ConsultaEtapa.aspx");
         }
 

@@ -54,6 +54,14 @@ namespace PDM.View
             }
             UsuarioBL ubl = new UsuarioBL();
             bool cadastrou = ubl.cadastraUsuario(user);
+            
+            LogEventoBL lbl = new LogEventoBL();
+            Log l = new Log();
+            l.email = Session["email"].ToString();
+            l.data = DateTime.Now;
+            l.descricao = "Incluído usuário nome: " + user.nome + " ";
+            lbl.adicionaLog(l);
+            
             if (cadastrou)
             {
                 Response.Write("<script>alert('Registro efetuado com sucesso!')</script>");

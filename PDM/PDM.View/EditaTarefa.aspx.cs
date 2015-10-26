@@ -104,6 +104,12 @@ namespace PDM.View
             {
                 Response.Write("<script>alert('Tarefa editada com sucesso!')</script>");
             }
+            LogEventoBL lbl = new LogEventoBL();
+            Log l = new Log();
+            l.email = Session["email"].ToString();
+            l.data = DateTime.Now;
+            l.descricao = "Editou tarefa nº" + t.id + " ";
+            lbl.adicionaLog(l);
             Response.Redirect("EditaProjeto.aspx?id_projeto=" + idProjeto.ToString());
         }
 
@@ -115,6 +121,12 @@ namespace PDM.View
             {
                 Response.Write("<script>alert('Tarefa excluída com sucesso!')</script>");
             }
+            LogEventoBL lbl = new LogEventoBL();
+            Log l = new Log();
+            l.email = Session["email"].ToString();
+            l.data = DateTime.Now;
+            l.descricao = "Removeu a Tarefa nº " + idTarefa + " ";
+            lbl.adicionaLog(l);
             Response.Redirect("EditaProjeto.aspx?id_projeto=" + idProjeto.ToString());
         }
 

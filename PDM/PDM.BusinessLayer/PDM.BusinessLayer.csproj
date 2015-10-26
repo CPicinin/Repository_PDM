@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="EmpresaBL.cs" />
     <Compile Include="EtapaBL.cs" />
+    <Compile Include="LogEventoBL.cs" />
     <Compile Include="LoginBL.cs" />
     <Compile Include="MensagemBL.cs" />
     <Compile Include="ProjetoBL.cs" />
