@@ -63,9 +63,24 @@ namespace PDM.View
             else { t.status = 0; }
 
             bool foi = tbl.cadastraTarefa(t);
+            if(foi)
             {
-                Response.Write("<script>alert('Tarefa gravada com sucesso!')</script>");
+                MensagemBL mbl = new MensagemBL();
+                Mensagem m = new Mensagem();
+                m.data = DateTime.Now;
+                m.remetente = "notificador.pdm@gmail.com";
+                m.responsavel = t.emailResponsavel;
+                m.mensagem = "Uma nova Tarefa foi criada para você no Projeto Nº " + t.idProjeto + ".";
+                m.lida = 0;
+                mbl.cadastraMensagem(m);
             }
+            LogEventoBL lbl = new LogEventoBL();
+            Log l = new Log();
+            l.email = Session["email"].ToString();
+            l.data = DateTime.Now;
+            l.descricao = "Cadastro de Nova Tarefa para o projeto nº " + t.idProjeto + " ";
+            lbl.adicionaLog(l);
+
             Response.Redirect("EditaProjeto.aspx?id_projeto=" + idProjeto.ToString());
         }
 

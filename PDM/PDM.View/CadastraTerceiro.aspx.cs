@@ -61,6 +61,12 @@ namespace PDM.View
                 //preencha tudo
             }
             bool gravou = tbl.cadastraTerceiro(t);
+            LogEventoBL lbl = new LogEventoBL();
+            Log l = new Log();
+            l.email = Session["email"].ToString();
+            l.data = DateTime.Now;
+            l.descricao = "Incluir Terceiro nome: " + t.nome + " ";
+            lbl.adicionaLog(l);
             if(gravou)
             {
                 Response.Write("<script>alert('Registro efetuado com sucesso!')</script>");

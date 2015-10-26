@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="EmpresaDA.cs" />
     <Compile Include="EtapaDA.cs" />
+    <Compile Include="LogEventoDA.cs" />
     <Compile Include="LoginDA.cs" />
     <Compile Include="MensagemDA.cs" />
     <Compile Include="ProjetoDA.cs" />

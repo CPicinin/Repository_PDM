@@ -25,7 +25,7 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
   <body class="hold-transition login-page">
 
     <div class="login-box">
@@ -34,15 +34,15 @@
         </div><!-- /.login-logo -->
         <div class="login-box-body">
             <p class="login-box-msg">Faça login para entrar no sistema</p>
-            <form role="form" runat="server">
+                        <form role="form" runat="server">
                 <div class="form-group has-feedback">
                     <input runat="server" type="email" class="form-control" id="email" placeholder="Email" autofocus="autofocus">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                </div>
+                                </div>
                 <div class="form-group has-feedback">
                     <input runat="server" type="password" class="form-control" id="password" placeholder="Senha">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                </div>
+                                </div>
                 <div class="row">
                     <div class="col-xs-8">
                         <div class="checkbox icheck">
@@ -57,8 +57,8 @@
                     <div class="col-xs-8">
                         <asp:HyperLink id="HyperLink1" runat="server" NavigateUrl="~/RecuperarSenha.aspx" Text="Esqueceu sua senha? Clique aqui!"></asp:HyperLink>
                     </div>
-                </div>
-            </form>
+                                </div>
+                        </form>
         </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
 
@@ -77,6 +77,6 @@
         });
       });
     </script>
-  </body>
+</body>
 </html>
 

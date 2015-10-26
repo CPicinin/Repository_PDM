@@ -72,5 +72,37 @@ namespace PDM.PrintMailOther
 
             return destino;
         }*/
+
+        public bool notificaNovaSenha(string senha, string email, string mensagem)
+        {
+            string remetente = "notificador.pdm@gmail.com";
+            string assunto = "Alteração de senha";
+
+            try
+            {
+
+                MailMessage objEmail = new MailMessage();
+                objEmail.From = new MailAddress(remetente);
+                objEmail.To.Add(email);
+                objEmail.Priority = MailPriority.Normal;
+                objEmail.IsBodyHtml = true;
+                objEmail.Subject = assunto;
+                objEmail.Body = mensagem;
+                objEmail.SubjectEncoding = Encoding.GetEncoding("ISO-8859-1");
+                objEmail.BodyEncoding = Encoding.GetEncoding("ISO-8859-1");
+
+                SmtpClient objSmtp = new SmtpClient();
+                objSmtp.Host = "smtp.gmail.com";
+                objSmtp.Port = 25;
+                objSmtp.EnableSsl = true;
+                objSmtp.Credentials = new NetworkCredential("notificador.pdm@gmail.com", "Pdm123456");
+                objSmtp.Send(objEmail);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

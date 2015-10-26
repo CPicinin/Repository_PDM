@@ -89,6 +89,12 @@ namespace PDM.View
             TarefaBL tbl = new TarefaBL();
             bool foi = tbl.adicionarItem(i);
             carregaTabela();
+            LogEventoBL lbl = new LogEventoBL();
+            Log l = new Log();
+            l.email = Session["email"].ToString();
+            l.data = DateTime.Now;
+            l.descricao = "Adicionou um item <" + i.descricao + "> na Tarefa nº " + i.idTarefa + " ";
+            lbl.adicionaLog(l);
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)

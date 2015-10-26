@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecuperarSenha.aspx.cs" Inherits="PDM.View.RecuperarSenha" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginRecupera.aspx.cs" Inherits="PDM.View.LoginRecupera" %>
 
 <!DOCTYPE html>
 
@@ -37,19 +37,25 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Recuperar Senha</h3>
+                        <h3 class="panel-title">Login de Recuperação</h3>
                     </div>
                     <div class="panel-body">
                         <form role="form" runat="server">
                             <fieldset>
                                 <div class="form-group">
-                                    Digite seu e-mail para que o PDM possa cadastrar uma nova senha.
-                                </div>
-                                <div class="form-group">
                                     <input runat="server" class="form-control" placeholder="E-mail" id="txtEmail" type="email" required="required" autofocus="autofocus"/>
                                 </div>
+                                <div class="form-group">
+                                    <input runat="server" class="form-control" placeholder="Senha Temporária" id="password" required="required" type="password"/>
+                                </div>
+                                <div class="form-group">
+                                    <input runat="server" class="form-control" placeholder="Nova Senha" id="txtSenha" required="required" type="password"/>
+                                </div>
+                                <div class="form-group">
+                                    <input runat="server" class="form-control" placeholder="Confirmar Nova Senha" id="txtSenha2" required="required" type="password"/>
+                                </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <asp:LinkButton ID="lnkRecupera" runat="server" OnClick="lnkRecupera_Click" class="btn btn-lg btn-success btn-block" Text="Enviar Email"></asp:LinkButton>
+                                <asp:LinkButton ID="lnkRecupera" runat="server" OnClick="lnkRecupera_Click" class="btn btn-lg btn-success btn-block" Text="Cadastrar nova senha"></asp:LinkButton>
                             </fieldset>
                         </form>
                     </div>

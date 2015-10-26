@@ -43,6 +43,12 @@ namespace PDM.View
             MensagemBL mbl = new MensagemBL();
             mbl.marcaMensagemLida(idMensagem);
             Response.Redirect("ConsultaMensagens.aspx");
+            LogEventoBL lbl = new LogEventoBL();
+            Log l = new Log();
+            l.email = Session["email"].ToString();
+            l.data = DateTime.Now;
+            l.descricao = "Leu mensagem " + idMensagem + " ";
+            lbl.adicionaLog(l);
         }
     }
 }

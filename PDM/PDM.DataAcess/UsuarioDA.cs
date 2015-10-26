@@ -168,5 +168,91 @@ namespace PDM.DataAcess
             conexao.Close();
             return user;
         }
+        public string buscaHash(string email)
+        {
+            string hashTemp = "";
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader leitor;
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"SELECT TOP 1 hashTemp FROM Usuario WHERE email = '" + email + "' ";
+                comando.Connection = conexao;
+                leitor = comando.ExecuteReader();
+                while (leitor.Read())
+                {
+                    hashTemp = leitor["hashTemp"].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                conexao.Close();
+                return null;
+            }
+            conexao.Close();
+            return hashTemp;
+        }
+        public bool alteraSenhaUsuario(string email, string senha)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"UPDATE dbo.Usuario SET senha = '" + senha.GetHashCode() + "' WHERE email =  '" + email + "' ";
+                comando.Connection = conexao;
+                comando.ExecuteNonQuery();
+                conexao.Close();
+                return true;
+            }
+            catch (Exception)
+            {
+                conexao.Close();
+                return false;
+            }
+        }
+        public bool limpaHash(string email)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"UPDATE dbo.Usuario SET hashTemp = '' WHERE email =  '" + email + "' ";
+                comando.Connection = conexao;
+                comando.ExecuteNonQuery();
+                conexao.Close();
+                return true;
+            }
+            catch (Exception)
+            {
+                conexao.Close();
+                return false;
+            }
+        }
+        public bool insereHashTemp(string email, string hashTemp)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"UPDATE dbo.Usuario SET hashTemp = '" + hashTemp.GetHashCode() + "' WHERE email =  '" + email + "' ";
+                comando.Connection = conexao;
+                comando.ExecuteNonQuery();
+                conexao.Close();
+                return true;
+            }
+            catch (Exception)
+            {
+                conexao.Close();
+                return false;
+            }
+        }
     }
 }

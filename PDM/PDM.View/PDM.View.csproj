@@ -80,7 +80,9 @@
     <Content Include="Home.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="LerMensagem.aspx" />
+    <Content Include="LimpaHashViaEMail.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="LoginRecupera.aspx" />
     <Content Include="noedited.aspx" />
     <Content Include="PDM.Master" />
     <Content Include="PDMWithoutNavigationLeft.Master" />
@@ -322,12 +324,26 @@
     <Compile Include="LerMensagem.aspx.designer.cs">
       <DependentUpon>LerMensagem.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LimpaHashViaEMail.aspx.cs">
+      <DependentUpon>LimpaHashViaEMail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LimpaHashViaEMail.aspx.designer.cs">
+      <DependentUpon>LimpaHashViaEMail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginRecupera.aspx.cs">
+      <DependentUpon>LoginRecupera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginRecupera.aspx.designer.cs">
+      <DependentUpon>LoginRecupera.aspx</DependentUpon>
     </Compile>
     <Compile Include="noedited.aspx.cs">
       <DependentUpon>noedited.aspx</DependentUpon>

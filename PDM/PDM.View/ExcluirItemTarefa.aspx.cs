@@ -19,6 +19,12 @@ namespace PDM.View
                 TarefaBL tbl = new TarefaBL();
                 tbl.removerItem(id);
                 Response.Redirect("~/RealizaTarefa.aspx?id_tarefa=" + Session["idTarefa"].ToString());
+                LogEventoBL lbl = new LogEventoBL();
+                Log l = new Log();
+                l.email = Session["email"].ToString();
+                l.data = DateTime.Now;
+                l.descricao = "Removeu ItemTarefa nº " + id + " ";
+                lbl.adicionaLog(l);
             }
         }
     }
