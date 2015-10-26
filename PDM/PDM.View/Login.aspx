@@ -1,83 +1,82 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="PDM.View.Login" %>
 
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PDM - Login</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="style/css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- MetisMenu CSS -->
-    <link href="style/css/metisMenu.min.css" rel="stylesheet" />
-
-    <!-- Custom CSS -->
-    <link href="style/css/sb-admin-2.css" rel="stylesheet" />
-
-    <!-- Custom Fonts -->
-    <link href="style/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="template/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="template/dist/css/AdminLTE.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="template/plugins/iCheck/square/blue.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="login-panel panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Login</h3>
-                    </div>
-                    <div class="panel-body">
-                        <form role="form" runat="server">
-                            <fieldset>
-                                <div class="form-group">
-                                    <input runat="server" class="form-control" placeholder="E-mail" id="email" type="email" required="required" autofocus="autofocus"/>
-                                </div>
-                                <div class="form-group">
-                                    <input runat="server" class="form-control" placeholder="Senha" id="password" required="required" type="password"/>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input id="remember" runat="server" type="checkbox" value="Remember Me"/>Lembrar
-                                            
-                                    </label>
-                                </div>
-                                <!-- Change this to a button or input when using this as a form -->
-                                <asp:LinkButton ID="lnkLogin" runat="server" OnClick="Unnamed_Click" class="btn btn-lg btn-success btn-block" Text="Login"></asp:LinkButton>
-                                <div>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <asp:HyperLink id="registrar" runat="server" NavigateUrl="~/RecuperarSenha.aspx" Text="Esqueceu sua senha? Clique aqui!"></asp:HyperLink>
-                                </div>
-                            </fieldset>
-                        </form>
+  </head>
+  <body class="hold-transition login-page">
+
+    <div class="login-box">
+        <div class="login-logo">
+            <img src="template/img/pdm.png" class="img-responsive" alt="PDM">
+        </div><!-- /.login-logo -->
+        <div class="login-box-body">
+            <p class="login-box-msg">Faça login para entrar no sistema</p>
+            <form role="form" runat="server">
+                <div class="form-group has-feedback">
+                    <input runat="server" type="email" class="form-control" id="email" placeholder="Email" autofocus="autofocus">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input runat="server" type="password" class="form-control" id="password" placeholder="Senha">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="checkbox icheck">
+                            <label>
+                                <input runat="server" type="checkbox"> Lembrar
+                            </label>
+                        </div>
+                    </div><!-- /.col -->
+                    <div class="col-xs-4">
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="Unnamed_Click" class="btn btn-lg btn-success btn-block" Text="Login"></asp:LinkButton>
+                    </div><!-- /.col -->
+                    <div class="col-xs-8">
+                        <asp:HyperLink id="HyperLink1" runat="server" NavigateUrl="~/RecuperarSenha.aspx" Text="Esqueceu sua senha? Clique aqui!"></asp:HyperLink>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </form>
+        </div><!-- /.login-box-body -->
+    </div><!-- /.login-box -->
 
-    <!-- jQuery -->
-    <script src="style/js/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="style/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="style/js/metisMenu.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="style/js/sb-admin-2.js"></script>
-</body>
+    <!-- jQuery 2.1.4 -->
+    <script src="template/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="template/bootstrap/js/bootstrap.min.js"></script>
+    <!-- iCheck -->
+    <script src="template/plugins/iCheck/icheck.min.js"></script>
+    <script>
+      $(function () {
+        $('input').iCheck({
+          checkboxClass: 'icheckbox_square-blue',
+          radioClass: 'iradio_square-blue',
+          increaseArea: '20%' // optional
+        });
+      });
+    </script>
+  </body>
 </html>
+
