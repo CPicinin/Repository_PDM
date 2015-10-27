@@ -258,7 +258,7 @@ namespace PDM.View
             p = pbl.buscaProjeto("", idprojeto);
 
             string filename = String.Format(@"{0}_projeto_{1}.pdf", Guid.NewGuid().ToString("D").ToUpper(), p.id);
-            string filepath= @"C:\Users\Gestao_02\Source\Repos\Repository_PDM\PDM\PDM.View\pdf\";
+            string filepath = StaticObjects.filepathPDF;
 
             criaPDFPage(s_document.AddPage(), p);
             s_document.Save(filepath + filename);
@@ -274,7 +274,7 @@ namespace PDM.View
             int conta = 0, iTempTopMargin;
             System.Drawing.Point point;
             point = new System.Drawing.Point(260, 15);
-            System.Drawing.Image newImage = System.Drawing.Image.FromFile(@"C:\Users\Gestao_02\Source\Repos\Repository_PDM\PDM\PDM.View\template\img\pdm.png");
+            System.Drawing.Image newImage = System.Drawing.Image.FromFile(StaticObjects.filepathImage);
             gfx.DrawImage(newImage, point);
 
             //MOntar header
