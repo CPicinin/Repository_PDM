@@ -14,17 +14,14 @@ namespace PDM.View
         protected void Page_Load(object sender, EventArgs e)
         {
             ProjetoBL pbl = new ProjetoBL();
-            List<string> lista = new List<string>();
+            Dictionary<string, string> lista = new Dictionary<string, string>();
             lista = pbl.buscaTiposProjeto();
-            if(lista != null)
-            {
-                listaTipo.DataSource = lista;
-                listaTipo.DataBind();
-            }
+            listaTipo.DataSource = lista;
+            listaTipo.DataBind();
             List<Usuario> listaU = new List<Usuario>();
             UsuarioBL ubl = new UsuarioBL();
             listaU = ubl.buscaUsuariosEmpresa(Convert.ToInt16(Session["empresa"].ToString()));
-            foreach(Usuario u in listaU)
+            foreach (Usuario u in listaU)
             {
                 listaResponsaveis.Items.Add(u.email);
             }
@@ -36,12 +33,12 @@ namespace PDM.View
             Projeto p = new Projeto();
             p.titulo = txtTitulo.Value;
             p.emailResponsavel = listaResponsaveis.SelectedItem.Value;
-            p.tipo = listaTipo.SelectedIndex;
+            p.tipo = Convert.ToInt16(listaTipo.SelectedItem.Value);
             p.status = 0;
             p.dataInicio = DateTime.Now;
             ProjetoBL pbl = new ProjetoBL();
             bool cadastrou = pbl.cadastraProjeto(p);
-            if(cadastrou)
+            if (cadastrou)
             {
                 Response.Write("<script>alert('Registro efetuado com sucesso!')</script>");
             }

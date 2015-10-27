@@ -200,9 +200,9 @@ namespace PDM.DataAcess
             catch (Exception ex) { return 0; }
             }
         }
-        public List<string> buscaTiposProjeto()
+        public Dictionary<string, string> buscaTiposProjeto()
         {
-            List<string> lista = new List<string>();
+            Dictionary<string, string> lista = new Dictionary<string, string>();
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = StaticObjects.strConexao;
             SqlCommand comando = new SqlCommand();
@@ -210,13 +210,14 @@ namespace PDM.DataAcess
             try
             {
                 conexao.Open();
-                comando.CommandText = @"SELECT descricao FROM TipoProjeto ORDER BY id ";
+                comando.CommandText = @"SELECT id, descricao FROM TipoProjeto ORDER BY id ";
                 comando.Connection = conexao;
                 leitor = comando.ExecuteReader();
                 while (leitor.Read())
                 {
-                    string item = leitor["descricao"].ToString();
-                    lista.Add(item);
+                    string item = leitor["id"].ToString();
+                    string item2 = leitor["descricao"].ToString();
+                    lista.Add(item, item2);
                 }
                 conexao.Close();
                 return lista;

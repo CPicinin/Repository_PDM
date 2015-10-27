@@ -35,12 +35,9 @@ namespace PDM.View
             if (!IsPostBack)
             {
                 ProjetoBL pbl = new ProjetoBL();
-                List<string> lista = new List<string>();
+                Dictionary<string, string> lista = new Dictionary<string, string>();
                 lista = pbl.buscaTiposProjeto();
-                foreach (string s in lista)
-                {
-                    listaTipo.Items.Add(s);
-                }
+                listaTipo.DataSource = lista;
                 listaTipo.DataBind();
                 List<Usuario> listaU = new List<Usuario>();
                 string teste = Session["empresa"].ToString();
@@ -127,7 +124,7 @@ namespace PDM.View
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {
             ProjetoBL pbl = new ProjetoBL();
-            p.tipo = listaTipo.SelectedIndex;
+            p.tipo = Convert.ToInt16(listaTipo.SelectedItem.Value);
             p.titulo = txtTitulo.Value;
             bool foi = pbl.editaProjeto(p);
             if (foi)

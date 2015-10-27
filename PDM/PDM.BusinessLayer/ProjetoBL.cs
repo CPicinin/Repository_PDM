@@ -44,10 +44,10 @@ namespace PDM.BusinessLayer
             bool excluiu = pda.excluiProjeto(id);
             return excluiu;
         }
-        public List<string> buscaTiposProjeto()
+        public Dictionary<string, string> buscaTiposProjeto()
         {
-            
-            List<string> lista = new List<string>();
+
+            Dictionary<string, string> lista = new Dictionary<string, string>();
             ProjetoDA pda = new ProjetoDA();
             lista = pda.buscaTiposProjeto();
             return lista;

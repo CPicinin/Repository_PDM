@@ -22,12 +22,12 @@
                 </div>
                 <div class="form-group">
                     <label>Responsável</label>
-                    <asp:DropDownList ID="listaResponsaveis" runat="server" CssClass="form-control" ></asp:DropDownList>
+                    <asp:DropDownList ID="listaResponsaveis" runat="server" CssClass="form-control" DataTextField ="Value" DataValueField="Key" ></asp:DropDownList>
                 </div>
                 <div class="form-group">
                     <label>Tipo de projeto</label>
                     <div class="list-group">
-                            <asp:DropDownList ID="listaTipo" runat="server" CssClass="form-control" ></asp:DropDownList>
+                            <asp:DropDownList ID="listaTipo" runat="server" CssClass="form-control" DataTextField ="Value" DataValueField="Key"></asp:DropDownList>
                     </div>
                 </div>
                 <asp:Button ID="btnCadastrar" type="submit" OnClick="btnCadastrar_Click" runat="server" class="btn btn-default" Text="Salvar" />

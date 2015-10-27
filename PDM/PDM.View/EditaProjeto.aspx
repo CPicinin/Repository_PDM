@@ -27,7 +27,7 @@
                 <div class="form-group">
                     <label>Tipo de projeto</label>
                     <div class="list-group">
-                        <asp:DropDownList ID="listaTipo" DataTextField="titulo" DataValueField="id"  runat="server" CssClass="form-control"></asp:DropDownList>
+                        <asp:DropDownList ID="listaTipo" DataTextField="Value" DataValueField="key"  runat="server" CssClass="form-control"></asp:DropDownList>
                     </div>
                 </div>
                 <div class="form-group">
