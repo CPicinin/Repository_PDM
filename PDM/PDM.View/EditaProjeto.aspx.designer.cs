@@ -58,6 +58,15 @@ namespace PDM.View {
         protected global::System.Web.UI.WebControls.Button btnCancela;
         
         /// <summary>
+        /// btnrelatorio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnrelatorio;
+        
+        /// <summary>
         /// lstEtapa control.
         /// </summary>
         /// <remarks>
@@ -92,15 +101,6 @@ namespace PDM.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnAdicionar;
-        
-        /// <summary>
-        /// btnGeraRelatorio control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnGeraRelatorio;
         
         /// <summary>
         /// gridTarefas control.

@@ -33,6 +33,7 @@
                 <div class="form-group">
                     <asp:Button ID="btnCadastrar" type="submit" OnClick="btnCadastrar_Click" runat="server" class="btn btn-default" Text="Salvar" />
                     <asp:Button ID="btnCancela" type="cancel" runat="server" OnClick="btnCancela_Click" class="btn btn-default" Text="Cancelar" />
+                    <asp:Button ID="btnrelatorio" runat="server" OnClick="btnGeraRelatorio_Click" CssClass="btn btn-default" Text="Gerar Relatório do Projetos" />
                 </div>
                 <div class="form-group">
                     <h3>Tarefas do Projeto</h3>
@@ -45,8 +46,6 @@
                         <asp:LinkButton ID="btnNotificar"  OnClick="btnNotifica_Click" runat="server" class="fa fa-envelope" />
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:LinkButton ID="btnAdicionar" CssClass="fa fa-plus" OnClick="btnAdicionar_Click" runat="server"/>
-                        &nbsp;&nbsp;&nbsp;&nbsp
-                        <asp:LinkButton ID="btnGeraRelatorio" CssClass="fa fa-pagelines" OnClick="btnGeraRelatorio_Click" runat="server"/>
                     </div>
                 </div>
                 <div class="form-group">

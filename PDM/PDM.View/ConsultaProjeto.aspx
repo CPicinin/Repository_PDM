@@ -30,12 +30,6 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-
-            <div class="col-xs-8 col-md-8">
-                <div class="form-group">
-                    <asp:Button ID="btnrelatorio" runat="server" OnClick="btnrelatorio_Click" CssClass="btn btn-default" Text="Gerar Relatório de Projetos" />
-                </div>
-            </div>
             <!-- /.row -->
             <div class="row">
             </div>
