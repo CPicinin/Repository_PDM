@@ -4,54 +4,61 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div class="row">
-            <div class="col-xs-3 col-md-3"></div>
-            <div class="col-lg-6">
-                <h1 class="page-header">Cadastro</h1>
-                <h3>Criar uma nova Conta de teste no PDM</h3>
+            <div class="col-xs-5 col-md-5"></div>
+            <div class="col-lg-2">
+               <img src="template/img/pdm.png" class="img-responsive" alt="PDM" width="200px" height="100px">
+                </div>
+            <div class="col-xs-5 col-md-5"></div>
+        </div>
+    <br />
+        <div class="row">
+            <div class="col-xs-4 col-md-4"></div>
+            <div class="col-lg-4">
+                <p class="login-box-msg">Registre uma nova conta</p>
             </div>
-            <div class="col-xs-3 col-md-3"></div>
+            <div class="col-xs-4 col-md-4"></div>
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-xs-3 col-md-3"></div>
-            <div class="col-xs-6 col-md-6">
+            <div class="col-xs-4 col-md-4"></div>
+            <div class="col-xs-4 col-md-4">
                 <form role="form">
                     <div class="box box-primary">
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input id="email" runat="server" class="form-control" required="required" type="email" placeholder="Email"/>
+                    <div class="form-group has-feedback">
+                        <input id="email" runat="server" type="email" class="form-control" placeholder="Email" required="required">
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     </div>
-                    <div class="form-group">
-                        <label>Senha</label>
-                        <input id="senha" runat="server" class="form-control" placeholder="Senha" required="required" type="password"/>
+                    <div class="form-group has-feedback">
+                        <input id="senha" runat="server" type="password" required="required" class="form-control" placeholder="Password">
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
-                    <div class="form-group">
-                        <label>Nome</label>
-                        <input id="nome" runat="server" class="form-control" required="required" placeholder="Nome"/>
-                    </div>
-                    <div></div>
+                        <div class="form-group has-feedback">
+                            <input type="text" class="form-control" placeholder="Nome Completo" id="nome" runat="server">
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+                    <div></div> 
                     <div class="form-group">
                         <h4>Dados da Empresa</h4>
                     </div>
-                    <div class="form-group">
-                        <label>CNPJ</label>
-                        <input id="cnpj" runat="server" class="form-control" required="required" placeholder="CNPJ"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Razão Social</label>
-                        <input id="razao" runat="server" class="form-control" required="required" placeholder="Razão Social"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Email Principal</label>
-                        <input id="emailEmpresa" runat="server" class="form-control" required="required" type="email" placeholder="Email"/>
-                    </div>
+                        <div class="form-group has-feedback">
+                            <input id="cnpj" runat="server" required="required" type="text" class="form-control" placeholder="CNPJ">
+                            <span class="form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input id="razao" runat="server" required="required" type="text" class="form-control" placeholder="Razão Social">
+                            <span class="form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input id="emailEmpresa" runat="server" required="required" type="text" class="form-control" placeholder="Email Principal">
+                            <span class="form-control-feedback"></span>
+                        </div>
                     
                     <asp:Button ID="btnCadastrar" CssClass="btn btn-primary" Text="Cadastrar" runat="server" OnClick="btnCadastrar_Click" />
                 </div>
                         </form>
             </div>
-            <div class="col-xs-3 col-md-3"></div>
+            <div class="col-xs-4 col-md-4"></div>
         </div>
     <!-- /#page-wrapper -->
 </asp:Content>
