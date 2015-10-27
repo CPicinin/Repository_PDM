@@ -46,13 +46,10 @@
                 <div class="row">
                     <div class="col-xs-8">
                         <div class="checkbox icheck">
-                            <label>
-                                <input runat="server" type="checkbox"> Lembrar
-                            </label>
                         </div>
                     </div><!-- /.col -->
                     <div class="col-xs-4">
-                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="Unnamed_Click" class="btn btn-lg btn-success btn-block" Text="Login"></asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="btnLogin_Click" class="btn btn-lg btn-success btn-block" Text="Login"></asp:LinkButton>
                     </div><!-- /.col -->
                     <div class="col-xs-8">
                         <asp:HyperLink id="HyperLink1" runat="server" NavigateUrl="~/RecuperarSenha.aspx" Text="Esqueceu sua senha? Clique aqui!"></asp:HyperLink>
