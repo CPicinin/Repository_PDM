@@ -94,6 +94,15 @@ namespace PDM.View {
         protected global::System.Web.UI.WebControls.LinkButton btnAdicionar;
         
         /// <summary>
+        /// btnGeraRelatorio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnGeraRelatorio;
+        
+        /// <summary>
         /// gridTarefas control.
         /// </summary>
         /// <remarks>

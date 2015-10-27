@@ -12,10 +12,10 @@
             </div>
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                <!-- /.panel-heading -->
+                    <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <asp:GridView ID="gridProjetos" runat="server" AutoGenerateColumns="false" class="table table-striped table-bordered table-hover" >
+                            <asp:GridView ID="gridProjetos" runat="server" AutoGenerateColumns="false" class="table table-striped table-bordered table-hover">
                                 <Columns>
                                     <asp:BoundField DataField="numero" HeaderText="Número" />
                                     <asp:BoundField DataField="titulo" HeaderText="Título" />
@@ -29,6 +29,12 @@
                     <!-- /.panel-body -->
                 </div>
                 <!-- /.col-lg-12 -->
+            </div>
+
+            <div class="col-xs-8 col-md-8">
+                <div class="form-group">
+                    <asp:Button ID="btnrelatorio" runat="server" OnClick="btnrelatorio_Click" CssClass="btn btn-default" Text="Gerar Relatório de Projetos" />
+                </div>
             </div>
             <!-- /.row -->
             <div class="row">

@@ -45,6 +45,8 @@
                         <asp:LinkButton ID="btnNotificar"  OnClick="btnNotifica_Click" runat="server" class="fa fa-envelope" />
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:LinkButton ID="btnAdicionar" CssClass="fa fa-plus" OnClick="btnAdicionar_Click" runat="server"/>
+                        &nbsp;&nbsp;&nbsp;&nbsp
+                        <asp:LinkButton ID="btnGeraRelatorio" CssClass="fa fa-pagelines" OnClick="btnGeraRelatorio_Click" runat="server"/>
                     </div>
                 </div>
                 <div class="form-group">

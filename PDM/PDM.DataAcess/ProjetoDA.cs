@@ -183,5 +183,28 @@ namespace PDM.DataAcess
             catch (Exception ex) { }
             return null;
         }
+        public string buscaNomeTipoProjeto(int id)
+        {
+            string item = "";
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader leitor;
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"SELECT descricao FROM TipoProjeto WHERE id= " + id + "";
+                comando.Connection = conexao;
+                leitor = comando.ExecuteReader();
+                while (leitor.Read())
+                {
+                    item = leitor["descricao"].ToString();
+                }
+                conexao.Close();
+                return item;
+            }
+            catch (Exception ex) { }
+            return null;
+        }
     }
 }

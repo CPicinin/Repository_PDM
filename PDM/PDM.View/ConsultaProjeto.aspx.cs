@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PDM.BusinessLayer;
 using PDM.DataObjects;
+
 namespace PDM.View
 {
     public partial class ConsultaProjeto : System.Web.UI.Page
@@ -44,6 +45,11 @@ namespace PDM.View
             }
             gridProjetos.DataSource = dt.Copy();
             gridProjetos.DataBind();
+        }
+
+        protected void btnrelatorio_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

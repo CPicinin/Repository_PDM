@@ -52,7 +52,12 @@ namespace PDM.BusinessLayer
             lista = pda.buscaTiposProjeto();
             return lista;
         }
-
+        public string buscaNomeTipoProjeto(int id)
+        {
+            ProjetoDA pda = new ProjetoDA();
+            string item = pda.buscaNomeTipoProjeto(id);
+            return item;
+        }
         public List<Projeto> teste()
         {
 

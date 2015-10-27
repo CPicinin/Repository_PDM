@@ -1,20 +1,35 @@
-﻿using System;
+﻿using PdfSharp;
+using PdfSharp.Charting;
+using PdfSharp.Drawing;
+using PdfSharp.Drawing.Layout;
+using PdfSharp.Pdf;
+using PDM.BusinessLayer;
+using PDM.DataObjects;
+using PDM.PrintMailOther;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using PDM.BusinessLayer;
-using PDM.DataObjects;
-using System.Data;
-using PDM.PrintMailOther;
 
 namespace PDM.View
 {
     public partial class EditaProjeto : System.Web.UI.Page
     {
         Projeto p = new Projeto();
+        internal static PdfDocument s_document;
+        XFont font = new XFont("Calibri", 9, XFontStyle.Regular);
+        XFont headersFont = new XFont("Calibri", 10, XFontStyle.Bold);
+        ProjetoBL pda = new ProjetoBL();
+        RectangleF rect;
+
         protected void Page_Init(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -227,6 +242,138 @@ namespace PDM.View
         protected void btnAdicionar_Click(object sender, EventArgs e)
         {
             Response.Redirect("CadastraTarefa.aspx?id_projeto=" + Request["id_projeto"].ToString());
+        }
+
+        protected void btnGeraRelatorio_Click(object sender, EventArgs e)
+        {
+            s_document = new PdfDocument();
+            s_document.Info.Title = "`PDM - Projeto";
+            s_document.Info.Author = "PDM Product Development Manager";
+            s_document.Info.Subject = "Documento de Acompanhamento de Projeto";
+            s_document.Info.Keywords = "Projeto, PDM";
+
+            int idprojeto = Convert.ToInt16(Request["id_projeto"].ToString());
+            p = new Projeto();
+            ProjetoBL pbl = new ProjetoBL();
+            p = pbl.buscaProjeto("", idprojeto);
+
+            string filename = String.Format(@"{0}_projeto_{1}.pdf", Guid.NewGuid().ToString("D").ToUpper(), p.id);
+            string filepath= @"C:\Users\Gestao_02\Source\Repos\Repository_PDM\PDM\PDM.View\pdf\";
+
+            criaPDFPage(s_document.AddPage(), p);
+            s_document.Save(filepath + filename);
+            Process.Start(filepath + filename);
+        }
+        public void criaPDFPage(PdfPage page, Projeto pro)
+        {
+            XGraphics gfx = XGraphics.FromPdfPage(page);
+            XTextFormatter tf = new XTextFormatter(gfx);
+            XRect retangulo;
+            int iLeftMargin = 15;
+            int iTopMargin = 25;
+            int conta = 0, iTempTopMargin;
+            System.Drawing.Point point;
+            point = new System.Drawing.Point(260, 15);
+            System.Drawing.Image newImage = System.Drawing.Image.FromFile(@"C:\Users\Gestao_02\Source\Repos\Repository_PDM\PDM\PDM.View\template\img\pdm.png");
+            gfx.DrawImage(newImage, point);
+
+            //MOntar header
+            iLeftMargin = iLeftMargin + 15;
+            iTopMargin = iTopMargin + 50;
+
+            point = new System.Drawing.Point(iLeftMargin + 3, iTopMargin + 10);
+            gfx.DrawString("Número do Projeto: " + pro.id.ToString(), font, Brushes.Black, point);
+            gfx.DrawRectangle(new Pen(Brushes.Black), iLeftMargin, iTopMargin, 270, 15);
+            point = new System.Drawing.Point(iLeftMargin + 3 + 270, iTopMargin + 10);
+            string tipo = pda.buscaNomeTipoProjeto(pro.tipo);
+            gfx.DrawString("Tipo de projeto: " + tipo, font, Brushes.Black, point);
+            gfx.DrawRectangle(new Pen(Brushes.Black), iLeftMargin + 270, iTopMargin, 270, 15);
+
+            iTopMargin = iTopMargin + 15;
+
+            point = new System.Drawing.Point(iLeftMargin + 3, iTopMargin + 10);
+            UsuarioBL uda = new UsuarioBL();
+            string nome = uda.buscaNome(pro.emailResponsavel);
+            gfx.DrawString("Responsável pelo Projeto: " + nome, font, Brushes.Black, point);
+            gfx.DrawRectangle(new Pen(Brushes.Black), iLeftMargin, iTopMargin, 270, 15);
+            point = new System.Drawing.Point(iLeftMargin + 3 + 270, iTopMargin + 10);
+            gfx.DrawString("E-mail do responsável: " + pro.emailResponsavel, font, Brushes.Black, point);
+            gfx.DrawRectangle(new Pen(Brushes.Black), iLeftMargin + 270, iTopMargin, 270, 15);
+
+            iTopMargin = iTopMargin + 15;
+
+            point = new System.Drawing.Point(iLeftMargin + 3, iTopMargin + 10);
+            gfx.DrawString("Data de Início: " + pro.dataInicio.ToShortDateString(), font, Brushes.Black, point);
+            gfx.DrawRectangle(new Pen(Brushes.Black), iLeftMargin, iTopMargin, 270, 15);
+            point = new System.Drawing.Point(iLeftMargin + 3 + 270, iTopMargin + 10);
+            gfx.DrawString("Duração em dias até agora: " + DateTime.Now.Subtract(pro.dataInicio).Days, font, Brushes.Black, point);
+            gfx.DrawRectangle(new Pen(Brushes.Black), iLeftMargin + 270, iTopMargin, 270, 15);
+
+            iTopMargin = iTopMargin + 15;
+
+            TarefaBL tda = new TarefaBL();
+            int qntTotal = tda.contaTarefasProjeto(pro.id);
+            int qntFinalizada = tda.contaTarefaFinalizadasProjeto(pro.id);
+            point = new System.Drawing.Point(iLeftMargin + 3, iTopMargin + 10);
+            gfx.DrawString("Quantidade Total de Tarefas: " + qntTotal, font, Brushes.Black, point);
+            gfx.DrawRectangle(new Pen(Brushes.Black), iLeftMargin, iTopMargin, 270, 15);
+            point = new System.Drawing.Point(iLeftMargin + 3 + 270, iTopMargin + 10);
+            gfx.DrawString("Percentual de Tarefas Concluídas): " + ((qntFinalizada * 100)/qntTotal) + "%", font, Brushes.Black, point);
+            gfx.DrawRectangle(new Pen(Brushes.Black), iLeftMargin + 270, iTopMargin, 270, 15);
+
+            iTopMargin = iTopMargin + 15;
+
+            point = new System.Drawing.Point(iLeftMargin + 3, iTopMargin + 10);
+            gfx.DrawString("Título: " + pro.titulo, font, Brushes.Black, point);
+            gfx.DrawRectangle(new Pen(Brushes.Black), iLeftMargin, iTopMargin, 540, 15);
+
+            iTopMargin = iTopMargin + 37;
+
+            point = new System.Drawing.Point(iLeftMargin + 3, iTopMargin + 10);
+            gfx.DrawString("TAREFAS", headersFont, Brushes.Black, point);
+            gfx.DrawRectangle(new Pen(Brushes.Black), iLeftMargin, iTopMargin, 540, 15);
+
+            iTopMargin = iTopMargin + 15;
+
+            rect = new RectangleF(iLeftMargin + 3, iTopMargin + 10, 540, 300);
+            conta = 0;
+            iTempTopMargin = iTopMargin;
+            List<Tarefa> lista = new List<Tarefa>();
+            lista = tda.buscaTarefasProjeto(pro.id, false, "");
+            foreach (Tarefa t in lista)
+            {
+                StringBuilder frase = new StringBuilder();
+                frase.Append(t.titulo);
+                frase.Append(" (");
+                string status;
+                switch (t.status)
+                {
+                    case 0:
+                        status = "Pendente";
+                        break;
+                    case 1:
+                        status = "Em Andamento";
+                        break;
+                    case 2:
+                        status = "Concluída";
+                        break;
+                    case 3:
+                        status = "Cancelada";
+                        break;
+                    default:
+                        status = "Não Iformado";
+                        break;
+                }
+                frase.Append(status);
+                frase.Append(")");
+                point = new System.Drawing.Point(iLeftMargin + 3, iTempTopMargin + 10);
+                gfx.DrawString(frase.ToString(), font, Brushes.Black, point);
+                conta++;
+                iTempTopMargin = iTempTopMargin + 15;
+            }
+            rect = new RectangleF(iLeftMargin, iTopMargin, 540, iTempTopMargin - iTopMargin);
+            gfx.DrawRectangle(Pens.Black, Rectangle.Round(rect));
+            iTopMargin = iTempTopMargin + 15;
         }
     }
 }

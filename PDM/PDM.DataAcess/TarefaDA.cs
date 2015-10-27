@@ -320,5 +320,61 @@ namespace PDM.DataAcess
                 return false;
             }
         }
+        public int contaTarefasProjeto(int id)
+        {
+            int qnt = 0;
+            Tarefa t = new Tarefa();
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader leitor;
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"SELECT COUNT(id) AS 'quantidade' FROM dbo.Tarefa WHERE idProjeto = " + id + " ";
+                comando.Connection = conexao;
+                leitor = comando.ExecuteReader();
+                while (leitor.Read())
+                {
+                    qnt = Convert.ToInt16(leitor["quantidade"].ToString());
+                }
+                conexao.Close();
+                return qnt;
+            }
+            catch (Exception)
+            {
+                conexao.Close();
+                return 0;
+            }
+            return qnt;
+        }
+        public int contaTarefaFinalizadasProjeto(int id)
+        {
+            int qnt = 0;
+            Tarefa t = new Tarefa();
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader leitor;
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"SELECT COUNT(id) AS 'quantidade' FROM dbo.Tarefa WHERE idProjeto = " + id + " AND status <> 0 AND status <> 1";
+                comando.Connection = conexao;
+                leitor = comando.ExecuteReader();
+                while (leitor.Read())
+                {
+                    qnt = Convert.ToInt16(leitor["quantidade"].ToString());
+                }
+                conexao.Close();
+                return qnt;
+            }
+            catch (Exception)
+            {
+                conexao.Close();
+                return 0;
+            }
+            return qnt;
+        }
     }
 }

@@ -72,5 +72,15 @@ namespace PDM.BusinessLayer
             bool foi = tda.mudaStatusTarefa(status, id);
             return foi;
         }
+        public int contaTarefasProjeto(int id)
+        {
+            int qnt = tda.contaTarefasProjeto(id);
+            return qnt;
+        }
+        public int contaTarefaFinalizadasProjeto(int id)
+        {
+            int qnt = tda.contaTarefaFinalizadasProjeto(id);
+            return qnt;
+        }
     }
 }
