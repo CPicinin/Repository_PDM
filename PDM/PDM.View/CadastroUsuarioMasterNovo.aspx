@@ -14,20 +14,21 @@
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-xs-2 col-md-2"></div>
-            <div class="col-xs-8 col-md-8">
+            <div class="col-xs-3 col-md-3"></div>
+            <div class="col-xs-6 col-md-6">
                 <form role="form">
+                    <div class="box box-primary">
                     <div class="form-group">
                         <label>Email</label>
-                        <input id="email" runat="server" class="form-control" required="required" type="email" placeholder="email"/>
+                        <input id="email" runat="server" class="form-control" required="required" type="email" placeholder="Email"/>
                     </div>
                     <div class="form-group">
                         <label>Senha</label>
-                        <input id="senha" runat="server" class="form-control" placeholder="senha" required="required" type="password"/>
+                        <input id="senha" runat="server" class="form-control" placeholder="Senha" required="required" type="password"/>
                     </div>
                     <div class="form-group">
                         <label>Nome</label>
-                        <input id="nome" runat="server" class="form-control" required="required" placeholder="nome"/>
+                        <input id="nome" runat="server" class="form-control" required="required" placeholder="Nome"/>
                     </div>
                     <div></div>
                     <div class="form-group">
@@ -35,20 +36,22 @@
                     </div>
                     <div class="form-group">
                         <label>CNPJ</label>
-                        <input id="cnpj" runat="server" class="form-control" required="required" placeholder="cnpj"/>
+                        <input id="cnpj" runat="server" class="form-control" required="required" placeholder="CNPJ"/>
                     </div>
                     <div class="form-group">
                         <label>Razão Social</label>
-                        <input id="razao" runat="server" class="form-control" required="required" placeholder="razão"/>
+                        <input id="razao" runat="server" class="form-control" required="required" placeholder="Razão Social"/>
                     </div>
                     <div class="form-group">
                         <label>Email Principal</label>
-                        <input id="emailEmpresa" runat="server" class="form-control" required="required" type="email" placeholder="email"/>
+                        <input id="emailEmpresa" runat="server" class="form-control" required="required" type="email" placeholder="Email"/>
                     </div>
-                    <asp:Button ID="btnCadastrar" CssClass="btn btn-default" Text="Cadastrar" runat="server" OnClick="btnCadastrar_Click" />
-                </form>
+                    
+                    <asp:Button ID="btnCadastrar" CssClass="btn btn-primary" Text="Cadastrar" runat="server" OnClick="btnCadastrar_Click" />
+                </div>
+                        </form>
             </div>
-            <div class="col-xs-2 col-md-2"></div>
+            <div class="col-xs-3 col-md-3"></div>
         </div>
     <!-- /#page-wrapper -->
 </asp:Content>
