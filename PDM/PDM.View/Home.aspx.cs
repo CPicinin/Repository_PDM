@@ -24,13 +24,33 @@ namespace PDM.View
                 lblQntTarefas.Text = tbl.contaTarefasUsuario(Session["email"].ToString()).ToString();
                 MensagemBL mbl = new MensagemBL();
                 lblMensagens.Text = mbl.contaMensagens(Session["email"].ToString()).ToString();
+                carregaInformativo();
             }
         }
-        /*protected void Page_Load(object sender, EventArgs e)
+        public void carregaInformativo()
         {
-            if (!userLogged){
-                Response.Redirect("Login.aspx");}
-            else{}
-        }*/
+            string email = Session["email"].ToString();
+            Usuario u = new Usuario();
+            UsuarioBL ubl = new UsuarioBL();
+            u = ubl.buscaUsuarioAtivo(email);
+            ProjetoBL pbl = new ProjetoBL();
+            TarefaBL tbl = new TarefaBL();
+            int totaProj = 0, totalTask = 0;
+            double projPend = 0, projConc = 0, TaskPend = 0, taskConc = 0;
+            
+            totaProj = pbl.contaProjetosEmpresa(u.idEmpresa, "");
+            projPend = (pbl.contaProjetosEmpresa(u.idEmpresa, "AND status <> 2 AND status <> 3")*100) / totaProj;
+            projConc = (pbl.contaProjetosEmpresa(u.idEmpresa, "AND status <> 0 AND status <> 1") * 100) / totaProj;
+            totalTask = tbl.contaTarefasEmpresa(u.idEmpresa, "");
+            TaskPend = (tbl.contaTarefasEmpresa(u.idEmpresa, "AND status <> 2 AND status <> 3") * 100) / totalTask;
+            taskConc = (tbl.contaTarefasEmpresa(u.idEmpresa, "AND status <> 0 AND status <> 1") * 100) / totalTask;
+
+            lblQntProj.Text = totaProj.ToString();
+            lblProjPendente.Text = projPend.ToString();
+            lblProjFim.Text = projConc.ToString();
+            lblTotalTarefas.Text = totalTask.ToString();
+            lblTarefaTotal.Text = TaskPend.ToString();
+            lblTarefaExec.Text = taskConc.ToString();
+        }
     }
 }

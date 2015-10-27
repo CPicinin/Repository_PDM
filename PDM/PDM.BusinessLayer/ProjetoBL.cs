@@ -67,6 +67,12 @@ namespace PDM.BusinessLayer
 
             return bind;
         }
+        public int contaProjetosEmpresa(int idEmpresa, string where)
+        {
+            ProjetoDA pda = new ProjetoDA();
+            int qnt = pda.contaProjetosEmpresa(idEmpresa, where);
+            return qnt;
+        }
         
     }
 }

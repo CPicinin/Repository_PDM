@@ -82,5 +82,10 @@ namespace PDM.BusinessLayer
             int qnt = tda.contaTarefaFinalizadasProjeto(id);
             return qnt;
         }
+        public int contaTarefasEmpresa(int idEmpresa, string where)
+        {
+            int qnt = tda.contaTarefasEmpresa(idEmpresa, where);
+            return qnt;
+        }
     }
 }

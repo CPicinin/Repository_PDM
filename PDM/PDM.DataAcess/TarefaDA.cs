@@ -376,5 +376,47 @@ namespace PDM.DataAcess
             }
             return qnt;
         }
+        public int contaTarefasEmpresa(int idEmpresa, string where)
+        {
+            int qnt = 0;
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader leitor;
+            if ((where != "") && (where != null))
+            {
+                try
+                {
+                    conexao.Open();
+                    comando.CommandText = @"SELECT COUNT(id) AS 'quantidade' FROM Tarefa WHERE emailResponsavel IN (SELECT email from Usuario WHERE idEmpresa  = " + idEmpresa + ") " + where + " ";
+                    comando.Connection = conexao;
+                    leitor = comando.ExecuteReader();
+                    while (leitor.Read())
+                    {
+                        qnt = Convert.ToInt16(leitor["quantidade"].ToString());
+                    }
+                    conexao.Close();
+                    return qnt;
+                }
+                catch (Exception ex) { return 0; }
+            }
+            else
+            {
+                try
+                {
+                    conexao.Open();
+                    comando.CommandText = @"SELECT COUNT(id) AS 'quantidade' FROM Tarefa WHERE emailResponsavel IN (SELECT email from Usuario WHERE idEmpresa  = " + idEmpresa + ")";
+                    comando.Connection = conexao;
+                    leitor = comando.ExecuteReader();
+                    while (leitor.Read())
+                    {
+                        qnt = Convert.ToInt16(leitor["quantidade"].ToString());
+                    }
+                    conexao.Close();
+                    return qnt;
+                }
+                catch (Exception ex) { return 0; }
+            }
+        }
     }
 }
