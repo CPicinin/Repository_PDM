@@ -100,8 +100,6 @@ namespace PDM.View
             //falta uma confirmação de você tem certeza que deseja excluir?
             UsuarioBL ubl = new UsuarioBL();
             bool deletou = ubl.excluiUsuario(emailUser.Value.ToString());
-            UsuarioBL ubl = new UsuarioBL();
-            bool cadastrou = ubl.editaUsuario(user);
             LogEventoBL lbl = new LogEventoBL();
             Log l = new Log();
             l.email = Session["email"].ToString();

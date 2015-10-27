@@ -40,22 +40,22 @@
                     <label>Status</label>
                     <div class="radio">
                         <label>
-                            <input id="pendente" type="radio" runat="server" name="optionsRadios1" value="option1" />Pendente
+                            <input id="pendente" type="radio" runat="server" name="optionsRadios" value="option1" />Pendente
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input id="emAndamento" type="radio" runat="server" name="optionsRadios2" value="option2" />Em Andamento
+                            <input id="emAndamento" type="radio" runat="server" name="optionsRadios" value="option2" />Em Andamento
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input id="concluido" type="radio" runat="server" name="optionsRadios3" value="option3" />Concluído
+                            <input id="concluido" type="radio" runat="server" name="optionsRadios" value="option3" />Concluído
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input id="cancelado" type="radio" runat="server" name="optionsRadios4" value="option4" />Cancelado
+                            <input id="cancelado" type="radio" runat="server" name="optionsRadios" value="option4" />Cancelado
                         </label>
                     </div>
                 </div>

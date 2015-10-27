@@ -18,14 +18,12 @@ namespace PDM.BusinessLayer
             lista = tda.buscaTarefasProjeto(numero, filtraEtapa, etapa);
             return lista;
         }
-
         public Tarefa buscaTarefa(int id)
         {
             Tarefa t = new Tarefa();
             t = tda.buscaTarefa(id);
             return t;
-        }
-        
+        }        
         public bool cadastraTarefa(Tarefa t)
         {
             bool foi = tda.cadastraTarefa(t);
@@ -68,6 +66,11 @@ namespace PDM.BusinessLayer
             List<ItemTarefa> listaItens = new List<ItemTarefa>();
             listaItens = tda.buscaItensTarefa(id);
             return listaItens;
+        }
+        public bool mudaStatusTarefa(int status, int id)
+        {
+            bool foi = tda.mudaStatusTarefa(status, id);
+            return foi;
         }
     }
 }

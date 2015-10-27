@@ -97,17 +97,27 @@ namespace PDM.View
             lbl.adicionaLog(l);
         }
 
-        protected void btnSalvar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnFinalizar_Click(object sender, EventArgs e)
         {
-            //modal para confirmar finalização
+            TarefaBL tbl = new TarefaBL();
+            bool foi = tbl.mudaStatusTarefa(2, idTarefa);
+            if (foi)
+            {
+                Response.Write("<script>alert('Tarefa Finalizada com Sucesso!')</script>");
+            }
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            TarefaBL tbl = new TarefaBL();
+            bool foi = tbl.mudaStatusTarefa(3, idTarefa);
+            if(foi)
+            {
+                Response.Write("<script>alert('Tarefa Cancelada com Sucesso!')</script>");
+            }
+        }
+
+        protected void btnVoltar_Click(object sender, EventArgs e)
         {
             Response.Redirect("ConsultaTarefas.aspx");
         }

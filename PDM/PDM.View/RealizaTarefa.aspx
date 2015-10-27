@@ -72,8 +72,11 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <asp:Button ID="btnFinalizar" OnClick="btnFinalizar_Click" runat="server" CssClass="btn btn-default" Text="Finalizar" />
-                    <asp:Button ID="btnCancelar" type="reset" runat="server" OnClick="btnCancelar_Click" CssClass="btn btn-default" Text="Voltar" />
+                    <asp:Button ID="btnFinalizar" OnClick="btnFinalizar_Click" runat="server" CssClass="btn btn-default" Text="Finalizar Tarefa" />
+                    &nbsp;&nbsp;
+                    <asp:Button ID="btnCancelar" type="reset" runat="server" OnClick="btnCancelar_Click" CssClass="btn btn-default" Text="Cancelar Tarefa" />
+                    &nbsp;&nbsp;
+                     <asp:Button ID="btnVoltar" OnClick="btnVoltar_Click" runat="server" CssClass="btn btn-default" Text="Voltar" />
                 </div>
             </div>
     <div class="col-xs-4 col-md-4"></div>

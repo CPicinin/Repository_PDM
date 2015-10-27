@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PDM.DataObjects;
 using PDM.BusinessLayer;
+using PDM.PrintMailOther;
 
 namespace PDM.View
 {
@@ -74,6 +75,27 @@ namespace PDM.View
                 m.lida = 0;
                 mbl.cadastraMensagem(m);
             }
+            string etapa = ebl.buscaDescricaoEtapa(t.idEtapa);
+            string urlRedirecionada = "http://localhost:61700/Login.aspx";
+            string nome = Session["nome"].ToString();
+            string dataIni = t.dataInicio.ToShortDateString();
+            string nomeEtapa = ebl.buscaDescricaoEtapa(t.idEtapa);
+            string strPrazo = t.prazoEstimado.ToString();
+            string titulo = t.titulo;
+            string mensagem = "<html><head><meta http-equiv='content-type' content='text/html; charset=utf-8' /></head> " +
+                                            " <body><p style='font-family:Calibri;font-size:medium;'>Olá " + nome + ",</p>" +
+                                            " <p style='font-family:Calibri;font-size:medium;'>Você acaba de receber uma tarefa no software PDM. Veja mais detalhes:</p> " +
+                                            " <p style='font-family:Calibri;font-size:medium;'>Título da Tarefa: " + titulo + " <br> " +
+                                            " Etapa: " + etapa + "<br> " +
+                                            " Data de início: " + dataIni + "<br> " +
+                                            " Prazo de conclusão em dias: " + strPrazo + " </p> " +
+                                            " <p> Clique no link abaixo para acessar o sistema e conferir suas tarefas. <br> " +
+                                            " <a href='" + urlRedirecionada + "'>Link para Login </a> </p>" +
+                                            " <p style='font-family:Calibri;font-size:medium;'>Contamos com seu empenho para o sucesso do projeto!<br> " +
+                                            " Administrador</p><body></html>";
+            Email email = new Email();
+            email.notificarNovaTarefa(t.emailResponsavel, mensagem);
+            
             LogEventoBL lbl = new LogEventoBL();
             Log l = new Log();
             l.email = Session["email"].ToString();

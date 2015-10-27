@@ -226,7 +226,7 @@ namespace PDM.View
         }
         protected void btnAdicionar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("CadastraTarefa.aspx?id_projeto=" + p.id.ToString());
+            Response.Redirect("CadastraTarefa.aspx?id_projeto=" + Request["id_projeto"].ToString());
         }
     }
 }

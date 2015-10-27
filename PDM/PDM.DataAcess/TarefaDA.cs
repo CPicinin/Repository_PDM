@@ -300,5 +300,25 @@ namespace PDM.DataAcess
                 return null;
             }
         }
+        public bool mudaStatusTarefa(int status, int id)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = StaticObjects.strConexao;
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                conexao.Open();
+                comando.CommandText = @"UPDATE dbo.Tarefa SET status = " + status + " WHERE id = " + id + " ";
+                comando.Connection = conexao;
+                comando.ExecuteNonQuery();
+                conexao.Close();
+                return true;
+            }
+            catch (Exception)
+            {
+                conexao.Close();
+                return false;
+            }
+        }
     }
 }

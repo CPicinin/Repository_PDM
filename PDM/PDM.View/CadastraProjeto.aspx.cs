@@ -43,7 +43,7 @@ namespace PDM.View
             bool cadastrou = pbl.cadastraProjeto(p);
             if(cadastrou)
             {
-                Response.Write("Projeto cadastrado com sucesso!");
+                Response.Write("<script>alert('Registro efetuado com sucesso!')</script>");
             }
             LogEventoBL lbl = new LogEventoBL();
             Log l = new Log();
