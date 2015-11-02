@@ -50,7 +50,6 @@
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
             </div>
-            
         </div>
     </div>
     <!-- /#page-wrapper -->
