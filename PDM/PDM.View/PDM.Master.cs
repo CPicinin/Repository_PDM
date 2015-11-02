@@ -13,8 +13,8 @@ namespace PDM.View
         protected void Page_Load(object sender, EventArgs e)
         {
             MensagemBL mbl = new MensagemBL();
+            lblQntMensagem.Text = mbl.contaMensagens(Session["email"].ToString());
             TarefaBL tbl = new TarefaBL();
-            lblQntMensagem.Text = mbl.contaMensagens(Session["email"].ToString()).ToString();
             lblQntTarefas.Text = tbl.contaTarefasUsuario(Session["email"].ToString()).ToString();
         }
         protected void OnClick(object sender, ImageClickEventArgs e)
