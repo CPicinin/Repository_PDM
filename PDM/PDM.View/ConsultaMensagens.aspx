@@ -3,11 +3,25 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="page-wrapper">
+        
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
                 <h1 class="page-header">Mensagens</h1>
+                <div class="box-header">
+                  <div class="box-tools">
+                    <div class="input-group" style="width: 150px;">
+                        <a class="btn btn-block btn-primary pull-right" href="CasdastraMensagem.aspx">Nova Mensagem</a>
+                    </div>
+                  </div>
+                </div><!-- /.box-header -->
             </div>
-            <div class="col-lg-12">
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
                 <div class="panel panel-default">
                 <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -30,8 +44,8 @@
             <div class="row">
             </div>
         </div>
+        </div>
         <!-- /#page-wrapper -->
-    </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>

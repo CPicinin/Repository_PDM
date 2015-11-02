@@ -20,11 +20,7 @@ namespace PDM.View
             }
             else
             {
-                TarefaBL tbl = new TarefaBL();
-                lblQntTarefas.Text = tbl.contaTarefasUsuario(Session["email"].ToString()).ToString();
-                MensagemBL mbl = new MensagemBL();
-                lblMensagens.Text = mbl.contaMensagens(Session["email"].ToString()).ToString();
-                carregaInformativo();
+                
             }
         }
         public void carregaInformativo()
