@@ -16,31 +16,63 @@ namespace PDM.View
         {
             if (Request["user_mail"] != null)
             {
-                UsuarioBL ubl = new UsuarioBL();
-                Usuario u = new Usuario();
-                u = ubl.buscaUsuarioAtivo(Request["user_mail"].ToString());
-                emailUser.Value = u.email;
-                nomeUser.Value = u.nome;
-                
-                emp = new Empresa();
-                emp = ebl.buscaEmpresa(u.idEmpresa);
-                EmpresaUser.Value = emp.razao;
+                if(Request["user_mail"].ToString() == "ownUser")
+                {
+                    UsuarioBL ubl = new UsuarioBL();
+                    Usuario u = new Usuario();
+                    u = ubl.buscaUsuarioAtivo(Session["email"].ToString());
+                    emailUser.Value = u.email;
+                    nomeUser.Value = u.nome;
 
-                if (u.tipo == 1)
-                {
-                    admSim.Checked = true;
+                    emp = new Empresa();
+                    emp = ebl.buscaEmpresa(u.idEmpresa);
+                    EmpresaUser.Value = emp.razao;
+
+                    if (u.tipo == 1)
+                    {
+                        admSim.Checked = true;
+                    }
+                    else
+                    {
+                        admNao.Checked = true;
+                    }
+                    if (u.ativo == 0)
+                    {
+                        AtivoNao.Checked = true;
+                    }
+                    else
+                    {
+                        ativoSim.Checked = true;
+                    }
                 }
                 else
                 {
-                    admNao.Checked = true;
-                }
-                if (u.ativo == 0)
-                {
-                    AtivoNao.Checked = true;
-                }
-                else
-                {
-                    ativoSim.Checked = true;
+                    UsuarioBL ubl = new UsuarioBL();
+                    Usuario u = new Usuario();
+                    u = ubl.buscaUsuarioAtivo(Request["user_mail"].ToString());
+                    emailUser.Value = u.email;
+                    nomeUser.Value = u.nome;
+                
+                    emp = new Empresa();
+                    emp = ebl.buscaEmpresa(u.idEmpresa);
+                    EmpresaUser.Value = emp.razao;
+
+                    if (u.tipo == 1)
+                    {
+                        admSim.Checked = true;
+                    }
+                    else
+                    {
+                        admNao.Checked = true;
+                    }
+                    if (u.ativo == 0)
+                    {
+                        AtivoNao.Checked = true;
+                    }
+                    else
+                    {
+                        ativoSim.Checked = true;
+                    }
                 }
             }
             else

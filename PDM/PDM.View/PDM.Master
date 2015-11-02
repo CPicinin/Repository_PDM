@@ -69,24 +69,24 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <span class="hidden-xs">Cristian Picinin</span>
+                  <span class="hidden-xs"><asp:Label ID="lblNome02" runat="server"></asp:Label></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     <p>
-                      Cristian Picinin
-                      <small>Registrado Desde 20/10/2015</small>
+                      <asp:Label ID="lblNome01" runat="server"></asp:Label>
+                      <small>Validade da licença: <asp:Label ID="lblDataFimLicenca" runat="server"></asp:Label></small>
                     </p>
                   </li>
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                      <a href="EditarUsuario.aspx?user_mail=ownUser" class="btn btn-default btn-flat">Perfil</a>
                     </div>
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Logout</a>
+                      <a href="Login.aspx?end_session=sim" class="btn btn-default btn-flat">Logout</a>
                     </div>
                   </li>
                 </ul>

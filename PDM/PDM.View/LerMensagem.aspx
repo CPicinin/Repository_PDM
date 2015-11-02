@@ -30,7 +30,7 @@
                     <input id="txtmensagem" type="text" class="form-control" runat="server" />
                 </div>
                 <div class="form-group">
-                    <asp:Button ID="btnLida" type="submit" OnClick="btnLida_Click" runat="server" CssClass="btn btn-default" Text="Salvar" />
+                    <asp:Button ID="btnLida" type="submit" OnClick="btnLida_Click" runat="server" CssClass="btn btn-default" Text="Marcar como Lida" />
                     <asp:Button ID="btnCancela" type="cancel" runat="server" OnClick="btnCancela_Click" CssClass="btn btn-default" Text="Cancelar" />
                 </div>
             </div>
