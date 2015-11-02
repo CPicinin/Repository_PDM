@@ -3,8 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>PDM - Consulta de Usuários</title>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="menuUser" runat="server">
-</asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="page-wrapper">
         <div class="row">

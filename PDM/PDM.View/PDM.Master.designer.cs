@@ -31,6 +31,24 @@ namespace PDM.View {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// lblQntMensagem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblQntMensagem;
+        
+        /// <summary>
+        /// lblQntTarefas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblQntTarefas;
+        
+        /// <summary>
         /// menuUser control.
         /// </summary>
         /// <remarks>

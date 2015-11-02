@@ -4,20 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using PDM.BusinessLayer;
+using PDM.DataObjects;
 namespace PDM.View
 {
     public partial class PDM : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            MensagemBL mbl = new MensagemBL();
+            TarefaBL tbl = new TarefaBL();
+            lblQntMensagem.Text = mbl.contaMensagens(Session["email"].ToString()).ToString();
+            lblQntTarefas.Text = tbl.contaTarefasUsuario(Session["email"].ToString()).ToString();
         }
-        public void AlteraTexto()
-        {
-            
-        }
-
         protected void OnClick(object sender, ImageClickEventArgs e)
         {
             string exit = "sim";
