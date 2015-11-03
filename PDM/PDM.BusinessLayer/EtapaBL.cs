@@ -16,9 +16,9 @@ namespace PDM.BusinessLayer
             int id = eda.buscaIdEtapa(descricao);
             return id;
         }
-        public List<string> buscaDescricaoEtapas()
+        public Dictionary<string, string> buscaDescricaoEtapas()
         {
-            List<string> lista = new List<string>();
+            Dictionary<string, string> lista = new Dictionary<string, string>();
             EtapaDA eda = new EtapaDA();
             lista = eda.buscaDescicaoEtapas();
             return lista;

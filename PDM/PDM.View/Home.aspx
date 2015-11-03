@@ -39,11 +39,11 @@
                                 <td style="padding:3px;"><asp:Label ID="lblTotalTarefas" runat="server"></asp:Label></td>
                             </tr>
                             <tr>
-                                <td style="padding:3px;">Quantidade de Tarefas Abertas e Pendentes</td>
+                                <td style="padding:3px;">Percentual de Tarefas Abertas e Pendentes</td>
                                 <td style="padding:3px;"><asp:Label ID="lblTarefaTotal" runat="server"></asp:Label>%</td>
                             </tr>
                             <tr>
-                                <td style="padding:3px;">Quantidade de Tarefas Concluídas e Canceladas</td>
+                                <td style="padding:3px;">Percentual de Tarefas Concluídas e Canceladas</td>
                                 <td style="padding:3px;"><asp:Label ID="lblTarefaExec" runat="server"></asp:Label>%</td>
                             </tr>
                   </table>

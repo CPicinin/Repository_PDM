@@ -20,7 +20,7 @@ namespace PDM.View
             }
             else
             {
-                
+                carregaInformativo();
             }
         }
         public void carregaInformativo()

@@ -19,25 +19,23 @@ namespace PDM.View
             if (Request["id_tarefa"] != null)
             {
                 idTarefa = Convert.ToInt16(Request["id_tarefa"].ToString());
-                Session["idTarefa"] = idTarefa;  
+                Session["idTarefa"] = idTarefa;
             }
             EtapaBL ebl = new EtapaBL();
-            List<string> listaE = new List<string>();
+            Dictionary<string, string> listaE = new Dictionary<string, string>();
             listaE = ebl.buscaDescricaoEtapas();
             listaEtapas.Items.Add("--selecione--");
-            foreach (string s in listaE)
-            {
-                listaEtapas.Items.Add(s);
-            }
+            listaEtapas.DataSource = listaE;
             listaEtapas.DataBind();
+
             TarefaBL tbl = new TarefaBL();
             Tarefa t = new Tarefa();
             t = tbl.buscaTarefa(idTarefa);
             txtTitulo.Value = t.titulo;
-            listaEtapas.SelectedItem.Value = ebl.buscaDescricaoEtapa(t.idEtapa).ToString();
+            listaEtapas.SelectedItem.Value = t.idEtapa.ToString();
             txtDataIni.Value = t.dataInicio.ToShortDateString();
             txtPrazo.Value = t.prazoEstimado.ToString();
-            switch(t.status)
+            switch (t.status)
             {
                 case 0:
                     pendente.Checked = true;
@@ -111,7 +109,7 @@ namespace PDM.View
         {
             TarefaBL tbl = new TarefaBL();
             bool foi = tbl.mudaStatusTarefa(3, idTarefa);
-            if(foi)
+            if (foi)
             {
                 Response.Write("<script>alert('Tarefa Cancelada com Sucesso!')</script>");
             }

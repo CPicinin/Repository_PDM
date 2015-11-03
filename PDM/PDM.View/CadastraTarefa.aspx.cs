@@ -25,15 +25,11 @@ namespace PDM.View
             }
             listaResponsaveis.DataBind();
 
-            List<string> listaE = new List<string>();
             EtapaBL ebl = new EtapaBL();
+            Dictionary<string, string> listaE = new Dictionary<string, string>();
             listaE = ebl.buscaDescricaoEtapas();
-            foreach(string desc in listaE)
-            {
-                ListaEtapas.Items.Add(desc);
-            }
+            ListaEtapas.DataSource = listaE;
             ListaEtapas.DataBind();
-
             if (Request["id_projeto"] != null)
             {
                 idProjeto = Convert.ToInt16(Request["id_projeto"].ToString());

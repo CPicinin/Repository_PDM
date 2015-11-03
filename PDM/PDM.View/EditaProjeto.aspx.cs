@@ -105,13 +105,9 @@ namespace PDM.View
                     gridTarefas.DataBind();
                 }
                 EtapaBL ebl = new EtapaBL();
-                List<string> listaEtapas = new List<string>();
-                listaEtapas = ebl.buscaDescricaoEtapas();
-                lstEtapa.Items.Add("--selecione--");
-                foreach (string s in listaEtapas)
-                {
-                    lstEtapa.Items.Add(s);
-                }
+                Dictionary<string, string> listaE = new Dictionary<string, string>();
+                listaE = ebl.buscaDescricaoEtapas();
+                lstEtapa.DataSource = listaE;
                 lstEtapa.DataBind();
             }
         }

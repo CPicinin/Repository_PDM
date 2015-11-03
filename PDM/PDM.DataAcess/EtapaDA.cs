@@ -36,9 +36,9 @@ namespace PDM.DataAcess
                 return 0;
             }
         }
-        public List<string> buscaDescicaoEtapas()
+        public Dictionary<string, string> buscaDescicaoEtapas()
         {
-            List<string> lista = new List<string>();
+            Dictionary<string, string> lista = new Dictionary<string, string>();
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = StaticObjects.strConexao;
             SqlCommand comando = new SqlCommand();
@@ -46,12 +46,14 @@ namespace PDM.DataAcess
             try
             {
                 conexao.Open();
-                comando.CommandText = @"SELECT tituloEtapa FROM Etapa";
+                comando.CommandText = @"SELECT id, tituloEtapa FROM Etapa";
                 comando.Connection = conexao;
                 leitor = comando.ExecuteReader();
                 while (leitor.Read())
                 {
-                    lista.Add(leitor["tituloEtapa"].ToString());
+                    string item = leitor["id"].ToString();
+                    string item2 = leitor["tituloEtapa"].ToString();
+                    lista.Add(item, item2);
                 }
                 conexao.Close();
                 return lista;
