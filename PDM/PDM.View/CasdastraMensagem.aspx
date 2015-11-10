@@ -20,7 +20,7 @@
                 </div>
                 <div class="form-group">
                     <label>Mensagem</label>
-                    <input id="txtmensagem" type="text" class="form-control" placeholder="Mensagem" runat="server" />
+                    <input id="txtmensagem" type="text" class="form-control" placeholder="Mensagem" runat="server" required="required"/>
                 </div>
                 <div class="form-group">
                     <asp:Button ID="btnCadastrar" type="submit" OnClick="btnCadastrar_Click" runat="server" CssClass="btn btn-default" Text="Enviar" />

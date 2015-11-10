@@ -17,7 +17,7 @@
             <div class="col-md-10">
                 <div class="form-group">
                     <label>Etapa</label>
-                    <asp:DropDownList ID="ListaEtapas" class="form-control" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="ListaEtapas" class="form-control" runat="server" DataTextField="Value" DataValueField="Key"></asp:DropDownList>
                 </div>
                 <div class="form-group">
                     <label>Responsável</label>
@@ -25,15 +25,15 @@
                 </div>
                 <div class="form-group">
                     <label>Título</label>
-                    <input id="txtTitulo" type="text" class="form-control" placeholder="Nome" runat="server" />
+                    <input id="txtTitulo" type="text" class="form-control" placeholder="Nome" runat="server" required="required"/>
                 </div>
                 <div class="form-group">
                     <label>Data de Início</label>
-                    <input id="txtDataIni" type="date" class="form-control" runat="server" />
+                    <input id="txtDataIni" type="date" class="form-control" runat="server" required="required"/>
                 </div>
                 <div class="form-group">
                     <label>Prazo (dias)</label>
-                    <input id="txtPrazo" type="number" class="form-control" runat="server" />
+                    <input id="txtPrazo" type="number" class="form-control" runat="server" required="required"/>
                 </div>
                 <div class="form-group">
                     <label>Status</label>

@@ -105,7 +105,7 @@ namespace PDM.DataAcess
             try
             {
                 conexao.Open();
-                comando.CommandText = @"INSERT INTO dbo.Tarefa	(idProjeto,idEtapa,emailResponsavel,titulo,dataInicio,dataFim,prazoEstimado,observacao,status) " +
+                comando.CommandText = @"INSERT INTO dbo.Tarefa (idProjeto,idEtapa,emailResponsavel,titulo,dataInicio,dataFim,prazoEstimado,observacao,status) " +
                             " VALUES (" + t.idProjeto + "," + t.idEtapa + ",'" + t.emailResponsavel + "','" + t.titulo +"', " +
                             " '" + t.dataInicio + "','" + t.dataFim + "'," + t.prazoEstimado + ",'" + t.observacao + "'," + t.status +")";
                 comando.Connection = conexao;

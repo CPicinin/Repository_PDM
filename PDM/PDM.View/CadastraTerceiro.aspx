@@ -17,11 +17,11 @@
             <div class="col-md-10">
                 <div class="form-group">
                     <label>Nome</label>
-                    <input id="txtNome" type="text" class="form-control" placeholder="Nome" runat="server" />
+                    <input id="txtNome" type="text" class="form-control" placeholder="Nome" runat="server" required="required"/>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input id="txtEmail" type="email" class="form-control" placeholder="Email"  runat="server" />
+                    <input id="txtEmail" type="email" class="form-control" placeholder="Email"  runat="server" required="required"/>
                 </div>
                 <div class="form-group">
                     <label>Tipo</label>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="form-group">
                     <label>Telefone</label>
-                    <input id="txtTelefone" class="form-control" type="text" runat="server" />
+                    <input id="txtTelefone" class="form-control" type="text" runat="server" required="required"/>
                 </div>
                 <div class="form-group">
                     <label>Tipo</label>

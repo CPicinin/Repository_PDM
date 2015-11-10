@@ -41,9 +41,8 @@ namespace PDM.View
             TarefaBL tbl = new TarefaBL();
             EtapaBL ebl = new EtapaBL();
             Tarefa t = new Tarefa();
-            
             t.idProjeto = idProjeto;
-            t.idEtapa = ebl.buscaIdEtapa(ListaEtapas.SelectedItem.Value);
+            t.idEtapa = Convert.ToInt16(ListaEtapas.SelectedItem.Value);
             t.emailResponsavel = listaResponsaveis.SelectedItem.Value;
             t.titulo = txtTitulo.Value;
             DateTime dt = Convert.ToDateTime(txtDataIni.Value);

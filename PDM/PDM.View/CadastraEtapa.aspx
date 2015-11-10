@@ -16,7 +16,7 @@
             <div class="col-md-10">
                 <div class="form-group">
                     <label>Nome da Etapa</label>
-                    <input id="txtNome" type="text" class="form-control" placeholder="Nome" runat="server" />
+                    <input id="txtNome" type="text" class="form-control" placeholder="Nome" runat="server" required="required"/>
                 </div>
                 <div class="form-group">
                     <asp:Button ID="btnCadastrar" type="submit" OnClick="btnCadastrar_Click" runat="server" CssClass="btn btn-default" Text="Salvar" />

@@ -38,7 +38,7 @@
                     <h3>Tarefas do Projeto</h3>
                     <div class="list-group">
                         Filtrar por Etapa:
-                        <asp:DropDownList ID="lstEtapa" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="lstEtapa" runat="server" DataTextField="Value" DataValueField="Key" ></asp:DropDownList>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="btnBuscaTarefas" type="submit" OnClick="btnBuscaTarefas_Click" runat="server" class="btn btn-default" Text="Buscar" />
                         &nbsp;&nbsp;&nbsp;&nbsp;

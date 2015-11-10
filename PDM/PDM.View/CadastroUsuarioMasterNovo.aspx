@@ -34,7 +34,7 @@
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                         <div class="form-group has-feedback">
-                            <input type="text" class="form-control" placeholder="Nome Completo" id="nome" runat="server">
+                            <input type="text" class="form-control" placeholder="Nome Completo" id="nome" runat="server" required="required">
                             <span class="glyphicon glyphicon-user form-control-feedback"></span>
                         </div>
                     <div></div> 
@@ -46,11 +46,11 @@
                             <span class="form-control-feedback"></span>
                         </div>
                         <div class="form-group has-feedback">
-                            <input id="razao" runat="server" required="required" type="text" class="form-control" placeholder="Razão Social">
+                            <input id="razao" runat="server" required="required" type="text" class="form-control" placeholder="Razão Social" required="required">
                             <span class="form-control-feedback"></span>
                         </div>
                         <div class="form-group has-feedback">
-                            <input id="emailEmpresa" runat="server" required="required" type="text" class="form-control" placeholder="Email Principal">
+                            <input id="emailEmpresa" runat="server" required="required" type="text" class="form-control" placeholder="Email Principal" required="required">
                             <span class="form-control-feedback"></span>
                         </div>
                     

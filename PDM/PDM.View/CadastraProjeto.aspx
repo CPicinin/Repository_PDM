@@ -17,7 +17,7 @@
             <div class="col-md-10">
                 <div class="form-group">
                     <label>Título</label>
-                    <input id="txtTitulo" type="text" class="form-control" placeholder="Nome" runat="server" />
+                    <input id="txtTitulo" type="text" class="form-control" placeholder="Nome" runat="server" required="required"/>
                 </div>
                 <div class="form-group">
                     <label>Responsável</label>

@@ -19,19 +19,19 @@
                     <form role="form">
                         <div class="form-group">
                             <label>Servidor</label>
-                            <asp:TextBox ID="txtServidor" runat="server" class="form-control" placeholder="Servidor"></asp:TextBox>
+                            <asp:TextBox ID="txtServidor" runat="server" class="form-control" placeholder="Servidor" required="required"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label>Instância</label>
-                            <asp:TextBox ID="txtInstancia" runat="server" class="form-control" placeholder="Instância"></asp:TextBox>
+                            <asp:TextBox ID="txtInstancia" runat="server" class="form-control" placeholder="Instância" required="required"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label>Usuário</label>
-                            <asp:TextBox ID="txtUsuario" runat="server" class="form-control" placeholder="Usuário"></asp:TextBox>
+                            <asp:TextBox ID="txtUsuario" runat="server" class="form-control" placeholder="Usuário" required="required"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label>Senha</label>
-                            <asp:TextBox ID="txtSenha" runat="server" class="form-control" type="password" placeholder="Senha"></asp:TextBox>
+                            <asp:TextBox ID="txtSenha" runat="server" class="form-control" type="password" placeholder="Senha" required="required"></asp:TextBox>
                         </div>
                         <asp:Button ID="btnSalvar" runat="server" OnClick="btnSalvar_Click" Text="Salvar" />
                         <asp:Button ID="btnCancelar" runat="server" OnClick="btnCancelar_Click" Text="Cancelar" />
