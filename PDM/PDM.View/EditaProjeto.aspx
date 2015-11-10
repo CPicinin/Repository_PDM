@@ -5,15 +5,16 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="page-wrapper">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
                 <h1 class="page-header">Edita Projeto</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-xs-2 col-md-2"></div>
-            <div class="col-xs-8 col-md-8">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
                 <div class="form-group">
                     <label>Título</label>
                     <input id="txtTitulo" type="text" class="form-control" placeholder="Nome" runat="server" />

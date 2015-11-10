@@ -5,10 +5,14 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="page-wrapper">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
                 <h1 class="page-header">Projetos</h1>
             </div>
-            <div class="col-lg-12">
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
                 <div class="panel panel-default">
                     <!-- /.panel-heading -->
                     <div class="panel-body">
