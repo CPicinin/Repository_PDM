@@ -46,11 +46,11 @@
                             <span class="form-control-feedback"></span>
                         </div>
                         <div class="form-group has-feedback">
-                            <input id="razao" runat="server" required="required" type="text" class="form-control" placeholder="Razão Social" required="required">
+                            <input id="razao" runat="server" required="required" type="text" class="form-control" placeholder="Razão Social">
                             <span class="form-control-feedback"></span>
                         </div>
                         <div class="form-group has-feedback">
-                            <input id="emailEmpresa" runat="server" required="required" type="text" class="form-control" placeholder="Email Principal" required="required">
+                            <input id="emailEmpresa" runat="server" required="required" type="text" class="form-control" placeholder="Email Principal">
                             <span class="form-control-feedback"></span>
                         </div>
                     
