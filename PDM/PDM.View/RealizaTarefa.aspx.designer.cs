@@ -13,76 +13,49 @@ namespace PDM.View {
     public partial class RealizaTarefa {
         
         /// <summary>
-        /// listaEtapas control.
+        /// lblEtapa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList listaEtapas;
+        protected global::System.Web.UI.WebControls.Label lblEtapa;
         
         /// <summary>
-        /// txtTitulo control.
+        /// lblTitulo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtTitulo;
+        protected global::System.Web.UI.WebControls.Label lblTitulo;
         
         /// <summary>
-        /// txtDataIni control.
+        /// lblDtIni control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDataIni;
+        protected global::System.Web.UI.WebControls.Label lblDtIni;
         
         /// <summary>
-        /// txtPrazo control.
+        /// lblPrazo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtPrazo;
+        protected global::System.Web.UI.WebControls.Label lblPrazo;
         
         /// <summary>
-        /// pendente control.
+        /// lblStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton pendente;
-        
-        /// <summary>
-        /// emAndamento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton emAndamento;
-        
-        /// <summary>
-        /// concluido control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton concluido;
-        
-        /// <summary>
-        /// cancelado control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton cancelado;
+        protected global::System.Web.UI.WebControls.Label lblStatus;
         
         /// <summary>
         /// txtItem control.

@@ -30,7 +30,7 @@
                                 <Columns>
                                     <asp:BoundField DataField="data" HeaderText="Data de Envio" />
                                     <asp:BoundField DataField="remetente" HeaderText="Email Remetente" />
-                                    <asp:BoundField DataField="nome" HeaderText="Nome Reemetente" />
+                                    <asp:BoundField DataField="nome" HeaderText="Nome Remetente" />
                                     <asp:HyperLinkField ControlStyle-CssClass="fa fa-binoculars fa-fw" DataNavigateUrlFields="abrir" />
                                 </Columns>
                             </asp:GridView>

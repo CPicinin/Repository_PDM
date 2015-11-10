@@ -21,33 +21,29 @@ namespace PDM.View
                 idTarefa = Convert.ToInt16(Request["id_tarefa"].ToString());
                 Session["idTarefa"] = idTarefa;
             }
-            EtapaBL ebl = new EtapaBL();
-            Dictionary<string, string> listaE = new Dictionary<string, string>();
-            listaE = ebl.buscaDescricaoEtapas();
-            listaEtapas.Items.Add("--selecione--");
-            listaEtapas.DataSource = listaE;
-            listaEtapas.DataBind();
-
             TarefaBL tbl = new TarefaBL();
             Tarefa t = new Tarefa();
             t = tbl.buscaTarefa(idTarefa);
-            txtTitulo.Value = t.titulo;
-            listaEtapas.SelectedItem.Value = t.idEtapa.ToString();
-            txtDataIni.Value = t.dataInicio.ToShortDateString();
-            txtPrazo.Value = t.prazoEstimado.ToString();
+
+            EtapaBL ebl = new EtapaBL();
+            lblEtapa.Text = ebl.buscaDescricaoEtapa(t.idEtapa);
+            lblTitulo.Text = t.titulo;
+            lblDtIni.Text = t.dataInicio.ToShortDateString();
+            lblPrazo.Text = t.prazoEstimado.ToString();
+            
             switch (t.status)
             {
                 case 0:
-                    pendente.Checked = true;
+                    lblStatus.Text = "Pendente";
                     break;
                 case 1:
-                    emAndamento.Checked = true;
+                    lblStatus.Text = "Em Andamento";
                     break;
                 case 2:
-                    concluido.Checked = true;
+                    lblStatus.Text = "Concluída";
                     break;
                 case 3:
-                    cancelado.Checked = true;
+                    lblStatus.Text = "Cancelada";
                     break;
             }
             carregaTabela();
