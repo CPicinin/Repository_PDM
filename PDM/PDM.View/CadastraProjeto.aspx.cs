@@ -59,7 +59,7 @@ namespace PDM.View
 
         protected void btnCancela_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("ConsultaProjeto.aspx");
         }
     }
 }

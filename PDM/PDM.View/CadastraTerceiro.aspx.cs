@@ -75,14 +75,7 @@ namespace PDM.View
 
         protected void btnLimpar_Click(object sender, EventArgs e)
         {
-            txtEmail.Value = "";
-            txtNome.Value = "";
-            txtTelefone.Value = "";
-            cpfCnpj.Value = "";
-            radioCliente.Checked = false;
-            radioFornecedor.Checked = false;
-            radioPessoaFisica.Checked = false;
-            radioPessoaJuridica.Checked = false;
+            Response.Redirect("ConsultaTerceiro.aspx");
         }
     }
 }

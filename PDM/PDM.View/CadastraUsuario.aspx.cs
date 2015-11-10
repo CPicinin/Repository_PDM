@@ -70,15 +70,7 @@ namespace PDM.View
 
         protected void btnLimpar_Click(object sender, EventArgs e)
         {
-            emailUser.Value = "";
-            nomeUser.Value = "";
-            EmpresaUser.Value = "";
-            senhaUser.Value = "";
-            senha2User.Value = "";
-            admNao.Checked = false;
-            admSim.Checked = false;
-            ativoSim.Checked = false;
-            AtivoNao.Checked = false;
+            Response.Redirect("Consultausuario.aspx");
         }
     }
 }

@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <asp:Button ID="btnCadastrar" type="submit" OnClick="btnCadastrar_Click" runat="server" class="btn btn-default" Text="Cadastrar" />
-                <asp:Button ID="btnLimpar" type="reset" runat="server" OnClick="btnLimpar_Click" class="btn btn-default" Text="Limpar" />
+                <asp:LinkButton ID="btnLimpar" runat="server" OnClick="btnLimpar_Click" CssClass="btn btn-default" Text="Cancelar" />
             </div>
             <div class="col-xs-2 col-md-2"></div>
         </div>

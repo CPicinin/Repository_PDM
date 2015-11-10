@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PDM.Master" AutoEventWireup="true" CodeBehind="CadastraProjeto.aspx.cs" Inherits="PDM.View.CadastraProjeto" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PDM.Master" ValidateRequest="false" AutoEventWireup="true" CodeBehind="CadastraProjeto.aspx.cs" Inherits="PDM.View.CadastraProjeto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>PDM - Cadastro de Projeto</title>
 </asp:Content>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <asp:Button ID="btnCadastrar" type="submit" OnClick="btnCadastrar_Click" runat="server" class="btn btn-default" Text="Salvar" />
-                <asp:Button ID="btnCancela" type="cancel" runat="server" OnClick="btnCancela_Click" class="btn btn-default" Text="Cancelar" />
+                <asp:LinkButton ID="btnCancela" runat="server" OnClick="btnCancela_Click" CssClass="btn btn-default" Text="Cancelar" />
             </div>
             <div class="col-xs-2 col-md-2"></div>
         </div>

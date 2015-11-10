@@ -125,7 +125,7 @@
 
             <li class="treeview">
               <a href="ConsultaTerceiro.aspx">
-                <i class="fa fa-globe"></i> <span>Clientes</span>
+                <i class="fa fa-globe"></i> <span>Terceiros</span>
               </a>
             </li>
 

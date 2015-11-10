@@ -4,12 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using PDM.BusinessLayer;
 
 namespace PDM.View
 {
     public partial class Config : System.Web.UI.Page
     {
-        public static string arquivoTxt = @"C:\Users\Gestao_02\Source\Repos\Repository_PDM2\PDM\PDM.View\template\img\db.txt";
+        string arquivoTxt = LogEventoBL.buscaArquivoTxt();
         protected void Page_Init(object sender, EventArgs e)
         {
             string[] lineV = new string[5];

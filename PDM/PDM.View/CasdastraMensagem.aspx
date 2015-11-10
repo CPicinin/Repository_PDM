@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-group">
                     <asp:Button ID="btnCadastrar" type="submit" OnClick="btnCadastrar_Click" runat="server" CssClass="btn btn-default" Text="Enviar" />
-                    <asp:Button ID="btnCancela" type="cancel" runat="server" OnClick="btnCancela_Click" CssClass="btn btn-default" Text="Cancelar" />
+                    <asp:LinkButton ID="btnCancela" runat="server" OnClick="btnCancela_Click" CssClass="btn btn-default" Text="Cancelar" />
                 </div>
             </div>
             <div class="col-xs-4 col-md-4"></div>

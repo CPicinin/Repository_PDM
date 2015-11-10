@@ -22,5 +22,10 @@ namespace PDM.BusinessLayer
             lista = lda.buscaLogs(where);
             return lista;
         }
+        public static string buscaArquivoTxt()
+        {
+            string texto = StaticObjects.arquivoTxt;
+            return texto;
+        }
     }
 }
