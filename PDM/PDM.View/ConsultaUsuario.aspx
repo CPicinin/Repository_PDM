@@ -9,8 +9,17 @@
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <h1 class="page-header">Usuários</h1>
+                <div class="box-header">
+                  <div class="box-tools">
+                    <div class="input-group" style="width: 150px;">
+                        <a class="btn btn-block btn-primary pull-right" href="CadastraUsuario.aspx">Novo</a>
+                    </div>
+                  </div>
+                </div><!-- /.box-header -->
             </div>
         </div>
+        <br />
+        <br />
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10">

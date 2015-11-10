@@ -118,53 +118,33 @@
               </a>
             </li>
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-user"></i> <span>Usuário</span> <i class="fa fa-angle-left pull-right"></i>
+              <a href="ConsultaUsuario.aspx">
+                <i class="fa fa-user"></i> <span>Usuário</span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="ConsultaUsuario.aspx"><i class="fa fa-circle-o"></i> Consultar</a></li>
-                <li><a href="CadastraUsuario.aspx"><i class="fa fa-circle-o"></i> Novo</a></li>
-              </ul>
             </li>
 
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-globe"></i> <span>Clientes</span> <i class="fa fa-angle-left pull-right"></i>
+              <a href="ConsultaTerceiro.aspx">
+                <i class="fa fa-globe"></i> <span>Clientes</span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="ConsultaTerceiro.aspx"><i class="fa fa-circle-o"></i> Consultar</a></li>
-                <li><a href="CadastraTerceiro.aspx"><i class="fa fa-circle-o"></i> Novo</a></li>
-              </ul>
             </li>
 
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-sticky-note-o"></i> <span>Projetos</span> <i class="fa fa-angle-left pull-right"></i>
+              <a href="ConsultaProjeto.aspx">
+                <i class="fa fa-sticky-note-o"></i> <span>Projetos</span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="ConsultaProjeto.aspx"><i class="fa fa-circle-o"></i> Consultar</a></li>
-                <li><a href="CadastraProjeto.aspx"><i class="fa fa-circle-o"></i> Novo</a></li>
-              </ul>
             </li>
 
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-reorder"></i> <span>Etapas</span> <i class="fa fa-angle-left pull-right"></i>
+              <a href="ConsultaEtapa.aspx">
+                <i class="fa fa-reorder"></i> <span>Etapas</span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="ConsultaEtapa.aspx"><i class="fa fa-circle-o"></i> Consultar</a></li>
-                <li><a href="CadastraEtapa.aspx"><i class="fa fa-circle-o"></i> Novo</a></li>
-              </ul>
             </li>
             
               <li class="treeview">
-              <a href="#">
-                <i class="fa  fa-clone"></i> <span>Tarefas</span> <i class="fa fa-angle-left pull-right"></i>
+              <a href="ConsultaTarefas.aspx">
+                <i class="fa  fa-clone"></i> <span>Tarefas</span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="ConsultaTarefas.aspx"><i class="fa fa-circle-o"></i> Consultar</a></li>
-                <li><a href="CadastraTarefa.aspx"><i class="fa fa-circle-o"></i> Novo</a></li>
-              </ul>
             </li>
           </ul>
         </section>
