@@ -48,6 +48,18 @@ namespace PDM.View
                     listaResponsaveis.Items.Add(u.email);
                 }
                 listaResponsaveis.DataBind();
+                Dictionary<string, string> listaTer = new Dictionary<string, string>();
+                TerceiroBL tb = new TerceiroBL();
+                List<Terceiro> listaT = new List<Terceiro>();
+                listaT = tb.buscaTerceiros(Convert.ToInt16(Session["empresa"]));
+                foreach (Terceiro t in listaT)
+                {
+                    string item = t.id.ToString();
+                    string item2 = t.nome.ToString();
+                    listaTer.Add(item, item2);
+                }
+                listaTerceiros.DataSource = listaTer;
+                listaTerceiros.DataBind();
 
                 if (Request["id_projeto"] != null)
                 {
@@ -122,6 +134,7 @@ namespace PDM.View
             ProjetoBL pbl = new ProjetoBL();
             p.tipo = Convert.ToInt16(listaTipo.SelectedItem.Value);
             p.titulo = txtTitulo.Value;
+            p.idTerceiro = Convert.ToInt16(listaTerceiros.SelectedItem.Value);
             bool foi = pbl.editaProjeto(p);
             if (foi)
             {
@@ -133,7 +146,7 @@ namespace PDM.View
             l.data = DateTime.Now;
             l.descricao = "Editado projeto " + p.id + "-" + p.titulo + " ";
             lbl.adicionaLog(l);
-            Response.Redirect("ConsultaEtapa.aspx");
+            Response.Redirect("ConsultaProjeto.aspx");
         }
 
         protected void btnBuscaTarefas_Click(object sender, EventArgs e)

@@ -80,7 +80,6 @@ namespace PDM.PrintMailOther
 
             try
             {
-
                 MailMessage objEmail = new MailMessage();
                 objEmail.From = new MailAddress(remetente);
                 objEmail.To.Add(email);
@@ -90,7 +89,6 @@ namespace PDM.PrintMailOther
                 objEmail.Body = mensagem;
                 objEmail.SubjectEncoding = Encoding.GetEncoding("ISO-8859-1");
                 objEmail.BodyEncoding = Encoding.GetEncoding("ISO-8859-1");
-
                 SmtpClient objSmtp = new SmtpClient();
                 objSmtp.Host = "smtp.gmail.com";
                 objSmtp.Port = 25;

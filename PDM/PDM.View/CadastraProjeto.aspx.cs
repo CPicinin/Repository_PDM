@@ -26,6 +26,19 @@ namespace PDM.View
                 listaResponsaveis.Items.Add(u.email);
             }
             listaResponsaveis.DataBind();
+
+            Dictionary<string, string> listaTer = new Dictionary<string, string>();
+            TerceiroBL tbl = new TerceiroBL();
+            List<Terceiro> listaT = new List<Terceiro>();
+            listaT = tbl.buscaTerceiros(Convert.ToInt16(Session["empresa"]));
+            foreach(Terceiro t in listaT)
+            {
+                string item = t.id.ToString();
+                string item2 = t.nome.ToString();
+                listaTer.Add(item, item2);
+            }
+            listaTerceiros.DataSource = listaTer;
+            listaTerceiros.DataBind();
         }
 
         protected void btnCadastrar_Click(object sender, EventArgs e)
@@ -35,6 +48,16 @@ namespace PDM.View
             p.emailResponsavel = listaResponsaveis.SelectedItem.Value;
             p.tipo = Convert.ToInt16(listaTipo.SelectedItem.Value);
             p.status = 0;
+            if(checkTerceiro.Checked == true)
+            {
+                p.vaiTerceiro = 1;
+                p.idTerceiro = Convert.ToInt16(listaTerceiros.SelectedItem.Value);
+            }
+            else
+            {
+                p.vaiTerceiro = 0;
+                p.idTerceiro = 1;
+            }
             p.dataInicio = DateTime.Now;
             ProjetoBL pbl = new ProjetoBL();
             bool cadastrou = pbl.cadastraProjeto(p);
@@ -60,6 +83,18 @@ namespace PDM.View
         protected void btnCancela_Click(object sender, EventArgs e)
         {
             Response.Redirect("ConsultaProjeto.aspx");
+        }
+
+        protected void checkTerceiro_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkTerceiro.Checked == true)
+            {
+                listaTerceiros.Enabled = true;
+            }
+            else
+            {
+                listaTerceiros.Enabled = false;
+            }
         }
     }
 }

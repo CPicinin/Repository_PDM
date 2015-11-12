@@ -29,8 +29,12 @@
                             <asp:DropDownList ID="listaTipo" runat="server" CssClass="form-control" DataTextField ="Value" DataValueField="Key"></asp:DropDownList>
                     </div>
                 </div>
+                <div class="form-group">
+                    <asp:CheckBox ID="checkTerceiro" runat="server" Text="&nbsp;&nbsp;Incluir Terceiro no projeto" />
+                    <asp:DropDownList ID="listaTerceiros" runat="server" CssClass="form-control" DataTextField="Value" DataValueField="Key"></asp:DropDownList>
+                </div>
                 <asp:Button ID="btnCadastrar" type="submit" OnClick="btnCadastrar_Click" runat="server" class="btn btn-default" Text="Salvar" />
-                <asp:LinkButton ID="btnCancela" runat="server" OnClick="btnCancela_Click" CssClass="btn btn-default" Text="Cancelar" />
+                <asp:LinkButton ID="btnCancelar" runat="server" OnClick="btnCancela_Click" CssClass="btn btn-default" Text="Cancelar" />
             </div>
             <div class="col-xs-2 col-md-2"></div>
         </div>

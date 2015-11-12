@@ -30,6 +30,10 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label>Terceiro</label>
+                    <asp:DropDownList ID="listaTerceiros" runat="server" CssClass="form-control" DataTextField="Value" DataValueField="Key"></asp:DropDownList>
+                </div>
+                <div class="form-group">
                     <asp:Button ID="btnCadastrar" type="submit" OnClick="btnCadastrar_Click" runat="server" class="btn btn-default" Text="Salvar" />
                     <asp:Button ID="btnCancela" type="cancel" runat="server" OnClick="btnCancela_Click" class="btn btn-default" Text="Cancelar" />
                     <asp:Button ID="btnrelatorio" runat="server" OnClick="btnGeraRelatorio_Click" CssClass="btn btn-default" Text="Gerar Relatório do Projetos" />

@@ -76,19 +76,23 @@ namespace PDM.View
         }
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            ItemTarefa i = new ItemTarefa();
-            i.idTarefa = idTarefa;
-            i.data = DateTime.Now;
-            i.descricao = txtItem.Text;
-            TarefaBL tbl = new TarefaBL();
-            bool foi = tbl.adicionarItem(i);
-            carregaTabela();
-            LogEventoBL lbl = new LogEventoBL();
-            Log l = new Log();
-            l.email = Session["email"].ToString();
-            l.data = DateTime.Now;
-            l.descricao = "Adicionou um item <" + i.descricao + "> na Tarefa nº " + i.idTarefa + " ";
-            lbl.adicionaLog(l);
+            if ((txtItem.Text != "") && txtItem.Text != null)
+            {
+                ItemTarefa i = new ItemTarefa();
+                i.idTarefa = idTarefa;
+                i.data = DateTime.Now;
+                i.descricao = txtItem.Text;
+                TarefaBL tbl = new TarefaBL();
+                bool foi = tbl.adicionarItem(i);
+                carregaTabela();
+                LogEventoBL lbl = new LogEventoBL();
+                Log l = new Log();
+                l.email = Session["email"].ToString();
+                l.data = DateTime.Now;
+                l.descricao = "Adicionou um item <" + i.descricao + "> na Tarefa nº " + i.idTarefa + " ";
+                lbl.adicionaLog(l);
+                txtItem.Text = "";
+            }
         }
 
         protected void btnFinalizar_Click(object sender, EventArgs e)

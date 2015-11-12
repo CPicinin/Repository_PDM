@@ -17,7 +17,7 @@
             <div class="col-md-10">
                 <div class="form-group">
                     <label>Etapa</label>
-                    <asp:DropDownList ID="listaEtapas" class="form-control" runat="server" />
+                    <asp:DropDownList ID="listaEtapas" class="form-control" runat="server" DataTextField="Value" DataValueField="Key" />
                 </div>
                 <div class="form-group">
                     <label>Responsável</label>

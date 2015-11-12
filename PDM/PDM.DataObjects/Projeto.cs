@@ -14,5 +14,7 @@ namespace PDM.DataObjects
         public int tipo { get; set; }
         public DateTime dataInicio { get; set; }
         public int status { get; set; }
+        public int vaiTerceiro { get; set; }
+        public int idTerceiro { get; set; }
     }
 }

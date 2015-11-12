@@ -40,6 +40,24 @@ namespace PDM.View {
         protected global::System.Web.UI.WebControls.DropDownList listaTipo;
         
         /// <summary>
+        /// checkTerceiro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox checkTerceiro;
+        
+        /// <summary>
+        /// listaTerceiros control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList listaTerceiros;
+        
+        /// <summary>
         /// btnCadastrar control.
         /// </summary>
         /// <remarks>
@@ -49,12 +67,12 @@ namespace PDM.View {
         protected global::System.Web.UI.WebControls.Button btnCadastrar;
         
         /// <summary>
-        /// btnCancela control.
+        /// btnCancelar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnCancela;
+        protected global::System.Web.UI.WebControls.LinkButton btnCancelar;
     }
 }
