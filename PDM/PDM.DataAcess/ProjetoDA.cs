@@ -129,7 +129,7 @@ namespace PDM.DataAcess
             {
                 conexao.Open();
                 comando.CommandText = @"UPDATE Projeto SET emailResponsavel = '" + p.emailResponsavel +"', titulo = '" + p.titulo + "', " +
-                    " vaiTerceiro = " + p.vaiTerceiro + ", idTerceiro = " + p.idTerceiro + " " +
+                    " vaiTerceiro = " + p.vaiTerceiro + ", idTerceiro = " + p.idTerceiro + ", " +
                     " idTipo = " + p.tipo + ", dataInicio = '" + p.dataInicio + "', status = " + p.status + " WHERE id = " + p.id + " ";
                 comando.Connection = conexao;
                 comando.ExecuteNonQuery();

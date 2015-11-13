@@ -132,7 +132,9 @@ namespace PDM.View
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {
             ProjetoBL pbl = new ProjetoBL();
+            p.id = Convert.ToInt16(Request["id_projeto"].ToString());
             p.tipo = Convert.ToInt16(listaTipo.SelectedItem.Value);
+            p.emailResponsavel = listaResponsaveis.SelectedItem.Value;
             p.titulo = txtTitulo.Value;
             p.idTerceiro = Convert.ToInt16(listaTerceiros.SelectedItem.Value);
             bool foi = pbl.editaProjeto(p);
