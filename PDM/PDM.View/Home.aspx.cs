@@ -33,20 +33,31 @@ namespace PDM.View
             TarefaBL tbl = new TarefaBL();
             int totaProj = 0, totalTask = 0;
             double projPend = 0, projConc = 0, TaskPend = 0, taskConc = 0;
-            
-            totaProj = pbl.contaProjetosEmpresa(u.idEmpresa, "");
-            projPend = (pbl.contaProjetosEmpresa(u.idEmpresa, "AND status <> 2 AND status <> 3")*100) / totaProj;
-            projConc = (pbl.contaProjetosEmpresa(u.idEmpresa, "AND status <> 0 AND status <> 1") * 100) / totaProj;
-            totalTask = tbl.contaTarefasEmpresa(u.idEmpresa, "");
-            TaskPend = (tbl.contaTarefasEmpresa(u.idEmpresa, "AND status <> 2 AND status <> 3") * 100) / totalTask;
-            taskConc = (tbl.contaTarefasEmpresa(u.idEmpresa, "AND status <> 0 AND status <> 1") * 100) / totalTask;
+            try
+            {
+                totaProj = pbl.contaProjetosEmpresa(u.idEmpresa, "");
+                projPend = (pbl.contaProjetosEmpresa(u.idEmpresa, "AND status <> 2 AND status <> 3") * 100) / totaProj;
+                projConc = (pbl.contaProjetosEmpresa(u.idEmpresa, "AND status <> 0 AND status <> 1") * 100) / totaProj;
+                totalTask = tbl.contaTarefasEmpresa(u.idEmpresa, "");
+                TaskPend = (tbl.contaTarefasEmpresa(u.idEmpresa, "AND status <> 2 AND status <> 3") * 100) / totalTask;
+                taskConc = (tbl.contaTarefasEmpresa(u.idEmpresa, "AND status <> 0 AND status <> 1") * 100) / totalTask;
 
-            lblQntProj.Text = totaProj.ToString();
-            lblProjPendente.Text = projPend.ToString();
-            lblProjFim.Text = projConc.ToString();
-            lblTotalTarefas.Text = totalTask.ToString();
-            lblTarefaTotal.Text = TaskPend.ToString();
-            lblTarefaExec.Text = taskConc.ToString();
+                lblQntProj.Text = totaProj.ToString();
+                lblProjPendente.Text = projPend.ToString();
+                lblProjFim.Text = projConc.ToString();
+                lblTotalTarefas.Text = totalTask.ToString();
+                lblTarefaTotal.Text = TaskPend.ToString();
+                lblTarefaExec.Text = taskConc.ToString();
+            }
+            catch (Exception ex)
+            {
+                lblQntProj.Text = "0";
+                lblProjPendente.Text = "0";
+                lblProjFim.Text = "0";
+                lblTotalTarefas.Text = "0";
+                lblTarefaTotal.Text = "0";
+                lblTarefaExec.Text = "0";
+            }
         }
     }
 }

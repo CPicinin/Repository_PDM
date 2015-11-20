@@ -33,18 +33,22 @@ namespace PDM.View
             dt.Columns.Add(c4);
             dt.Columns.Add(c5);
 
-            foreach (Projeto p in lista)
+            if ((lista != null) && (lista.Count >0))
             {
-                DataRow dr = dt.NewRow();
-                dr["numero"] = p.id.ToString();
-                dr["titulo"] = p.titulo.ToString();
-                dr["responsavel"] = p.emailResponsavel.ToString();
-                dr["dataAbertura"] = p.dataInicio.ToString();
-                dr["editar"] = "~/EditaProjeto.aspx?id_projeto=" + p.id.ToString();
-                dt.Rows.Add(dr);
+
+                foreach (Projeto p in lista)
+                {
+                    DataRow dr = dt.NewRow();
+                    dr["numero"] = p.id.ToString();
+                    dr["titulo"] = p.titulo.ToString();
+                    dr["responsavel"] = p.emailResponsavel.ToString();
+                    dr["dataAbertura"] = p.dataInicio.ToString();
+                    dr["editar"] = "~/EditaProjeto.aspx?id_projeto=" + p.id.ToString();
+                    dt.Rows.Add(dr);
+                }
+                gridProjetos.DataSource = dt.Copy();
+                gridProjetos.DataBind();
             }
-            gridProjetos.DataSource = dt.Copy();
-            gridProjetos.DataBind();
         }
 
         protected void btnrelatorio_Click(object sender, EventArgs e)

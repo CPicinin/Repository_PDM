@@ -19,7 +19,7 @@ namespace PDM.View {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDataEnvio;
+        protected global::System.Web.UI.WebControls.Label txtDataEnvio;
         
         /// <summary>
         /// txtemail control.
@@ -28,7 +28,7 @@ namespace PDM.View {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtemail;
+        protected global::System.Web.UI.WebControls.Label txtemail;
         
         /// <summary>
         /// txtNome control.
@@ -37,7 +37,7 @@ namespace PDM.View {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtNome;
+        protected global::System.Web.UI.WebControls.Label txtNome;
         
         /// <summary>
         /// txtmensagem control.
@@ -46,7 +46,7 @@ namespace PDM.View {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtmensagem;
+        protected global::System.Web.UI.WebControls.Label txtmensagem;
         
         /// <summary>
         /// btnLida control.

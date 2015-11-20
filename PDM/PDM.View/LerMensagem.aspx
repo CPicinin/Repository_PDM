@@ -15,20 +15,20 @@
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <div class="form-group">
-                    <label>Data de envio:</label>
-                    <input id="txtDataEnvio" type="text" class="form-control" runat="server" />
+                    <label>Data de envio:</label><br />
+                    <asp:Label id="txtDataEnvio" runat="server" />
                 </div>
                 <div class="form-group">
-                    <label>Email Remetente</label>
-                    <input id="txtemail" type="text" class="form-control" runat="server" />
+                    <label>Email Remetente</label><br />
+                    <asp:Label id="txtemail" runat="server" />
                 </div>
                 <div class="form-group">
-                    <label>Nome do Remetente</label>
-                    <input id="txtNome" type="text" class="form-control" runat="server" />
+                    <label>Nome do Remetente</label><br />
+                    <asp:Label id="txtNome" runat="server" />
                 </div>
                 <div class="form-group">
-                    <label>Mensagem</label>
-                    <input id="txtmensagem" type="text" class="form-control" runat="server" />
+                    <label>Mensagem</label><br />
+                    <asp:Label id="txtmensagem" runat="server" />
                 </div>
                 <div class="form-group">
                     <asp:Button ID="btnLida" type="submit" OnClick="btnLida_Click" runat="server" CssClass="btn btn-default" Text="Marcar como Lida" />

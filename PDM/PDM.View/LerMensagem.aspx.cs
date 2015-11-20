@@ -21,11 +21,11 @@ namespace PDM.View
                 MensagemBL mbl = new MensagemBL();
                 Mensagem m = new Mensagem();
                 m = mbl.buscamensagem(idMensagem);
-                txtDataEnvio.Value = m.data.ToShortDateString();
-                txtemail.Value = m.remetente;
+                txtDataEnvio.Text = m.data.ToShortDateString();
+                txtemail.Text = m.remetente;
                 UsuarioBL ubl = new UsuarioBL();
-                txtNome.Value = ubl.buscaNome(m.remetente);
-                txtmensagem.Value = m.mensagem;
+                txtNome.Text = ubl.buscaNome(m.remetente);
+                txtmensagem.Text = m.mensagem;
             }
             else
             {

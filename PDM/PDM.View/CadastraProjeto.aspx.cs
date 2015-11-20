@@ -56,7 +56,7 @@ namespace PDM.View
             else
             {
                 p.vaiTerceiro = 0;
-                p.idTerceiro = 1;
+                p.idTerceiro = 0;
             }
             p.dataInicio = DateTime.Now;
             ProjetoBL pbl = new ProjetoBL();

@@ -29,7 +29,7 @@ namespace PDM.PrintMailOther
 
                 SmtpClient objSmtp = new SmtpClient();
                 objSmtp.Host = "smtp.gmail.com";
-                objSmtp.Port = 25;
+                objSmtp.Port = 587;
                 objSmtp.EnableSsl = true;
                 objSmtp.Credentials = new NetworkCredential("notificador.pdm@gmail.com", "Pdm123456");
                 objSmtp.Send(objEmail);
@@ -91,7 +91,7 @@ namespace PDM.PrintMailOther
                 objEmail.BodyEncoding = Encoding.GetEncoding("ISO-8859-1");
                 SmtpClient objSmtp = new SmtpClient();
                 objSmtp.Host = "smtp.gmail.com";
-                objSmtp.Port = 25;
+                objSmtp.Port = 587;
                 objSmtp.EnableSsl = true;
                 objSmtp.Credentials = new NetworkCredential("notificador.pdm@gmail.com", "Pdm123456");
                 objSmtp.Send(objEmail);
